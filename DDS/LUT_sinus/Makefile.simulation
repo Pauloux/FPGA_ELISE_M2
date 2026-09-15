@@ -1,4 +1,4 @@
-SOURCE_FILE = lut_sinus
+SOURCE_FILE = LUT_sinus
 TESTBENCH_FILE = testbench
 TESTBENCH_ENTITY = simulation
 
