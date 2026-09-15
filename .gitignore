@@ -1,0 +1,8 @@
+*.v
+*.cf
+*.ghw
+*.bit
+*.fasm
+*.frames
+*.json
+*.bin
