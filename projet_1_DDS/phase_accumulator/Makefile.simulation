@@ -1,0 +1,19 @@
+SOURCE_FILE = phase_accumulator
+TESTBENCH_FILE = testbench
+TESTBENCH_ENTITY = simulation
+
+all: verify
+
+.PHONY: verify
+verify: $(SOURCE_FILE).vhd $(TESTBENCH_FILE).vhd
+	ghdl -a --std=08 $(SOURCE_FILE).vhd $(TESTBENCH_FILE).vhd
+
+.PHONY: simulation
+simulation: verify
+	ghdl -r --std=08 $(TESTBENCH_ENTITY) --stop-time=20us --wave=$(TESTBENCH_FILE).ghw
+	gtkwave $(TESTBENCH_FILE).ghw
+
+.PHONY: clean
+clean:
+	-rm $(TESTBENCH_FILE).ghw
+	-rm *.cf

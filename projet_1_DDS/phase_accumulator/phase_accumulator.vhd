@@ -1,0 +1,43 @@
+-- Phase Accumulator (DDS)
+-- Set N (phase width), default is 10.
+-- Drive i_clk, keep i_N_reset high (active low), set frequency word i_w.
+-- On each rising clock edge: o_phase = o_phase + i_w (wraps at 2^N).
+-- Pulse i_N_reset low to clear o_phase to 0.
+
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.NUMERIC_STD.ALL;
+
+ENTITY phase_accumulator IS
+	GENERIC(
+		N : INTEGER := 10
+	);
+	PORT(
+		i_clk : IN STD_LOGIC;
+		i_N_reset : IN STD_LOGIC;
+		i_w : IN STD_LOGIC_VECTOR(N-1 DOWNTO 0) := (OTHERS => '0');
+		o_phase : OUT STD_LOGIC_VECTOR(N-1 DOWNTO 0) := (OTHERS => '0')
+
+	);
+END ENTITY phase_accumulator;
+
+ARCHITECTURE arch OF phase_accumulator IS
+
+	SIGNAL s_phase : STD_LOGIC_VECTOR(N-1 DOWNTO 0) := (OTHERS => '0');
+
+BEGIN
+
+	o_phase <= s_phase;
+
+	PROCESS(i_clk, i_N_reset)
+	BEGIN
+
+		IF i_N_reset = '0' THEN
+			s_phase <= (OTHERS => '0');
+		ELSIF rising_edge(i_clk) THEN
+			s_phase <= STD_LOGIC_VECTOR(UNSIGNED(s_phase) + UNSIGNED(i_w));
+		END IF;
+
+	END PROCESS;
+
+END arch;
