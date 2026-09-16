@@ -1,0 +1,49 @@
+[*]
+[*] GTKWave Analyzer v3.3.126 (w)1999-2026 BSI
+[*] Wed Sep 16 14:04:16 2026
+[*]
+[dumpfile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/Resources/ADC_DAC_channel1/testbench.ghw"
+[dumpfile_mtime] "Wed Sep 16 14:04:10 2026"
+[dumpfile_size] 1316
+[savefile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/Resources/ADC_DAC_channel1/testbench.gtkw"
+[timestart] 0
+[size] 1920 934
+[pos] -27 -24
+*-23.709505 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.simulation.
+[treeopen] top.simulation.c_adc_dac_channel1_simulation_model.
+[sst_width] 278
+[signals_width] 254
+[sst_expanded] 1
+[sst_vpaned_height] 274
+@200
+-Simulation input
+@22
+#{top.simulation.s_adc_dat_a[3:0]} top.simulation.s_adc_dat_a[3] top.simulation.s_adc_dat_a[2] top.simulation.s_adc_dat_a[1] top.simulation.s_adc_dat_a[0]
+@200
+-
+@28
+top.simulation.s_adc_clk_i
+@200
+-
+-wrt_o = clk_o = /clk_i
+-
+-Input data is stable
+-on wrt_o = clk_o rising edge
+@28
+top.simulation.s_dac_wrt_o
+top.simulation.s_dac_clk_o
+@22
+#{top.simulation.s_dac_dat_o[13:0]} top.simulation.s_dac_dat_o[13] top.simulation.s_dac_dat_o[12] top.simulation.s_dac_dat_o[11] top.simulation.s_dac_dat_o[10] top.simulation.s_dac_dat_o[9] top.simulation.s_dac_dat_o[8] top.simulation.s_dac_dat_o[7] top.simulation.s_dac_dat_o[6] top.simulation.s_dac_dat_o[5] top.simulation.s_dac_dat_o[4] top.simulation.s_dac_dat_o[3] top.simulation.s_dac_dat_o[2] top.simulation.s_dac_dat_o[1] top.simulation.s_dac_dat_o[0]
+@200
+-
+-sel always 0
+@28
+top.simulation.s_dac_sel_o
+@200
+-rst always 0
+@28
+top.simulation.s_dac_rst_o
+[pattern_trace] 1
+[pattern_trace] 0

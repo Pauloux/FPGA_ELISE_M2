@@ -10,7 +10,7 @@ entity ADC_DAC_channel1 is
 Port ( adc_clk_p_i, adc_clk_n_i : in STD_LOGIC;
 	   led_o : buffer STD_LOGIC_VECTOR (7 downto 0);
     	adc_dat_a_i : in std_logic_vector(13 downto 0);
-    	adc_dat_b_i : in std_logic_vector(13 downto 0);
+    	adc_dat_b_i : in std_logic_vector(13 downto 0);	-- not used ? For channel 2 ?
     
     --DAC signals
     dac_clk_o : out std_logic;
@@ -23,10 +23,10 @@ Port ( adc_clk_p_i, adc_clk_n_i : in STD_LOGIC;
 end ADC_DAC_channel1; 
  
 architecture a of ADC_DAC_channel1 is
-	signal div : integer range 0 to 7;
+	signal div : integer range 0 to 7;	-- not used ?
 	signal clk125, clk_nobuf_s : std_logic;
-	signal aclk : std_logic;
-	signal dat_a_reg,dat_b_reg : std_logic_vector(13 downto 0);
+	signal aclk : std_logic;	-- not used ?
+	signal dat_a_reg,dat_b_reg : std_logic_vector(13 downto 0);	-- Not used ?
 	
 	component IBUFDS is
 		port(I, IB: IN std_logic;
