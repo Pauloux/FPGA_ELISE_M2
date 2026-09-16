@@ -30,4 +30,6 @@ Use descriptive signal/variable/component/process names. Prefer long names to sh
 VHDL keyword are in CAPITAL LETTERS
 Constant are also in CAPITAL LETTERS
 
+Always define default values for output and signals
+
 Use tabs for indentation (and not spaces)
