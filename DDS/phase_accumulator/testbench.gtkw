@@ -1,0 +1,33 @@
+[*]
+[*] GTKWave Analyzer v3.3.126 (w)1999-2026 BSI
+[*] Wed Sep 16 15:59:59 2026
+[*]
+[dumpfile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/DDS/phase_accumulator/testbench.ghw"
+[dumpfile_mtime] "Wed Sep 16 15:56:56 2026"
+[dumpfile_size] 2671
+[savefile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/DDS/phase_accumulator/testbench.gtkw"
+[timestart] 0
+[size] 1920 966
+[pos] -27 -24
+*-26.673552 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.simulation.
+[treeopen] top.simulation.c_phase_accumulator.
+[sst_width] 278
+[signals_width] 181
+[sst_expanded] 1
+[sst_vpaned_height] 284
+@200
+-Inputs
+@28
+top.simulation.c_phase_accumulator.i_clk
+top.simulation.c_phase_accumulator.i_n_reset
+@22
+#{top.simulation.c_phase_accumulator.i_w[9:0]} top.simulation.c_phase_accumulator.i_w[9] top.simulation.c_phase_accumulator.i_w[8] top.simulation.c_phase_accumulator.i_w[7] top.simulation.c_phase_accumulator.i_w[6] top.simulation.c_phase_accumulator.i_w[5] top.simulation.c_phase_accumulator.i_w[4] top.simulation.c_phase_accumulator.i_w[3] top.simulation.c_phase_accumulator.i_w[2] top.simulation.c_phase_accumulator.i_w[1] top.simulation.c_phase_accumulator.i_w[0]
+@200
+-
+-Outputs
+@25
+#{top.simulation.c_phase_accumulator.o_phase[9:0]} top.simulation.c_phase_accumulator.o_phase[9] top.simulation.c_phase_accumulator.o_phase[8] top.simulation.c_phase_accumulator.o_phase[7] top.simulation.c_phase_accumulator.o_phase[6] top.simulation.c_phase_accumulator.o_phase[5] top.simulation.c_phase_accumulator.o_phase[4] top.simulation.c_phase_accumulator.o_phase[3] top.simulation.c_phase_accumulator.o_phase[2] top.simulation.c_phase_accumulator.o_phase[1] top.simulation.c_phase_accumulator.o_phase[0]
+[pattern_trace] 1
+[pattern_trace] 0
