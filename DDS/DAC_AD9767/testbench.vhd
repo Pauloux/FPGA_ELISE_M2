@@ -1,3 +1,9 @@
+-- Author: Paul ROUSSEAU
+-- Date: 16 September 2026
+--
+-- Description:
+-- Testbench for the DAC_AD9467.vhd file.
+
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
 USE IEEE.NUMERIC_STD.ALL;
@@ -9,18 +15,21 @@ ARCHITECTURE behavioral OF simulation IS
 
 	CONSTANT PERIOD : TIME := 8 ns;	-- 125 MHz
 
-	SIGNAL s_i_clk	: STD_LOGIC;
-	SIGNAL s_i_data	: STD_LOGIC_VECTOR(13 DOWNTO 0);
-	SIGNAL s_i_data_tmp	: UNSIGNED(13 DOWNTO 0);
+	-- Inputs
+	SIGNAL s_i_clk	: STD_LOGIC	:= '0';
+	SIGNAL s_i_data	: STD_LOGIC_VECTOR(13 DOWNTO 0) := (OTHERS => '0');
+	SIGNAL s_i_data_tmp	: UNSIGNED(13 DOWNTO 0)	:= (OTHERS => '0');
 
-	SIGNAL s_o_reset	: STD_LOGIC;
-	SIGNAL s_o_sel	: STD_LOGIC;
-	SIGNAL s_o_clk	: STD_LOGIC;
-	SIGNAL s_o_wrt	: STD_LOGIC;
-	SIGNAL s_o_data	: STD_LOGIC_VECTOR(13 DOWNTO 0);
+	-- Outputs
+	SIGNAL s_o_reset	: STD_LOGIC	:= '0';
+	SIGNAL s_o_sel	: STD_LOGIC	:= '0';
+	SIGNAL s_o_clk	: STD_LOGIC	:= '0';
+	SIGNAL s_o_wrt	: STD_LOGIC	:= '0';
+	SIGNAL s_o_data	: STD_LOGIC_VECTOR(13 DOWNTO 0)	:= (OTHERS => '0');
 
 BEGIN
 
+	-- DAC_AD9767 instantiation
 	c_DAC_AD9767	: ENTITY work.DAC_AD9767
 		PORT MAP (
 			i_clk	=> s_i_clk,
@@ -41,6 +50,7 @@ BEGIN
 		WAIT FOR PERIOD / 2;
 	END PROCESS p_clock;
 	
+	-- Data. Increase the input data on each clock rising edge
 	p_data	: PROCESS
 	BEGIN
 		WAIT FOR PERIOD / 2;
@@ -50,6 +60,6 @@ BEGIN
 		END LOOP;
 	END PROCESS p_data;
 
-	s_i_data <= STD_LOGIC_VECTOR(s_i_data);
+	s_i_data <= STD_LOGIC_VECTOR(s_i_data_tmp);
 
 END behavioral;

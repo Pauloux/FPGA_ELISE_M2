@@ -1,4 +1,9 @@
--- Interleaved mode, channel 1 only
+-- Author: Paul ROUSSEAU
+-- Date: 16 September 2026
+--
+-- Description:
+-- Driver for the AD9767, a 14-bit DAC
+-- Interleaved mode, output on channel 1 only
 
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
@@ -21,9 +26,8 @@ ARCHITECTURE arch OF DAC_AD9767 IS
 BEGIN
 
 	-- Clock
-	-- Their rising edge must occur on i_clk falling edge
-	-- This garantees the data is table when o_clk and o_wrt
-	-- are on a rising edge.
+	-- Their rising edge must occur on i_clk falling edge. This garantees the
+	-- data is stable when a rising edge occurs on o_clk and o_wrt.
 	o_clk	<= NOT(i_clk);
 	o_wrt	<= NOT(i_clk);
 
