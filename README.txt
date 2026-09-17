@@ -25,11 +25,12 @@ s_ : signal
 t_ : type
 v_ : variable
 
+Please write only in English to be consistent.
+
 Use descriptive signal/variable/component/process names. Prefer long names to short but unreadable ones. Common abbreviations can be used such as "i" (loop index), "tmp", "freq", etc.
 
-VHDL keyword are in CAPITAL LETTERS
-Constant are also in CAPITAL LETTERS
+VHDL keyword are in CAPITAL LETTERS. Constant are also in CAPITAL LETTERS
 
-Always define default values for output and signals
+Always define default values for output and signals.
 
-Use tabs for indentation (and not spaces)
+Use tabs for indentation (and not spaces).

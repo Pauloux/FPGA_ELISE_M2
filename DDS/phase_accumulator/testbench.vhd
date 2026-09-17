@@ -1,7 +1,7 @@
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
 USE IEEE.NUMERIC_STD.ALL;
-USE STD.ENV.ALL;  -- pour avoir la commande "stop" qui met fin à la simulation
+USE STD.ENV.ALL;	-- For the STOP command to stop the simulation
 
 ENTITY simulation IS
 END simulation;
