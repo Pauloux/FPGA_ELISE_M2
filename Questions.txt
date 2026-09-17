@@ -1,4 +1,10 @@
-DAC :
+General:
+- Default value for output signals ? And inputs signals ?
+
+DAC:
 - Why unused signals ?
 - Why o_sel <= '0' for channel 1, contrary of what the datasheet says ?
 - Why interleaved mode not taken into account (sample frequency divided by 2) ?
+
+DDS:
+- Where to do the constant phase shift ?
