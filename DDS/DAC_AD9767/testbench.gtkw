@@ -1,24 +1,25 @@
 [*]
 [*] GTKWave Analyzer v3.3.126 (w)1999-2026 BSI
-[*] Wed Sep 16 21:55:09 2026
+[*] Thu Sep 17 19:26:33 2026
 [*]
 [dumpfile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/DDS/DAC_AD9767/testbench.ghw"
-[dumpfile_mtime] "Wed Sep 16 21:54:54 2026"
-[dumpfile_size] 1150
+[dumpfile_mtime] "Thu Sep 17 19:26:20 2026"
+[dumpfile_size] 1710
 [savefile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/DDS/DAC_AD9767/testbench.gtkw"
 [timestart] 0
-[size] 1920 966
+[size] 1920 934
 [pos] -27 -24
-*-23.757801 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-24.728655 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] top.
 [treeopen] top.simulation.
 [sst_width] 278
 [signals_width] 206
 [sst_expanded] 1
-[sst_vpaned_height] 284
+[sst_vpaned_height] 273
 @200
 -Inputs
 @28
+top.simulation.s_i_n_reset
 top.simulation.s_i_clk
 @22
 #{top.simulation.s_i_data[13:0]} top.simulation.s_i_data[13] top.simulation.s_i_data[12] top.simulation.s_i_data[11] top.simulation.s_i_data[10] top.simulation.s_i_data[9] top.simulation.s_i_data[8] top.simulation.s_i_data[7] top.simulation.s_i_data[6] top.simulation.s_i_data[5] top.simulation.s_i_data[4] top.simulation.s_i_data[3] top.simulation.s_i_data[2] top.simulation.s_i_data[1] top.simulation.s_i_data[0]

@@ -7,6 +7,7 @@
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
 USE IEEE.NUMERIC_STD.ALL;
+USE STD.ENV.ALL;  -- pour avoir la commande "stop" qui met fin à la simulation
 
 ENTITY simulation IS
 END simulation;
@@ -16,6 +17,7 @@ ARCHITECTURE behavioral OF simulation IS
 	CONSTANT PERIOD : TIME := 8 ns;	-- 125 MHz
 
 	-- Inputs
+	SIGNAL s_i_n_reset	: STD_LOGIC	:= '1';
 	SIGNAL s_i_clk	: STD_LOGIC	:= '0';
 	SIGNAL s_i_data	: STD_LOGIC_VECTOR(13 DOWNTO 0) := (OTHERS => '0');
 	SIGNAL s_i_data_tmp	: UNSIGNED(13 DOWNTO 0)	:= (OTHERS => '0');
@@ -32,6 +34,7 @@ BEGIN
 	-- DAC_AD9767 instantiation
 	c_DAC_AD9767	: ENTITY work.DAC_AD9767
 		PORT MAP (
+			i_n_reset	=> s_i_n_reset,
 			i_clk	=> s_i_clk,
 			i_data	=> s_i_data,
 			o_reset	=> s_o_reset,
@@ -59,7 +62,18 @@ BEGIN
 			WAIT FOR PERIOD;
 		END LOOP;
 	END PROCESS p_data;
-
 	s_i_data <= STD_LOGIC_VECTOR(s_i_data_tmp);
+
+	-- Asynchronous reset
+	p_reset	: PROCESS
+	BEGIN
+		s_i_n_reset	<= '1';
+		WAIT FOR 10 * PERIOD;
+		s_i_n_reset	<= '0';
+		WAIT FOR 5 * PERIOD;
+		s_i_n_reset	<= '1';
+		WAIT FOR 10 * PERIOD;
+		STOP;
+	END PROCESS p_reset;
 
 END behavioral;

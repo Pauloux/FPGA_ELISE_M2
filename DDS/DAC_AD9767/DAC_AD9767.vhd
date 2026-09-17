@@ -1,5 +1,5 @@
 -- Author: Paul ROUSSEAU
--- Date: 16 September 2026
+-- Date: 17 September 2026
 --
 -- Description:
 -- Driver for the AD9767, a 14-bit DAC
@@ -11,6 +11,7 @@ USE IEEE.NUMERIC_STD.ALL;
 
 ENTITY DAC_AD9767 IS
 	PORT(
+		i_n_reset	: IN STD_LOGIC;
 		i_clk : IN STD_LOGIC;
 		i_data	: IN STD_LOGIC_VECTOR(13 DOWNTO 0);
 
@@ -23,6 +24,9 @@ ENTITY DAC_AD9767 IS
 END ENTITY DAC_AD9767;
 
 ARCHITECTURE arch OF DAC_AD9767 IS
+	
+	SIGNAL s_data	: STD_LOGIC_VECTOR(13 DOWNTO 0);
+
 BEGIN
 
 	-- Clock
@@ -32,11 +36,17 @@ BEGIN
 	o_wrt	<= NOT(i_clk);
 
 	-- Data
-	PROCESS
+	PROCESS (i_n_reset, i_clk)
 	BEGIN
-		WAIT UNTIL rising_edge(i_clk);
-		o_data	<= i_data;
+		IF (i_n_reset = '0') THEN
+			s_data	<= (OTHERS => '0');
+		ELSIF (rising_edge(i_clk)) THEN
+			s_data	<= i_data;
+		ELSE
+			s_data	<= s_data;	-- Latch
+		END IF;
 	END PROCESS;
+	o_data	<= s_data;
 
 	-- Others
 	o_reset	<= '0';
