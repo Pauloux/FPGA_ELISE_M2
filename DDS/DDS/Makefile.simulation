@@ -15,10 +15,10 @@ RUN_OPTIONS = --stop-time=$(STOP_TIME) \
 
 # Getting file names
 SOURCE_FILE = $(SOURCE_NAME).vhd
+TESTBENCH_FILE = $(TESTBENCH_NAME).vhd
 EXTERNAL_SOURCES_FILES := $(foreach library_name,\
 	$(EXTERNAL_SOURCES_NAME),\
 	$(LIBRARY_PATH)/$(library_name)/$(library_name).vhd)
-TESTBENCH_FILE = $(TESTBENCH_NAME).vhd
 ALL_VHDL_FILES = $(SOURCE_FILE) $(TESTBENCH_FILE) $(EXTERNAL_SOURCES_FILES)
 DUMP_FILE = $(TESTBENCH_NAME).ghw
 WORK_CF_FILE = work-obj$(VHDL_STD).cf

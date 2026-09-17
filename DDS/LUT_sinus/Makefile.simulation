@@ -1,25 +1,53 @@
+# General parameters
 SOURCE_NAME = LUT_sinus
+LIBRARY_PATH = ..
+EXTERNAL_SOURCES_NAME =
 TESTBENCH_NAME ?= testbench
-TESTBENCH_ENTITY = simulation
-STOP_TIME = 10us
+TESTBENCH_ENTITY ?= simulation
+SAVE_FILE ?= $(TESTBENCH_NAME).gtkw
+STOP_TIME ?= 10us
+VHDL_STD = 08
 
+# GHDL options
+OPTIONS = --std=$(VHDL_STD)
+RUN_OPTIONS = --stop-time=$(STOP_TIME) \
+	--wave=$(DUMP_FILE)
+
+# Getting file names
 SOURCE_FILE = $(SOURCE_NAME).vhd
 TESTBENCH_FILE = $(TESTBENCH_NAME).vhd
+EXTERNAL_SOURCES_FILES := $(foreach library_name,\
+	$(EXTERNAL_SOURCES_NAME),\
+	$(LIBRARY_PATH)/$(library_name)/$(library_name).vhd)
+ALL_VHDL_FILES = $(SOURCE_FILE) $(TESTBENCH_FILE) $(EXTERNAL_SOURCES_FILES)
 DUMP_FILE = $(TESTBENCH_NAME).ghw
-SAVE_FILE ?= $(TESTBENCH_NAME).gtkw
+WORK_CF_FILE = work-obj$(VHDL_STD).cf
 
-all: verify
+all: simulation
 
-.PHONY: verify
-verify: $(SOURCE_FILE) $(TESTBENCH_FILE)
-	ghdl -a --std=08 $(SOURCE_FILE) $(TESTBENCH_FILE)
+$(WORK_CF_FILE): $(ALL_VHDL_FILES)
+	@echo "Importing files in the work library..."
+	ghdl -i $(OPTIONS) $(ALL_VHDL_FILES)
+	@echo "Analysis and elaboration..."
+	ghdl -m $(OPTIONS) $(TESTBENCH_ENTITY)
+
+$(DUMP_FILE): $(WORK_CF_FILE)
+	@echo "Running (simulation)..."
+	ghdl -r $(OPTIONS) $(TESTBENCH_ENTITY) $(RUN_OPTIONS)
 
 .PHONY: simulation
-simulation: verify
-	ghdl -r --std=08 $(TESTBENCH_ENTITY) --stop-time=$(STOP_TIME) --wave=$(DUMP_FILE)
+simulation: $(DUMP_FILE)
+	@echo "Opening GTKWave..."
 	gtkwave $(DUMP_FILE) $(wildcard $(SAVE_FILE))
+
+.PHONY: elaborate
+elaborate: $(WORK_CF_FILE)
+
+.PHONY: run
+run: $(DUMP_FILE)
 
 .PHONY: clean
 clean:
+	@echo "Cleaning..."
 	-rm -f $(DUMP_FILE)
-	-rm -f *.cf
+	-rm -f $(WORK_CF_FILE)
