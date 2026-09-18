@@ -85,16 +85,16 @@ BEGIN
 		);
 
 	-- DAC AD9767 instantiation
-	c_DAC_AD9767	: ENTITY work.ADC_AD9767
+	c_DAC_AD9767	: ENTITY work.DAC_AD9767
 		PORT MAP(
-			i_n_reset	=> i_n_reset,
+			i_n_reset	=> Button,
 			i_clk	=> s_clk,
 			i_data	=> s_dac_value,
-			o_reset	=> o_reset,
-			o_sel	=> o_sel,
-			o_clk	=> o_clk,
-			o_wrt	=> o_wrt,
-			o_data	=> o_data
+			o_reset	=> dac_rst_o,
+			o_sel	=> dac_sel_o,
+			o_clk	=> dac_clk_o,
+			o_wrt	=> dac_wrt_o,
+			o_data	=> dac_dat_o
 		);
 	
 	-- Input wiring
