@@ -60,51 +60,24 @@ BEGIN
 
 	p_cases:	PROCESS
 	BEGIN
-		-- Case 1 - Increment = 1 - Phase shift = 0
+		-- Case 1 - Increment = 512 - Phase shift = 0
 		s_i_n_reset	<= '1';
-		s_i_increment <= STD_LOGIC_VECTOR(TO_UNSIGNED(1, N));
+		s_i_increment <= STD_LOGIC_VECTOR(TO_UNSIGNED(512, N));
 		s_i_phase_shift	<= STD_LOGIC_VECTOR(TO_UNSIGNED(0, N));
-		WAIT FOR ((2**(N+1) + 10) * PERIOD);
+		WAIT FOR ((2**N + 10) * PERIOD);
 
-		-- Reset
-		s_i_n_reset	<= '0';
-		WAIT FOR 1 * PERIOD;
-
-		-- Case 2 - Increment = 2 - Phase shift = 0
+		-- Case 2 - Increment = 513 - Phase shift = 0
 		s_i_n_reset	<= '1';
-		s_i_increment <= STD_LOGIC_VECTOR(TO_UNSIGNED(2, N));
+		s_i_increment <= STD_LOGIC_VECTOR(TO_UNSIGNED(513, N));
 		s_i_phase_shift	<= STD_LOGIC_VECTOR(TO_UNSIGNED(0, N));
-		WAIT FOR ((2**(N+1) / 2 + 10) * PERIOD);
+		WAIT FOR ((2**N / 2 + 10) * PERIOD);
 
-		-- Reset
-		s_i_n_reset	<= '0';
-		WAIT FOR 1 * PERIOD;
 
-		-- Case 3 - Increment = 10 - Phase shift = 0
+		-- Case 3 - Increment = 256 - Phase shift = 0
 		s_i_n_reset	<= '1';
-		s_i_increment <= STD_LOGIC_VECTOR(TO_UNSIGNED(10, N));
+		s_i_increment <= STD_LOGIC_VECTOR(TO_UNSIGNED(256, N));
 		s_i_phase_shift	<= STD_LOGIC_VECTOR(TO_UNSIGNED(0, N));
-		WAIT FOR ((2**(N+1) / 10 + 10) * PERIOD);
-
-		-- Reset
-		s_i_n_reset	<= '0';
-		WAIT FOR 1 * PERIOD;
-
-		-- Case 4 - Increment = 10 - Phase shift = (2**N) / 2
-		s_i_n_reset	<= '1';
-		s_i_increment <= STD_LOGIC_VECTOR(TO_UNSIGNED(10, N));
-		s_i_phase_shift	<= STD_LOGIC_VECTOR(TO_UNSIGNED(2**N / 2, N));
-		WAIT FOR ((2**(N+1) / 10 + 10) * PERIOD);
-
-		-- Reset
-		s_i_n_reset	<= '0';
-		WAIT FOR 1 * PERIOD;
-
-		-- Case 5 - Increment = 10 - Phase shift = 3 * (2**N) / 4
-		s_i_n_reset	<= '1';
-		s_i_increment <= STD_LOGIC_VECTOR(TO_UNSIGNED(10, N));
-		s_i_phase_shift	<= STD_LOGIC_VECTOR(TO_UNSIGNED(3 * (2**N) / 4, N));
-		WAIT FOR ((2**(N+1) / 10 + 10) * PERIOD);
+		WAIT FOR ((2**N / 10 + 10) * PERIOD);
 
 		STOP;
 	END PROCESS p_cases;

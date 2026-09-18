@@ -24,17 +24,25 @@ END ENTITY phase_accumulator;
 ARCHITECTURE arch OF phase_accumulator IS
 
 	SIGNAL s_phase : STD_LOGIC_VECTOR(N-1 DOWNTO 0) := (OTHERS => '0');
-
+	SIGNAL s_clk_div_2: STD_LOGIC := '0';
 BEGIN
 
 	o_phase <= s_phase;
 
-	PROCESS(i_clk, i_n_reset)
-	BEGIN
+	PROCESS(i_clk)
+	BEGIN 
+		IF rising_edge(i_clk) THEN 
+			s_clk_div_2 <= NOT s_clk_div_2;
+		ELSE
+			s_clk_div_2 <= s_clk_div_2;
+		END IF;	
+	END PROCESS;
 
+	PROCESS(s_clk_div_2, i_n_reset)
+	BEGIN
 		IF i_n_reset = '0' THEN
 			s_phase <= (OTHERS => '0');
-		ELSIF rising_edge(i_clk) THEN
+		ELSIF rising_edge(s_clk_div_2) THEN
 			s_phase <= STD_LOGIC_VECTOR(UNSIGNED(s_phase) + UNSIGNED(i_w));
 		END IF;
 
