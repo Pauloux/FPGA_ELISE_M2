@@ -27,7 +27,7 @@ ENTITY DDS_redpitaya IS
 		dac_sel_o	: OUT STD_LOGIC;
 		dac_clk_o	: OUT STD_LOGIC;
 		dac_wrt_o	: OUT STD_LOGIC;
-		dac_dat_o	: OUT STD_LOGIC_VECTOR(13 DOWNTO 0);
+		dac_dat_o	: OUT STD_LOGIC_VECTOR(13 DOWNTO 0)
 	);
 END ENTITY DDS_redpitaya;
 
@@ -57,13 +57,13 @@ ARCHITECTURE arch OF DDS_redpitaya IS
 BEGIN
 
 	-- Clock
-	c_clock_no_buffer	: ENTITY IBUFDS
+	c_clock_no_buffer	: IBUFDS
 		PORT MAP(
-			I	=> i_clk_p,
-			IB	=> i_clk_n,
-			O	=> s_clk_no_buffer;
+			I	=> adc_clk_p_i,
+			IB	=> adc_clk_n_i,
+			O	=> s_clk_no_buffer
 		);
-	c_clock	: ENTITY BUFG
+	c_clock	: BUFG
 		PORT MAP(
 			I	=> s_clk_no_buffer,
 			O	=> s_clk
@@ -91,7 +91,7 @@ BEGIN
 	s_increment(2 DOWNTO 0)	<= GPIO(2 DOWNTO 0);
 	s_increment(8 DOWNTO 3)	<= (OTHERS => '0');
 
-	s_phase_shift(3 DOWNTO 0)	<= SW(3 DOWNTO 0);
-	s_phase_shift(9 DOWNTO 4)	<= (OTHERS	=> '0');
+	s_phase_shift(9 DOWNTO 6)	<= SW(3 DOWNTO 0);
+	s_phase_shift(5 DOWNTO 0)	<= (OTHERS	=> '0');
 
 END arch;

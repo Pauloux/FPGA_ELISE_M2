@@ -2,7 +2,7 @@
 
 PRJ = DDS_redpitaya
 VHDL_BIBLI_PATH = ..
-VHDL_BIBLI_NAME = DDS
+VHDL_BIBLI_NAME = DDS LUT_sinus phase_accumulator DAC_AD9767
 V_LIST = $(PRJ).v
 CONSTR = ../../ports.xdc
 
