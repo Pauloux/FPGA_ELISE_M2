@@ -1,0 +1,41 @@
+[*]
+[*] GTKWave Analyzer v3.3.121 (w)1999-2024 BSI
+[*] Fri Sep 18 13:38:36 2026
+[*]
+[dumpfile] "/home/etudiant/ELISE2/FPGA_ELISE_M2/DDS/DDS/testbench_aliasing.ghw"
+[dumpfile_mtime] "Fri Sep 18 13:27:13 2026"
+[dumpfile_size] 90457
+[savefile] "/home/etudiant/ELISE2/FPGA_ELISE_M2/DDS/DDS/testbench_aliasing.gtkw"
+[timestart] 8260000000
+[size] 1920 973
+[pos] -1 -1
+*-28.821417 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.simulation.
+[sst_width] 276
+[signals_width] 174
+[sst_expanded] 1
+[sst_vpaned_height] 287
+@28
+top.simulation.s_i_clk
+@8023
+#{top.simulation.s_o_dac_data[13:0]} top.simulation.s_o_dac_data[13] top.simulation.s_o_dac_data[12] top.simulation.s_o_dac_data[11] top.simulation.s_o_dac_data[10] top.simulation.s_o_dac_data[9] top.simulation.s_o_dac_data[8] top.simulation.s_o_dac_data[7] top.simulation.s_o_dac_data[6] top.simulation.s_o_dac_data[5] top.simulation.s_o_dac_data[4] top.simulation.s_o_dac_data[3] top.simulation.s_o_dac_data[2] top.simulation.s_o_dac_data[1] top.simulation.s_o_dac_data[0]
+@20000
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+@24
+#{top.simulation.s_i_increment[9:0]} top.simulation.s_i_increment[9] top.simulation.s_i_increment[8] top.simulation.s_i_increment[7] top.simulation.s_i_increment[6] top.simulation.s_i_increment[5] top.simulation.s_i_increment[4] top.simulation.s_i_increment[3] top.simulation.s_i_increment[2] top.simulation.s_i_increment[1] top.simulation.s_i_increment[0]
+[pattern_trace] 1
+[pattern_trace] 0

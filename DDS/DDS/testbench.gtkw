@@ -1,15 +1,15 @@
 [*]
-[*] GTKWave Analyzer v3.3.126 (w)1999-2026 BSI
-[*] Thu Sep 17 19:49:10 2026
+[*] GTKWave Analyzer v3.3.121 (w)1999-2024 BSI
+[*] Fri Sep 18 14:02:25 2026
 [*]
-[dumpfile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/DDS/DDS/testbench.ghw"
-[dumpfile_mtime] "Thu Sep 17 19:43:01 2026"
-[dumpfile_size] 119677
-[savefile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/DDS/DDS/testbench.gtkw"
+[dumpfile] "/home/etudiant/ELISE2/FPGA_ELISE_M2/DDS/DDS/testbench.ghw"
+[dumpfile_mtime] "Fri Sep 18 13:55:44 2026"
+[dumpfile_size] 166488
+[savefile] "/home/etudiant/ELISE2/FPGA_ELISE_M2/DDS/DDS/testbench.gtkw"
 [timestart] 0
 [size] 1920 966
-[pos] -27 -24
-*-31.018772 -1 8272000000 12456000000 13360000000 14264000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[pos] -1 -1
+*-32.000340 -1 16472000000 24744000000 26464000000 28184000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [markername] AReset_1
 [markername] BReset_2
 [markername] CReset_3
@@ -24,6 +24,7 @@
 -Inputs
 @28
 top.simulation.s_i_clk
+@29
 top.simulation.s_i_n_reset
 @24
 #{top.simulation.s_i_phase_shift[9:0]} top.simulation.s_i_phase_shift[9] top.simulation.s_i_phase_shift[8] top.simulation.s_i_phase_shift[7] top.simulation.s_i_phase_shift[6] top.simulation.s_i_phase_shift[5] top.simulation.s_i_phase_shift[4] top.simulation.s_i_phase_shift[3] top.simulation.s_i_phase_shift[2] top.simulation.s_i_phase_shift[1] top.simulation.s_i_phase_shift[0]
@@ -67,7 +68,6 @@ top.simulation.s_o_dac_wrt
 -
 -
 -
-@20001
 -
 [pattern_trace] 1
 [pattern_trace] 0
