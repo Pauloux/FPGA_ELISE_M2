@@ -54,6 +54,8 @@ ARCHITECTURE arch OF DDS_redpitaya IS
 	SIGNAL s_increment	: STD_LOGIC_VECTOR(9 DOWNTO 0);
 	SIGNAL s_phase_shift	: STD_LOGIC_VECTOR(9 DOWNTO 0);
 
+	SIGNAL s_dac_value	: STD_LOGIC_VECTOR(13 DOWNTO 0);
+
 BEGIN
 
 	-- Clock
@@ -79,11 +81,20 @@ BEGIN
 			i_n_reset	=> Button,
 			i_increment	=> s_increment,
 			i_phase_shift	=> s_phase_shift,
-			o_DAC_reset	=> dac_rst_o,
-			o_DAC_sel	=> dac_sel_o,
-			o_DAC_clk	=> dac_clk_o,
-			o_DAC_wrt	=> dac_wrt_o,
-			o_DAC_data	=> dac_dat_o
+			o_data	=> s_dac_value
+		);
+
+	-- DAC AD9767 instantiation
+	c_DAC_AD9767	: ENTITY work.ADC_AD9767
+		PORT MAP(
+			i_n_reset	=> i_n_reset,
+			i_clk	=> s_clk,
+			i_data	=> s_dac_value,
+			o_reset	=> o_reset,
+			o_sel	=> o_sel,
+			o_clk	=> o_clk,
+			o_wrt	=> o_wrt,
+			o_data	=> o_data
 		);
 	
 	-- Input wiring

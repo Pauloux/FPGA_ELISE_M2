@@ -1,15 +1,15 @@
 [*]
-[*] GTKWave Analyzer v3.3.121 (w)1999-2024 BSI
-[*] Fri Sep 18 14:02:25 2026
+[*] GTKWave Analyzer v3.3.126 (w)1999-2026 BSI
+[*] Fri Sep 18 14:35:57 2026
 [*]
-[dumpfile] "/home/etudiant/ELISE2/FPGA_ELISE_M2/DDS/DDS/testbench.ghw"
-[dumpfile_mtime] "Fri Sep 18 13:55:44 2026"
-[dumpfile_size] 166488
-[savefile] "/home/etudiant/ELISE2/FPGA_ELISE_M2/DDS/DDS/testbench.gtkw"
+[dumpfile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/DDS/DDS/testbench.ghw"
+[dumpfile_mtime] "Fri Sep 18 14:34:11 2026"
+[dumpfile_size] 102798
+[savefile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/DDS/DDS/testbench.gtkw"
 [timestart] 0
-[size] 1920 966
-[pos] -1 -1
-*-32.000340 -1 16472000000 24744000000 26464000000 28184000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[size] 1920 934
+[pos] -27 -24
+*-31.998268 -1 16472000000 24744000000 26464000000 28184000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [markername] AReset_1
 [markername] BReset_2
 [markername] CReset_3
@@ -19,28 +19,22 @@
 [sst_width] 278
 [signals_width] 222
 [sst_expanded] 1
-[sst_vpaned_height] 286
+[sst_vpaned_height] 275
 @200
 -Inputs
 @28
 top.simulation.s_i_clk
-@29
 top.simulation.s_i_n_reset
 @24
 #{top.simulation.s_i_phase_shift[9:0]} top.simulation.s_i_phase_shift[9] top.simulation.s_i_phase_shift[8] top.simulation.s_i_phase_shift[7] top.simulation.s_i_phase_shift[6] top.simulation.s_i_phase_shift[5] top.simulation.s_i_phase_shift[4] top.simulation.s_i_phase_shift[3] top.simulation.s_i_phase_shift[2] top.simulation.s_i_phase_shift[1] top.simulation.s_i_phase_shift[0]
 #{top.simulation.s_i_increment[9:0]} top.simulation.s_i_increment[9] top.simulation.s_i_increment[8] top.simulation.s_i_increment[7] top.simulation.s_i_increment[6] top.simulation.s_i_increment[5] top.simulation.s_i_increment[4] top.simulation.s_i_increment[3] top.simulation.s_i_increment[2] top.simulation.s_i_increment[1] top.simulation.s_i_increment[0]
 @200
 -
--Outputs (DAC)
-@28
-top.simulation.s_o_dac_reset
-top.simulation.s_o_dac_sel
-top.simulation.s_o_dac_clk
-top.simulation.s_o_dac_wrt
-@24
-#{top.simulation.s_o_dac_data[13:0]} top.simulation.s_o_dac_data[13] top.simulation.s_o_dac_data[12] top.simulation.s_o_dac_data[11] top.simulation.s_o_dac_data[10] top.simulation.s_o_dac_data[9] top.simulation.s_o_dac_data[8] top.simulation.s_o_dac_data[7] top.simulation.s_o_dac_data[6] top.simulation.s_o_dac_data[5] top.simulation.s_o_dac_data[4] top.simulation.s_o_dac_data[3] top.simulation.s_o_dac_data[2] top.simulation.s_o_dac_data[1] top.simulation.s_o_dac_data[0]
+-Outputs
+@22
+#{top.simulation.s_o_data[13:0]} top.simulation.s_o_data[13] top.simulation.s_o_data[12] top.simulation.s_o_data[11] top.simulation.s_o_data[10] top.simulation.s_o_data[9] top.simulation.s_o_data[8] top.simulation.s_o_data[7] top.simulation.s_o_data[6] top.simulation.s_o_data[5] top.simulation.s_o_data[4] top.simulation.s_o_data[3] top.simulation.s_o_data[2] top.simulation.s_o_data[1] top.simulation.s_o_data[0]
 @8022
-#{top.simulation.s_o_dac_data[13:0]} top.simulation.s_o_dac_data[13] top.simulation.s_o_dac_data[12] top.simulation.s_o_dac_data[11] top.simulation.s_o_dac_data[10] top.simulation.s_o_dac_data[9] top.simulation.s_o_dac_data[8] top.simulation.s_o_dac_data[7] top.simulation.s_o_dac_data[6] top.simulation.s_o_dac_data[5] top.simulation.s_o_dac_data[4] top.simulation.s_o_dac_data[3] top.simulation.s_o_dac_data[2] top.simulation.s_o_dac_data[1] top.simulation.s_o_dac_data[0]
+#{top.simulation.s_o_data[13:0]} top.simulation.s_o_data[13] top.simulation.s_o_data[12] top.simulation.s_o_data[11] top.simulation.s_o_data[10] top.simulation.s_o_data[9] top.simulation.s_o_data[8] top.simulation.s_o_data[7] top.simulation.s_o_data[6] top.simulation.s_o_data[5] top.simulation.s_o_data[4] top.simulation.s_o_data[3] top.simulation.s_o_data[2] top.simulation.s_o_data[1] top.simulation.s_o_data[0]
 @20000
 -
 -

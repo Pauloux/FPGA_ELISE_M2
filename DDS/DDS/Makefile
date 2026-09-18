@@ -1,1 +1,1 @@
-makefile.openXC7
+Makefile.simulation

@@ -1,9 +1,9 @@
 -- Author: Paul ROUSSEAU
--- Date: 17 September 2026
+-- Date: 18 September 2026
 --
 -- Description:
 -- Direct Digital Synthesis (DDS) implementation.
--- Uses the AD9767 14-bit ADC to generate the signal.
+-- Outputs a 14 bits sine wave.
 
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
@@ -18,13 +18,7 @@ ENTITY DDS IS
 		i_n_reset	: IN STD_LOGIC;
 		i_increment	: IN STD_LOGIC_VECTOR(N-1 DOWNTO 0);
 		i_phase_shift	: IN STD_LOGIC_VECTOR(N-1 DOWNTO 0);
-
-		-- DAC
-		o_DAC_reset	: OUT STD_LOGIC := '0';
-		o_DAC_sel	: OUT STD_LOGIC := '0';
-		o_DAC_clk	: OUT STD_LOGIC := '0';
-		o_DAC_wrt	: OUT STD_LOGIC := '0';
-		o_DAC_data	: OUT STD_LOGIC_VECTOR(13 DOWNTO 0) := (OTHERS => '0')
+		o_data	: OUT STD_LOGIC_VECTOR(13 DOWNTO 0)	:= (OTHERS => '0')
 	);
 END ENTITY DDS;
 
@@ -32,8 +26,6 @@ ARCHITECTURE arch OF DDS IS
 
 	SIGNAL s_phase	: STD_LOGIC_VECTOR(N-1 DOWNTO 0)	:= (OTHERS => '0');
 	SIGNAL s_phase_with_offset	: STD_LOGIC_VECTOR(N-1 DOWNTO 0)	:= (OTHERS => '0');
-
-	SIGNAL s_DAC_value	: STD_LOGIC_VECTOR(13 DOWNTO 0);
 
 BEGIN
 
@@ -59,20 +51,7 @@ BEGIN
 		)
 		PORT MAP(
 			i_phase	=> s_phase_with_offset,
-			o_data	=> s_DAC_value
-		);
-
-	-- DAC AD9767 instantiation
-	c_DAC_AD9767	: ENTITY work.DAC_AD9767
-		PORT MAP(
-			i_n_reset	=> i_n_reset,
-			i_clk	=> i_clk,
-			i_data	=> s_DAC_value,
-			o_reset	=> o_DAC_reset,
-			o_sel	=> o_DAC_sel,
-			o_clk	=> o_DAC_clk,
-			o_wrt	=> o_DAC_wrt,
-			o_data	=> o_DAC_data
+			o_data	=> o_data
 		);
 
 END arch;
