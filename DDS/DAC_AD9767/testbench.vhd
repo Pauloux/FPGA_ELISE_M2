@@ -19,6 +19,7 @@ ARCHITECTURE behavioral OF simulation IS
 	-- Inputs
 	SIGNAL s_i_n_reset	: STD_LOGIC	:= '1';
 	SIGNAL s_i_clk	: STD_LOGIC	:= '0';
+	SIGNAL s_i_channel	: STD_LOGIC	:= '0';
 	SIGNAL s_i_data	: STD_LOGIC_VECTOR(13 DOWNTO 0) := (OTHERS => '0');
 	SIGNAL s_i_data_tmp	: UNSIGNED(13 DOWNTO 0)	:= (OTHERS => '0');
 
@@ -36,6 +37,7 @@ BEGIN
 		PORT MAP (
 			i_n_reset	=> s_i_n_reset,
 			i_clk	=> s_i_clk,
+			i_channel	=> s_i_channel,
 			i_data	=> s_i_data,
 			o_reset	=> s_o_reset,
 			o_sel	=> s_o_sel,
@@ -63,6 +65,14 @@ BEGIN
 		END LOOP;
 	END PROCESS p_data;
 	s_i_data <= STD_LOGIC_VECTOR(s_i_data_tmp);
+	
+	p_channel	: PROCESS
+	BEGIN
+		s_i_channel	<= '0';
+		WAIT FOR 5 * PERIOD;
+		s_i_channel	<= '1';
+		WAIT FOR 5 * PERIOD;
+	END PROCESS p_channel;
 
 	-- Asynchronous reset
 	p_reset	: PROCESS

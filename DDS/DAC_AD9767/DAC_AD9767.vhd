@@ -3,7 +3,7 @@
 --
 -- Description:
 -- Driver for the AD9767, a 14-bit DAC
--- Interleaved mode, output on channel 1 only
+-- Interleaved mode, one (choosable) channel only
 
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
@@ -13,6 +13,8 @@ ENTITY DAC_AD9767 IS
 	PORT(
 		i_n_reset	: IN STD_LOGIC;
 		i_clk : IN STD_LOGIC;
+		-- i_channel : 0 -> channel 2, 1 -> channel 1
+		i_channel	: IN STD_LOGIC;
 		i_data	: IN STD_LOGIC_VECTOR(13 DOWNTO 0);
 
 		o_reset	: OUT STD_LOGIC := '0';
@@ -48,8 +50,10 @@ BEGIN
 	END PROCESS;
 	o_data	<= s_data;
 
-	-- Others
+	-- Channel selection
+	o_sel	<= i_channel;
+
+	-- Not used in interleaved mode
 	o_reset	<= '0';
-	o_sel	<= '0';	-- Channel 1, different from the datasheet ?
 
 END arch;

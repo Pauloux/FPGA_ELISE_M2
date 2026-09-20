@@ -53,6 +53,7 @@ ARCHITECTURE arch OF DDS_redpitaya IS
 	-- Signals
 	SIGNAL s_increment	: STD_LOGIC_VECTOR(9 DOWNTO 0);
 	SIGNAL s_phase_shift	: STD_LOGIC_VECTOR(9 DOWNTO 0);
+	SIGNAL s_channel	: STD_LOGIC;
 
 	SIGNAL s_dac_value	: STD_LOGIC_VECTOR(13 DOWNTO 0);
 
@@ -89,6 +90,7 @@ BEGIN
 		PORT MAP(
 			i_n_reset	=> Button,
 			i_clk	=> s_clk,
+			i_channel	=> s_channel,
 			i_data	=> s_dac_value,
 			o_reset	=> dac_rst_o,
 			o_sel	=> dac_sel_o,
@@ -98,8 +100,10 @@ BEGIN
 		);
 	
 	-- Input wiring
-	s_increment(9)	<= GPIO(3);
-	s_increment(2 DOWNTO 0)	<= GPIO(2 DOWNTO 0);
+	s_channel	<= GPIO(3);
+
+	s_increment(9)	<= GPIO(2);
+	s_increment(1 DOWNTO 0)	<= GPIO(1 DOWNTO 0);
 	s_increment(8 DOWNTO 3)	<= (OTHERS => '0');
 
 	s_phase_shift(9 DOWNTO 6)	<= SW(3 DOWNTO 0);
