@@ -1,12 +1,13 @@
-#faire source /home/jmfriedt/openxc7/export.sh
+# Before executing "make", please run this command:
+#source /home/jmfriedt/openxc7/export.sh
 
 PRJ = DDS_redpitaya
-VHDL_BIBLI_PATH = ..
-VHDL_BIBLI_NAME = DDS LUT_sinus phase_accumulator DAC_AD9767
+VHDL_LIBRARY_PATH = ..
+VHDL_LIBRARY_NAMES = DDS LUT_sinus phase_accumulator DAC_AD9767
 V_LIST = $(PRJ).v
 CONSTR = ../../ports.xdc
 
-VHDL_BIBLI_FILES := $(foreach bibli_name, $(VHDL_BIBLI_NAME),$(VHDL_BIBLI_PATH)/$(bibli_name)/$(bibli_name).vhd)
+VHDL_BIBLI_FILES := $(foreach bibli_name, $(VHDL_LIBRARY_NAMES),$(VHDL_LIBRARY_PATH)/$(bibli_name)/$(bibli_name).vhd)
 
 DEVICE = zynq7
 PART   = xc7z010clg400-1
@@ -31,7 +32,7 @@ $(PRJ).v: $(PRJ).vhd $(VHDL_BIBLI_FILES)
 	# obsolete
 	#yosys -m ghdl -p 'ghdl --std=08 $(VHDL_BIBLI_FILES) $(PRJ).vhd -e $(PRJ); write_verilog $(PRJ).v'
 	# new with recent ghdl
-	ghdl $(GHDL_OPT) $^ $(PRJ).vhd -e $(PRJ) > $@
+	ghdl $(GHDL_OPT) $^ -e $(PRJ) > $@
 
 $(PRJ).json: $(V_LIST)
 	yosys ${YOSYS_OPT} ${V_LIST}
