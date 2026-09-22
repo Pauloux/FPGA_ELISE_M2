@@ -49,5 +49,5 @@ run: $(DUMP_FILE)
 .PHONY: clean
 clean:
 	@echo "Cleaning..."
-	-rm -f $(DUMP_FILE)
-	-rm -f $(WORK_CF_FILE)
+	rm -f $(DUMP_FILE)
+	rm -f $(WORK_CF_FILE)
