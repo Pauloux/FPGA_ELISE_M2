@@ -13,7 +13,8 @@ ARCHITECTURE behavioral OF simulation IS
 
 	SIGNAL s_i_clk_125MHz : STD_LOGIC := '0';
 	SIGNAL s_i_N_reset    : STD_LOGIC := '0';
-	SIGNAL s_i_w          : STD_LOGIC_VECTOR(N-1 DOWNTO 0) := (OTHERS => '0');
+	SIGNAL s_i_enable	  : STD_LOGIC := '0';
+	SIGNAL s_i_increment  : STD_LOGIC_VECTOR(N-1 DOWNTO 0) := (OTHERS => '0');
 	SIGNAL s_o_phase      : STD_LOGIC_VECTOR(N-1 DOWNTO 0);
 
 BEGIN
@@ -27,7 +28,8 @@ BEGIN
 		PORT MAP (
 			i_clk     => s_i_clk_125MHz,
 			i_N_reset => s_i_N_reset,
-			i_w       => s_i_w,
+			i_enable => s_i_enable,
+			i_increment  => s_i_increment,
 			o_phase   => s_o_phase
 		);
 
@@ -45,26 +47,33 @@ BEGIN
 
 	p_scenario : PROCESS
 	BEGIN
-		-- cas avec w = 0 
+		-- case with increment = 0 
+		s_i_enable <= '1';
 		s_i_N_reset <= '1';
-		s_i_w <= (OTHERS => '0');
+		s_i_increment <= (OTHERS => '0');
 		WAIT FOR 4 * PERIOD;
+	
+		-- case with increment = 1 
+		s_i_increment <= STD_LOGIC_VECTOR(TO_UNSIGNED(1, N));
+		WAIT FOR 128 * PERIOD;
 
-		-- cas avec w = 1 
-		s_i_w <= STD_LOGIC_VECTOR(TO_UNSIGNED(1, N));
-		WAIT FOR 32 * PERIOD;
-
-		-- cas avec w=1 + reset 
-		WAIT FOR 16 * PERIOD;
+		-- case with increment=64 + reset toggle 
+		s_i_increment <= STD_LOGIC_VECTOR(TO_UNSIGNED(64,N));
+		WAIT FOR 8 * PERIOD;
 		s_i_N_reset <= '0';
 		WAIT FOR 4 * PERIOD;
 		s_i_N_reset <= '1';
-		WAIT UNTIL rising_edge(s_i_clk_125MHz);
-		WAIT FOR 16 * PERIOD;
+		WAIT FOR 10 * PERIOD;
 
-		-- cas avec w = 128
-		s_i_w <= STD_LOGIC_VECTOR(TO_UNSIGNED(128, N));
-		WAIT FOR 24 * PERIOD;
+		-- case with increment=64 + enable toggle
+		s_i_enable <= '0';
+		WAIT FOR 4 * PERIOD;
+		s_i_enable <= '1';
+		WAIT FOR 4 * PERIOD;
+
+		-- case with increment = 128
+		s_i_increment <= STD_LOGIC_VECTOR(TO_UNSIGNED(128, N));
+		WAIT FOR 12 * PERIOD;
 
 		stop;
 	END PROCESS p_scenario;
