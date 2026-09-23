@@ -1,6 +1,6 @@
-phase_N = 16;			% phase bits -> 1024 points
+PHASE_WIDTH_MAX = 16;		% phase bits -> 65536 points
 amplitude_N = 14;		% amplitude bits
-nb_points = 2^phase_N;		% 1024
+nb_points = 2^PHASE_WIDTH_MAX;	% 65536
 max_val = 2^amplitude_N - 1;	% 16383
 
 t = 0:nb_points-1;

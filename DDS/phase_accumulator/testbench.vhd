@@ -9,13 +9,13 @@ END simulation;
 ARCHITECTURE behavioral OF simulation IS
 
 	CONSTANT PERIOD : TIME := 8 ns;
-	CONSTANT N      : INTEGER := 10;
+	CONSTANT PHASE_WIDTH : INTEGER := 10;
 
 	SIGNAL s_i_clk_125MHz : STD_LOGIC := '0';
 	SIGNAL s_i_N_reset    : STD_LOGIC := '0';
 	SIGNAL s_i_enable	  : STD_LOGIC := '0';
-	SIGNAL s_i_increment  : STD_LOGIC_VECTOR(N-1 DOWNTO 0) := (OTHERS => '0');
-	SIGNAL s_o_phase      : STD_LOGIC_VECTOR(N-1 DOWNTO 0);
+	SIGNAL s_i_increment  : STD_LOGIC_VECTOR(PHASE_WIDTH-1 DOWNTO 0) := (OTHERS => '0');
+	SIGNAL s_o_phase      : STD_LOGIC_VECTOR(PHASE_WIDTH-1 DOWNTO 0);
 
 BEGIN
 
@@ -23,7 +23,7 @@ BEGIN
 
 	c_phase_accumulator : ENTITY work.phase_accumulator
 		GENERIC MAP (
-			N => N
+			PHASE_WIDTH => PHASE_WIDTH
 		)
 		PORT MAP (
 			i_clk     => s_i_clk_125MHz,
@@ -54,11 +54,11 @@ BEGIN
 		WAIT FOR 4 * PERIOD;
 	
 		-- case with increment = 1 
-		s_i_increment <= STD_LOGIC_VECTOR(TO_UNSIGNED(1, N));
+		s_i_increment <= STD_LOGIC_VECTOR(TO_UNSIGNED(1, PHASE_WIDTH));
 		WAIT FOR 128 * PERIOD;
 
 		-- case with increment=64 + reset toggle 
-		s_i_increment <= STD_LOGIC_VECTOR(TO_UNSIGNED(64,N));
+		s_i_increment <= STD_LOGIC_VECTOR(TO_UNSIGNED(64, PHASE_WIDTH));
 		WAIT FOR 8 * PERIOD;
 		s_i_N_reset <= '0';
 		WAIT FOR 4 * PERIOD;
@@ -72,7 +72,7 @@ BEGIN
 		WAIT FOR 4 * PERIOD;
 
 		-- case with increment = 128
-		s_i_increment <= STD_LOGIC_VECTOR(TO_UNSIGNED(128, N));
+		s_i_increment <= STD_LOGIC_VECTOR(TO_UNSIGNED(128, PHASE_WIDTH));
 		WAIT FOR 12 * PERIOD;
 
 		stop;

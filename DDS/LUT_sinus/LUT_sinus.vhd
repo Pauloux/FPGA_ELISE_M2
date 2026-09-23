@@ -6,21 +6,21 @@ USE IEEE.NUMERIC_STD.ALL;
 
 ENTITY LUT_sinus IS
 	GENERIC(
-		N : INTEGER := 10 --Nmax = 16 
+		PHASE_WIDTH : INTEGER := 10 -- PHASE_WIDTH_MAX = 16
 	);
 	PORT(
-		i_phase : IN STD_LOGIC_VECTOR(N-1 DOWNTO 0);
+		i_phase : IN STD_LOGIC_VECTOR(PHASE_WIDTH-1 DOWNTO 0);
 		o_data  : OUT STD_LOGIC_VECTOR(13 DOWNTO 0) := (OTHERS => '0')
 	);
 END ENTITY LUT_sinus;
 
 ARCHITECTURE arch OF LUT_sinus IS
 
-	CONSTANT Nmax : INTEGER := 16;
+	CONSTANT PHASE_WIDTH_MAX : INTEGER := 16;
 
-	SIGNAL s_addr_lut : UNSIGNED(Nmax-1 DOWNTO 0) := (OTHERS => '0');
+	SIGNAL s_addr_lut : UNSIGNED(PHASE_WIDTH_MAX-1 DOWNTO 0) := (OTHERS => '0');
 
-	TYPE t_LUT IS ARRAY (0 TO 2**Nmax - 1) OF STD_LOGIC_VECTOR(13 DOWNTO 0);
+	TYPE t_LUT IS ARRAY (0 TO 2**PHASE_WIDTH_MAX - 1) OF STD_LOGIC_VECTOR(13 DOWNTO 0);
 	CONSTANT c_sin_lut : t_LUT := (
 		0 	=> 	"10000000000000",
 		1 	=> 	"10000000000000",
@@ -65562,7 +65562,7 @@ ARCHITECTURE arch OF LUT_sinus IS
 
 BEGIN
  
-	s_addr_lut <= UNSIGNED(i_phase) & TO_UNSIGNED(0, Nmax - N); -- i_phase * 2^(Nmax - N)
+	s_addr_lut <= UNSIGNED(i_phase) & TO_UNSIGNED(0, PHASE_WIDTH_MAX - PHASE_WIDTH); -- i_phase * 2^(PHASE_WIDTH_MAX - PHASE_WIDTH)
 	o_data     <= c_sin_lut(TO_INTEGER(s_addr_lut));
 
 END arch;

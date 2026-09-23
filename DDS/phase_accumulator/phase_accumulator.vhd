@@ -1,7 +1,7 @@
 -- Phase Accumulator (DDS)
--- Set N (phase width), default is 10.
+-- Set PHASE_WIDTH, default is 10.
 -- Drive i_clk, keep i_n_reset high (active low), set frequency word i_w.
--- On each rising clock edge: o_phase = o_phase + i_w (wraps at 2^N).
+-- On each rising clock edge: o_phase = o_phase + i_w (wraps at 2^PHASE_WIDTH).
 -- Pulse i_n_reset low to clear o_phase to 0.
 
 LIBRARY IEEE;
@@ -10,21 +10,21 @@ USE IEEE.NUMERIC_STD.ALL;
 
 ENTITY phase_accumulator IS
 	GENERIC(
-		N : INTEGER := 10
+		PHASE_WIDTH : INTEGER := 10
 	);
 	PORT(
 		i_clk : IN STD_LOGIC;
 		i_n_reset : IN STD_LOGIC;
 		i_enable : IN STD_LOGIC;
-		i_increment : IN STD_LOGIC_VECTOR(N-1 DOWNTO 0) := (OTHERS => '0');
-		o_phase : OUT STD_LOGIC_VECTOR(N-1 DOWNTO 0) := (OTHERS => '0')
+		i_increment : IN STD_LOGIC_VECTOR(PHASE_WIDTH-1 DOWNTO 0) := (OTHERS => '0');
+		o_phase : OUT STD_LOGIC_VECTOR(PHASE_WIDTH-1 DOWNTO 0) := (OTHERS => '0')
 
 	);
 END ENTITY phase_accumulator;
 
 ARCHITECTURE arch OF phase_accumulator IS
 
-	SIGNAL s_phase : STD_LOGIC_VECTOR(N-1 DOWNTO 0) := (OTHERS => '0');
+	SIGNAL s_phase : STD_LOGIC_VECTOR(PHASE_WIDTH-1 DOWNTO 0) := (OTHERS => '0');
 
 BEGIN
 
