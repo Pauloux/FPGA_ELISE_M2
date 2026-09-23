@@ -10,7 +10,7 @@ USE IEEE.NUMERIC_STD.ALL;
 
 ENTITY DDS_redpitaya IS
 	GENERIC (
-		N	: INTEGER	:= 10
+		PHASE_WIDTH	: INTEGER	:= 10
 	);
 	PORT(
 		-- Clock
@@ -51,8 +51,8 @@ ARCHITECTURE arch OF DDS_redpitaya IS
 	END COMPONENT;
 
 	-- Signals
-	SIGNAL s_increment	: STD_LOGIC_VECTOR(9 DOWNTO 0) := (OTHERS => '0');
-	SIGNAL s_phase_shift	: STD_LOGIC_VECTOR(9 DOWNTO 0) := (OTHERS => '0');
+	SIGNAL s_increment	: STD_LOGIC_VECTOR(PHASE_WIDTH-1 DOWNTO 0) := (OTHERS => '0');
+	SIGNAL s_phase_shift	: STD_LOGIC_VECTOR(PHASE_WIDTH-1 DOWNTO 0) := (OTHERS => '0');
 	SIGNAL s_channel	: STD_LOGIC := '0';
 	SIGNAL s_enable	: STD_LOGIC := '1';
 	SIGNAL s_dac_value	: STD_LOGIC_VECTOR(13 DOWNTO 0) := (OTHERS => '0');
@@ -85,7 +85,7 @@ BEGIN
 	-- DDS instantiation
 	c_DDS	: ENTITY work.DDS
 		GENERIC MAP(
-			N	=> N
+			PHASE_WIDTH	=> PHASE_WIDTH
 		)
 		PORT MAP(
 			i_clk	=> s_clk,
@@ -113,11 +113,11 @@ BEGIN
 	-- Input wiring
 	s_channel	<= GPIO(3);
 
-	s_increment(9)	<= GPIO(2);
+	s_increment(PHASE_WIDTH-1)	<= GPIO(2);
 	s_increment(1 DOWNTO 0)	<= GPIO(1 DOWNTO 0);
-	s_increment(8 DOWNTO 3)	<= (OTHERS => '0');
+	s_increment(PHASE_WIDTH-2 DOWNTO 3)	<= (OTHERS => '0');
 
-	s_phase_shift(9 DOWNTO 6)	<= SW(3 DOWNTO 0);
-	s_phase_shift(5 DOWNTO 0)	<= (OTHERS	=> '0');
+	s_phase_shift(PHASE_WIDTH-1 DOWNTO PHASE_WIDTH-4)	<= SW(3 DOWNTO 0);
+	s_phase_shift(PHASE_WIDTH-5 DOWNTO 0)	<= (OTHERS	=> '0');
 
 END arch;

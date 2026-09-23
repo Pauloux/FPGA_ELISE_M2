@@ -15,14 +15,14 @@ END simulation;
 ARCHITECTURE behavioral OF simulation IS
 
 	CONSTANT PERIOD : TIME := 8 ns;	-- 125 MHz
-	CONSTANT N	: INTEGER := 10;
+	CONSTANT PHASE_WIDTH	: INTEGER := 10;
 
 	-- Inputs
 	SIGNAL s_i_clk	: STD_LOGIC;
 	SIGNAL s_i_n_reset	: STD_LOGIC;
-	SIGNAL s_i_increment	: STD_LOGIC_VECTOR(N-1 DOWNTO 0);
+	SIGNAL s_i_increment	: STD_LOGIC_VECTOR(PHASE_WIDTH-1 DOWNTO 0);
 	SIGNAL s_i_enable	: STD_LOGIC := '1';
-	SIGNAL s_i_phase_shift	: STD_LOGIC_VECTOR(N-1 DOWNTO 0);
+	SIGNAL s_i_phase_shift	: STD_LOGIC_VECTOR(PHASE_WIDTH-1 DOWNTO 0);
 
 	-- Outputs
 	SIGNAL s_o_data	: STD_LOGIC_VECTOR(13 DOWNTO 0);
@@ -32,7 +32,7 @@ BEGIN
 	-- DDS instantiation
 	c_DDS	: ENTITY work.DDS
 		GENERIC MAP(
-			N	=> N
+			PHASE_WIDTH	=> PHASE_WIDTH
 		)
 		PORT MAP(
 			i_clk	=> s_i_clk,
@@ -56,9 +56,9 @@ BEGIN
 	BEGIN
 		-- Case 1 - Increment = 1 - Phase shift = 0
 		s_i_n_reset	<= '1';
-		s_i_increment <= STD_LOGIC_VECTOR(TO_UNSIGNED(1, N));
-		s_i_phase_shift	<= STD_LOGIC_VECTOR(TO_UNSIGNED(0, N));
-		WAIT FOR ((2**(N+1) + 10) * PERIOD);
+		s_i_increment <= STD_LOGIC_VECTOR(TO_UNSIGNED(1, PHASE_WIDTH));
+		s_i_phase_shift	<= STD_LOGIC_VECTOR(TO_UNSIGNED(0, PHASE_WIDTH));
+		WAIT FOR ((2**(PHASE_WIDTH+1) + 10) * PERIOD);
 
 		-- Reset
 		s_i_n_reset	<= '0';
@@ -66,9 +66,9 @@ BEGIN
 
 		-- Case 2 - Increment = 2 - Phase shift = 0
 		s_i_n_reset	<= '1';
-		s_i_increment <= STD_LOGIC_VECTOR(TO_UNSIGNED(2, N));
-		s_i_phase_shift	<= STD_LOGIC_VECTOR(TO_UNSIGNED(0, N));
-		WAIT FOR ((2**(N+1) / 2 + 10) * PERIOD);
+		s_i_increment <= STD_LOGIC_VECTOR(TO_UNSIGNED(2, PHASE_WIDTH));
+		s_i_phase_shift	<= STD_LOGIC_VECTOR(TO_UNSIGNED(0, PHASE_WIDTH));
+		WAIT FOR ((2**(PHASE_WIDTH+1) / 2 + 10) * PERIOD);
 
 		-- Reset
 		s_i_n_reset	<= '0';
@@ -76,29 +76,29 @@ BEGIN
 
 		-- Case 3 - Increment = 10 - Phase shift = 0
 		s_i_n_reset	<= '1';
-		s_i_increment <= STD_LOGIC_VECTOR(TO_UNSIGNED(10, N));
-		s_i_phase_shift	<= STD_LOGIC_VECTOR(TO_UNSIGNED(0, N));
-		WAIT FOR ((2**(N+1) / 10 + 10) * PERIOD);
+		s_i_increment <= STD_LOGIC_VECTOR(TO_UNSIGNED(10, PHASE_WIDTH));
+		s_i_phase_shift	<= STD_LOGIC_VECTOR(TO_UNSIGNED(0, PHASE_WIDTH));
+		WAIT FOR ((2**(PHASE_WIDTH+1) / 10 + 10) * PERIOD);
 
 		-- Reset
 		s_i_n_reset	<= '0';
 		WAIT FOR 1 * PERIOD;
 
-		-- Case 4 - Increment = 10 - Phase shift = (2**N) / 2
+		-- Case 4 - Increment = 10 - Phase shift = (2**PHASE_WIDTH) / 2
 		s_i_n_reset	<= '1';
-		s_i_increment <= STD_LOGIC_VECTOR(TO_UNSIGNED(10, N));
-		s_i_phase_shift	<= STD_LOGIC_VECTOR(TO_UNSIGNED(2**N / 2, N));
-		WAIT FOR ((2**(N+1) / 10 + 10) * PERIOD);
+		s_i_increment <= STD_LOGIC_VECTOR(TO_UNSIGNED(10, PHASE_WIDTH));
+		s_i_phase_shift	<= STD_LOGIC_VECTOR(TO_UNSIGNED(2**PHASE_WIDTH / 2, PHASE_WIDTH));
+		WAIT FOR ((2**(PHASE_WIDTH+1) / 10 + 10) * PERIOD);
 
 		-- Reset
 		s_i_n_reset	<= '0';
 		WAIT FOR 1 * PERIOD;
 
-		-- Case 5 - Increment = 10 - Phase shift = 3 * (2**N) / 4
+		-- Case 5 - Increment = 10 - Phase shift = 3 * (2**PHASE_WIDTH) / 4
 		s_i_n_reset	<= '1';
-		s_i_increment <= STD_LOGIC_VECTOR(TO_UNSIGNED(10, N));
-		s_i_phase_shift	<= STD_LOGIC_VECTOR(TO_UNSIGNED(3 * (2**N) / 4, N));
-		WAIT FOR ((2**(N+1) / 10 + 10) * PERIOD);
+		s_i_increment <= STD_LOGIC_VECTOR(TO_UNSIGNED(10, PHASE_WIDTH));
+		s_i_phase_shift	<= STD_LOGIC_VECTOR(TO_UNSIGNED(3 * (2**PHASE_WIDTH) / 4, PHASE_WIDTH));
+		WAIT FOR ((2**(PHASE_WIDTH+1) / 10 + 10) * PERIOD);
 
 		STOP;
 	END PROCESS p_cases;
