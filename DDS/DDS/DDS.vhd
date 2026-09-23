@@ -18,6 +18,7 @@ ENTITY DDS IS
 		i_n_reset	: IN STD_LOGIC;
 		i_increment	: IN STD_LOGIC_VECTOR(N-1 DOWNTO 0);
 		i_phase_shift	: IN STD_LOGIC_VECTOR(N-1 DOWNTO 0);
+		i_enable	: IN STD_LOGIC;
 		o_data	: OUT STD_LOGIC_VECTOR(13 DOWNTO 0)	:= (OTHERS => '0')
 	);
 END ENTITY DDS;
@@ -26,6 +27,7 @@ ARCHITECTURE arch OF DDS IS
 
 	SIGNAL s_phase	: STD_LOGIC_VECTOR(N-1 DOWNTO 0)	:= (OTHERS => '0');
 	SIGNAL s_phase_with_offset	: STD_LOGIC_VECTOR(N-1 DOWNTO 0)	:= (OTHERS => '0');
+
 
 BEGIN
 
@@ -37,7 +39,8 @@ BEGIN
 		PORT MAP(
 			i_clk	=> i_clk,
 			i_n_reset	=> i_n_reset,
-			i_w	=> i_increment,
+			i_increment	=> i_increment,
+			i_enable	=> i_enable,
 			o_phase	=> s_phase
 		);
 	

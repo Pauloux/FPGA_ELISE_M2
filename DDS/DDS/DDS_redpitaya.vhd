@@ -51,11 +51,11 @@ ARCHITECTURE arch OF DDS_redpitaya IS
 	END COMPONENT;
 
 	-- Signals
-	SIGNAL s_increment	: STD_LOGIC_VECTOR(9 DOWNTO 0);
-	SIGNAL s_phase_shift	: STD_LOGIC_VECTOR(9 DOWNTO 0);
-	SIGNAL s_channel	: STD_LOGIC;
-
-	SIGNAL s_dac_value	: STD_LOGIC_VECTOR(13 DOWNTO 0);
+	SIGNAL s_increment	: STD_LOGIC_VECTOR(9 DOWNTO 0) := (OTHERS => '0');
+	SIGNAL s_phase_shift	: STD_LOGIC_VECTOR(9 DOWNTO 0) := (OTHERS => '0');
+	SIGNAL s_channel	: STD_LOGIC := '0';
+	SIGNAL s_enable	: STD_LOGIC := '1';
+	SIGNAL s_dac_value	: STD_LOGIC_VECTOR(13 DOWNTO 0) := (OTHERS => '0');
 
 BEGIN
 
@@ -72,6 +72,16 @@ BEGIN
 			O	=> s_clk
 		);
 
+	-- Enable for the DDS because DAC is interleaved mode
+	PROCESS(s_clk)
+	BEGIN
+		IF rising_edge(s_clk) THEN
+			s_enable <= NOT s_enable;
+		ELSE 
+			s_enable <= s_enable;
+		END IF;
+	END PROCESS;
+
 	-- DDS instantiation
 	c_DDS	: ENTITY work.DDS
 		GENERIC MAP(
@@ -82,6 +92,7 @@ BEGIN
 			i_n_reset	=> Button,
 			i_increment	=> s_increment,
 			i_phase_shift	=> s_phase_shift,
+			i_enable => s_enable,
 			o_data	=> s_dac_value
 		);
 

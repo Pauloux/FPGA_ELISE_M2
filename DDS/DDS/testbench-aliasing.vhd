@@ -22,7 +22,7 @@ ARCHITECTURE behavioral OF simulation IS
 	SIGNAL s_i_n_reset	: STD_LOGIC;
 	SIGNAL s_i_increment	: STD_LOGIC_VECTOR(N-1 DOWNTO 0);
 	SIGNAL s_i_phase_shift	: STD_LOGIC_VECTOR(N-1 DOWNTO 0);
-
+	SIGNAL s_i_enable	: STD_LOGIC := '1';
 	-- Outputs
 	SIGNAL s_o_DAC_reset	: STD_LOGIC;
 	SIGNAL s_o_DAC_sel	: STD_LOGIC;
@@ -42,6 +42,7 @@ BEGIN
 			i_n_reset	=> s_i_n_reset,
 			i_increment	=> s_i_increment,
 			i_phase_shift	=> s_i_phase_shift,
+			i_enable	=> s_i_enable,
 			o_DAC_reset	=> s_o_DAC_reset,
 			o_DAC_sel	=> s_o_DAC_sel,
 			o_DAC_clk	=> s_o_DAC_clk,
