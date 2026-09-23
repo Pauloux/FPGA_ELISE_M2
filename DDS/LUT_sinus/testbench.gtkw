@@ -1,29 +1,32 @@
 [*]
-[*] GTKWave Analyzer v3.3.126 (w)1999-2026 BSI
-[*] Wed Sep 16 16:02:39 2026
+[*] GTKWave Analyzer v3.3.116 (w)1999-2023 BSI
+[*] Wed Sep 23 09:19:06 2026
 [*]
-[dumpfile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/DDS/LUT_sinus/testbench.ghw"
-[dumpfile_mtime] "Wed Sep 16 16:00:46 2026"
-[dumpfile_size] 27263
-[savefile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/DDS/LUT_sinus/testbench.gtkw"
+[dumpfile] "/home/mbld/Documents/UFR_ST/Master/semestre_3/FPGA/FPGA_ELISE_M2/DDS/LUT_sinus/testbench.ghw"
+[dumpfile_mtime] "Wed Sep 23 09:11:54 2026"
+[dumpfile_size] 463339
+[savefile] "/home/mbld/Documents/UFR_ST/Master/semestre_3/FPGA/FPGA_ELISE_M2/DDS/LUT_sinus/testbench.gtkw"
 [timestart] 0
-[size] 1920 966
+[size] 1920 935
 [pos] -27 -24
-*-30.049904 8192000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-34.161049 8204000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] top.
 [treeopen] top.simulation.
 [sst_width] 278
-[signals_width] 142
+[signals_width] 174
 [sst_expanded] 1
-[sst_vpaned_height] 284
+[sst_vpaned_height] 273
 @200
 -Inputs
 @28
 top.simulation.s_i_clk_125mhz
-@8022
-#{top.simulation.s_i_phase[9:0]} top.simulation.s_i_phase[9] top.simulation.s_i_phase[8] top.simulation.s_i_phase[7] top.simulation.s_i_phase[6] top.simulation.s_i_phase[5] top.simulation.s_i_phase[4] top.simulation.s_i_phase[3] top.simulation.s_i_phase[2] top.simulation.s_i_phase[1] top.simulation.s_i_phase[0]
+@8024
+#{top.simulation.s_i_phase_10[9:0]} top.simulation.s_i_phase_10[9] top.simulation.s_i_phase_10[8] top.simulation.s_i_phase_10[7] top.simulation.s_i_phase_10[6] top.simulation.s_i_phase_10[5] top.simulation.s_i_phase_10[4] top.simulation.s_i_phase_10[3] top.simulation.s_i_phase_10[2] top.simulation.s_i_phase_10[1] top.simulation.s_i_phase_10[0]
 @20000
 -
+@8025
+#{top.simulation.s_i_phase_14[13:0]} top.simulation.s_i_phase_14[13] top.simulation.s_i_phase_14[12] top.simulation.s_i_phase_14[11] top.simulation.s_i_phase_14[10] top.simulation.s_i_phase_14[9] top.simulation.s_i_phase_14[8] top.simulation.s_i_phase_14[7] top.simulation.s_i_phase_14[6] top.simulation.s_i_phase_14[5] top.simulation.s_i_phase_14[4] top.simulation.s_i_phase_14[3] top.simulation.s_i_phase_14[2] top.simulation.s_i_phase_14[1] top.simulation.s_i_phase_14[0]
+@20000
 -
 -
 -
@@ -31,7 +34,7 @@ top.simulation.s_i_clk_125mhz
 -
 -Outputs
 @8022
-#{top.simulation.s_o_data[13:0]} top.simulation.s_o_data[13] top.simulation.s_o_data[12] top.simulation.s_o_data[11] top.simulation.s_o_data[10] top.simulation.s_o_data[9] top.simulation.s_o_data[8] top.simulation.s_o_data[7] top.simulation.s_o_data[6] top.simulation.s_o_data[5] top.simulation.s_o_data[4] top.simulation.s_o_data[3] top.simulation.s_o_data[2] top.simulation.s_o_data[1] top.simulation.s_o_data[0]
+#{top.simulation.s_o_data_10[13:0]} top.simulation.s_o_data_10[13] top.simulation.s_o_data_10[12] top.simulation.s_o_data_10[11] top.simulation.s_o_data_10[10] top.simulation.s_o_data_10[9] top.simulation.s_o_data_10[8] top.simulation.s_o_data_10[7] top.simulation.s_o_data_10[6] top.simulation.s_o_data_10[5] top.simulation.s_o_data_10[4] top.simulation.s_o_data_10[3] top.simulation.s_o_data_10[2] top.simulation.s_o_data_10[1] top.simulation.s_o_data_10[0]
 @20000
 -
 -
@@ -39,9 +42,10 @@ top.simulation.s_i_clk_125mhz
 -
 -
 -
-@20001
--
+@8022
+#{top.simulation.s_o_data_14[13:0]} top.simulation.s_o_data_14[13] top.simulation.s_o_data_14[12] top.simulation.s_o_data_14[11] top.simulation.s_o_data_14[10] top.simulation.s_o_data_14[9] top.simulation.s_o_data_14[8] top.simulation.s_o_data_14[7] top.simulation.s_o_data_14[6] top.simulation.s_o_data_14[5] top.simulation.s_o_data_14[4] top.simulation.s_o_data_14[3] top.simulation.s_o_data_14[2] top.simulation.s_o_data_14[1] top.simulation.s_o_data_14[0]
 @20000
+-
 -
 -
 -
