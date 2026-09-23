@@ -1,8 +1,5 @@
--- Author: Paul ROUSSEAU
--- Date: 17 September 2026
---
 -- Description:
--- Testbench for the DDS.vhd file.
+-- Testbench for the DDS.vhd file with aliasing.
 
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
@@ -21,14 +18,11 @@ ARCHITECTURE behavioral OF simulation IS
 	SIGNAL s_i_clk	: STD_LOGIC;
 	SIGNAL s_i_n_reset	: STD_LOGIC;
 	SIGNAL s_i_increment	: STD_LOGIC_VECTOR(N-1 DOWNTO 0);
-	SIGNAL s_i_phase_shift	: STD_LOGIC_VECTOR(N-1 DOWNTO 0);
 	SIGNAL s_i_enable	: STD_LOGIC := '1';
+	SIGNAL s_i_phase_shift	: STD_LOGIC_VECTOR(N-1 DOWNTO 0);
+
 	-- Outputs
-	SIGNAL s_o_DAC_reset	: STD_LOGIC;
-	SIGNAL s_o_DAC_sel	: STD_LOGIC;
-	SIGNAL s_o_DAC_clk	: STD_LOGIC;
-	SIGNAL s_o_DAC_wrt	: STD_LOGIC;
-	SIGNAL s_o_DAC_data	: STD_LOGIC_VECTOR(13 DOWNTO 0);
+	SIGNAL s_o_data	: STD_LOGIC_VECTOR(13 DOWNTO 0);
 
 BEGIN
 
@@ -43,11 +37,7 @@ BEGIN
 			i_increment	=> s_i_increment,
 			i_phase_shift	=> s_i_phase_shift,
 			i_enable	=> s_i_enable,
-			o_DAC_reset	=> s_o_DAC_reset,
-			o_DAC_sel	=> s_o_DAC_sel,
-			o_DAC_clk	=> s_o_DAC_clk,
-			o_DAC_wrt	=> s_o_DAC_wrt,
-			o_DAC_data	=> s_o_DAC_data
+			o_data	=> s_o_data
 		);
 
 	-- CLOCK
@@ -61,24 +51,21 @@ BEGIN
 
 	p_cases:	PROCESS
 	BEGIN
-		-- Case 1 - Increment = 512 - Phase shift = 0
-		s_i_n_reset	<= '1';
-		s_i_increment <= STD_LOGIC_VECTOR(TO_UNSIGNED(512, N));
 		s_i_phase_shift	<= STD_LOGIC_VECTOR(TO_UNSIGNED(0, N));
-		WAIT FOR ((2**N + 10) * PERIOD);
 
-		-- Case 2 - Increment = 513 - Phase shift = 0
+		-- Case 1 - Increment = 64 (below Nyquist, 16 samples/period)
 		s_i_n_reset	<= '1';
-		s_i_increment <= STD_LOGIC_VECTOR(TO_UNSIGNED(513, N));
-		s_i_phase_shift	<= STD_LOGIC_VECTOR(TO_UNSIGNED(0, N));
-		WAIT FOR ((2**N / 2 + 10) * PERIOD);
+		s_i_increment <= STD_LOGIC_VECTOR(TO_UNSIGNED(64, N));
+		WAIT FOR ((2**(N+1) / 64 + 10) * PERIOD);
 
+		-- Reset
+		s_i_n_reset	<= '0';
+		WAIT FOR 1 * PERIOD;
 
-		-- Case 3 - Increment = 256 - Phase shift = 0
+		-- Case 2 - Increment = 960 = 2^N - 64 (alias of case 1)
 		s_i_n_reset	<= '1';
-		s_i_increment <= STD_LOGIC_VECTOR(TO_UNSIGNED(256, N));
-		s_i_phase_shift	<= STD_LOGIC_VECTOR(TO_UNSIGNED(0, N));
-		WAIT FOR ((2**N / 10 + 10) * PERIOD);
+		s_i_increment <= STD_LOGIC_VECTOR(TO_UNSIGNED(960, N));
+		WAIT FOR ((2**(N+1) / 64 + 10) * PERIOD);
 
 		STOP;
 	END PROCESS p_cases;

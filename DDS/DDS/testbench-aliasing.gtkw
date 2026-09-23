@@ -1,25 +1,27 @@
 [*]
-[*] GTKWave Analyzer v3.3.121 (w)1999-2024 BSI
-[*] Fri Sep 18 13:38:36 2026
+[*] GTKWave Analyzer v3.3.116 (w)1999-2023 BSI
+[*] Wed Sep 23 10:08:00 2026
 [*]
-[dumpfile] "/home/etudiant/ELISE2/FPGA_ELISE_M2/DDS/DDS/testbench_aliasing.ghw"
-[dumpfile_mtime] "Fri Sep 18 13:27:13 2026"
-[dumpfile_size] 90457
-[savefile] "/home/etudiant/ELISE2/FPGA_ELISE_M2/DDS/DDS/testbench_aliasing.gtkw"
-[timestart] 8260000000
-[size] 1920 973
-[pos] -1 -1
-*-28.821417 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[dumpfile] "/home/mbld/Documents/UFR_ST/Master/semestre_3/FPGA/FPGA_ELISE_M2/DDS/DDS/testbench-aliasing.ghw"
+[dumpfile_mtime] "Wed Sep 23 10:07:22 2026"
+[dumpfile_size] 4737
+[savefile] "/home/mbld/Documents/UFR_ST/Master/semestre_3/FPGA/FPGA_ELISE_M2/DDS/DDS/testbench-aliasing.gtkw"
+[timestart] 0
+[size] 1920 935
+[pos] -27 -24
+*-26.498547 116400000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] top.
 [treeopen] top.simulation.
-[sst_width] 276
-[signals_width] 174
+[treeopen] top.simulation.c_dds.
+[treeopen] top.simulation.c_dds.c_phase_accumulator.
+[sst_width] 278
+[signals_width] 190
 [sst_expanded] 1
-[sst_vpaned_height] 287
+[sst_vpaned_height] 274
 @28
 top.simulation.s_i_clk
-@8023
-#{top.simulation.s_o_dac_data[13:0]} top.simulation.s_o_dac_data[13] top.simulation.s_o_dac_data[12] top.simulation.s_o_dac_data[11] top.simulation.s_o_dac_data[10] top.simulation.s_o_dac_data[9] top.simulation.s_o_dac_data[8] top.simulation.s_o_dac_data[7] top.simulation.s_o_dac_data[6] top.simulation.s_o_dac_data[5] top.simulation.s_o_dac_data[4] top.simulation.s_o_dac_data[3] top.simulation.s_o_dac_data[2] top.simulation.s_o_dac_data[1] top.simulation.s_o_dac_data[0]
+@8022
+#{top.simulation.s_i_phase_shift[9:0]} top.simulation.s_i_phase_shift[9] top.simulation.s_i_phase_shift[8] top.simulation.s_i_phase_shift[7] top.simulation.s_i_phase_shift[6] top.simulation.s_i_phase_shift[5] top.simulation.s_i_phase_shift[4] top.simulation.s_i_phase_shift[3] top.simulation.s_i_phase_shift[2] top.simulation.s_i_phase_shift[1] top.simulation.s_i_phase_shift[0]
 @20000
 -
 -
@@ -28,6 +30,9 @@ top.simulation.s_i_clk
 -
 -
 -
+@10022
+#{top.simulation.s_o_data[13:0]} top.simulation.s_o_data[13] top.simulation.s_o_data[12] top.simulation.s_o_data[11] top.simulation.s_o_data[10] top.simulation.s_o_data[9] top.simulation.s_o_data[8] top.simulation.s_o_data[7] top.simulation.s_o_data[6] top.simulation.s_o_data[5] top.simulation.s_o_data[4] top.simulation.s_o_data[3] top.simulation.s_o_data[2] top.simulation.s_o_data[1] top.simulation.s_o_data[0]
+@20000
 -
 -
 -
@@ -35,7 +40,7 @@ top.simulation.s_i_clk
 -
 -
 -
-@24
-#{top.simulation.s_i_increment[9:0]} top.simulation.s_i_increment[9] top.simulation.s_i_increment[8] top.simulation.s_i_increment[7] top.simulation.s_i_increment[6] top.simulation.s_i_increment[5] top.simulation.s_i_increment[4] top.simulation.s_i_increment[3] top.simulation.s_i_increment[2] top.simulation.s_i_increment[1] top.simulation.s_i_increment[0]
+@25
+#{top.simulation.c_dds.c_phase_accumulator.i_increment[9:0]} top.simulation.c_dds.c_phase_accumulator.i_increment[9] top.simulation.c_dds.c_phase_accumulator.i_increment[8] top.simulation.c_dds.c_phase_accumulator.i_increment[7] top.simulation.c_dds.c_phase_accumulator.i_increment[6] top.simulation.c_dds.c_phase_accumulator.i_increment[5] top.simulation.c_dds.c_phase_accumulator.i_increment[4] top.simulation.c_dds.c_phase_accumulator.i_increment[3] top.simulation.c_dds.c_phase_accumulator.i_increment[2] top.simulation.c_dds.c_phase_accumulator.i_increment[1] top.simulation.c_dds.c_phase_accumulator.i_increment[0]
 [pattern_trace] 1
 [pattern_trace] 0
