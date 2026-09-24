@@ -1,6 +1,6 @@
 # General parameters
 SOURCE_NAME = DDS_interleaved
-LIBRARY_PATH = .. ../..
+LIBRARY_PATH = .. ../../../DDS
 EXTERNAL_SOURCES_NAME = phase_accumulator LUT_interleaved_signals
 TESTBENCH_NAME ?= testbench
 TESTBENCH_ENTITY ?= simulation

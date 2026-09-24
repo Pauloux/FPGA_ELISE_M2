@@ -2,7 +2,7 @@
 #source /home/jmfriedt/openxc7/export.sh
 
 PRJ = DDS_interleaved_redpitaya
-VHDL_LIBRARY_PATH = .. ../..
+VHDL_LIBRARY_PATH = .. ../../../DDS
 VHDL_LIBRARY_NAMES = DDS_interleaved LUT_interleaved_signals phase_accumulator DAC_AD9767
 V_LIST = $(PRJ).v
 CONSTR = ../../../ports.xdc
