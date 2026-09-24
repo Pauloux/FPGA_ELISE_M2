@@ -18,7 +18,6 @@ ENTITY phase_accumulator IS
 		i_enable : IN STD_LOGIC;
 		i_increment : IN STD_LOGIC_VECTOR(PHASE_WIDTH-1 DOWNTO 0) := (OTHERS => '0');
 		o_phase : OUT STD_LOGIC_VECTOR(PHASE_WIDTH-1 DOWNTO 0) := (OTHERS => '0')
-
 	);
 END ENTITY phase_accumulator;
 
@@ -38,8 +37,10 @@ BEGIN
 			IF i_enable = '1' THEN 
 				s_phase <= STD_LOGIC_VECTOR(UNSIGNED(s_phase) + UNSIGNED(i_increment));
 			ELSE
-				s_phase <= s_phase ;
+				s_phase <= s_phase;
 			END IF;
+		ELSE
+			s_phase	<= s_phase;
 		END IF;
 
 	END PROCESS;
