@@ -17,9 +17,13 @@ ENTITY DDS_redpitaya IS
 		adc_clk_p_i, adc_clk_n_i	: IN STD_LOGIC;
 		-- Reset
 		Button	: IN STD_LOGIC;
-		-- Increment value : 1 MSB and 3 LSB
+		-- GPIO:
+		-- bit 3 (MSB) is for channel selection.
+		-- bit 2 is for the MSB of the increment value.
+		-- bits 1 and 0 are for the LSB of the increment value.
 		GPIO	: IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-		-- Phase shift : 4 MSB
+		-- SW:
+		-- all bits are for the LSB of the offset value
 		SW	: IN STD_LOGIC_VECTOR(3 DOWNTO 0);
 
 		-- DAC
@@ -72,7 +76,7 @@ BEGIN
 			O	=> s_clk
 		);
 
-	-- Enable for the DDS because DAC is interleaved mode
+	-- Enable is active every other clock period to account for interleaved DAC mode
 	PROCESS(s_clk)
 	BEGIN
 		IF rising_edge(s_clk) THEN
@@ -112,7 +116,6 @@ BEGIN
 	
 	-- Input wiring
 	s_channel	<= GPIO(3);
-
 	
 	s_increment(PHASE_WIDTH-1)	<= GPIO(2);
 	s_increment(1 DOWNTO 0)	<= GPIO(1 DOWNTO 0);
