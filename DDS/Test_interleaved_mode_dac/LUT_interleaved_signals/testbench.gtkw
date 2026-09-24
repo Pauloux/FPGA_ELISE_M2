@@ -1,0 +1,49 @@
+[*]
+[*] GTKWave Analyzer v3.3.116 (w)1999-2023 BSI
+[*] Thu Sep 24 06:51:31 2026
+[*]
+[dumpfile] "/home/mbld/Documents/UFR_ST/Master/semestre_3/FPGA/FPGA_ELISE_M2/DDS/LUT_interleaved_mode_dac/testbench.ghw"
+[dumpfile_mtime] "Thu Sep 24 06:50:17 2026"
+[dumpfile_size] 33346
+[savefile] "/home/mbld/Documents/UFR_ST/Master/semestre_3/FPGA/FPGA_ELISE_M2/DDS/LUT_interleaved_mode_dac/testbench.gtkw"
+[timestart] 0
+[size] 1920 935
+[pos] -27 -24
+*-30.081570 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.simulation.
+[sst_width] 278
+[signals_width] 174
+[sst_expanded] 1
+[sst_vpaned_height] 273
+@200
+-Inputs
+@28
+top.simulation.s_i_clk_125mhz
+@8023
+#{top.simulation.s_i_phase[9:0]} top.simulation.s_i_phase[9] top.simulation.s_i_phase[8] top.simulation.s_i_phase[7] top.simulation.s_i_phase[6] top.simulation.s_i_phase[5] top.simulation.s_i_phase[4] top.simulation.s_i_phase[3] top.simulation.s_i_phase[2] top.simulation.s_i_phase[1] top.simulation.s_i_phase[0]
+@20000
+-
+-
+-
+-
+@200
+-
+-Outputs
+@8022
+#{top.simulation.s_o_data[13:0]} top.simulation.s_o_data[13] top.simulation.s_o_data[12] top.simulation.s_o_data[11] top.simulation.s_o_data[10] top.simulation.s_o_data[9] top.simulation.s_o_data[8] top.simulation.s_o_data[7] top.simulation.s_o_data[6] top.simulation.s_o_data[5] top.simulation.s_o_data[4] top.simulation.s_o_data[3] top.simulation.s_o_data[2] top.simulation.s_o_data[1] top.simulation.s_o_data[0]
+@20000
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+[pattern_trace] 1
+[pattern_trace] 0
