@@ -7,7 +7,7 @@ VHDL_LIBRARY_NAMES = DDS_interleaved LUT_interleaved_signals phase_accumulator D
 V_LIST = $(PRJ).v
 CONSTR = ../../../ports.xdc
 
-VHDL_BIBLI_FILES := $(foreach path,$(VHDL_LIBRARY_PATH),\
+VHDL_LIBRARY_FILES := $(foreach path,$(VHDL_LIBRARY_PATH),\
 	$(foreach bibli_name,$(VHDL_LIBRARY_NAMES),\
 		$(wildcard $(path)/$(bibli_name)/$(bibli_name).vhd)))
 
@@ -30,9 +30,9 @@ YOSYS_OPT=-q -p "synth_xilinx -flatten -abc9 -arch xc7 -top $(PRJ); write_json $
 
 
 all: $(PRJ).bit
-$(PRJ).v: $(PRJ).vhd $(VHDL_BIBLI_FILES)
+$(PRJ).v: $(PRJ).vhd $(VHDL_LIBRARY_FILES)
 	# obsolete
-	#yosys -m ghdl -p 'ghdl --std=08 $(VHDL_BIBLI_FILES) $(PRJ).vhd -e $(PRJ); write_verilog $(PRJ).v'
+	#yosys -m ghdl -p 'ghdl --std=08 $(VHDL_LIBRARY_FILES) $(PRJ).vhd -e $(PRJ); write_verilog $(PRJ).v'
 	# new with recent ghdl
 	ghdl $(GHDL_OPT) $^ -e $(PRJ) > $@
 
@@ -61,8 +61,16 @@ $(PRJ).bit: $(PRJ).frames
 load: $(PRJ).bit
 	openFPGALoader -c digilent_hs2 $(PRJ).bit
 
+verify: $(PRJ).vhd $(VHDL_LIBRARY_FILES)
+	@echo "Importing files in the work library..."
+	ghdl -i $(PRJ).vhd $(VHDL_LIBRARY_FILES)
+	@echo "Analysis and elaboration... (Only four warnings concerning IBUFDS and BUFG not bound should appear)"
+	ghdl -m $(PRJ)
+	@echo "Only two warning concerning IBUFDS and BUFG not bound should appear"
+
 clean:
-	-rm -f *.rpt *.log *.json* *_synth.v *.place *.eblif *.fasm *.ioplace *.net
-	-rm -f *.net.post_routing *.route *.premap.v *.frames *.bit
-	-rm -f $(PRJ).v
+	rm -f *.rpt *.log *.json* *_synth.v *.place *.eblif *.fasm *.ioplace *.net
+	rm -f *.net.post_routing *.route *.premap.v *.frames *.bit
+	rm -f $(PRJ).v
+	rm -f work-obj93.cf
 
