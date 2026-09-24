@@ -113,6 +113,7 @@ BEGIN
 	-- Input wiring
 	s_channel	<= GPIO(3);
 
+	
 	s_increment(PHASE_WIDTH-1)	<= GPIO(2);
 	s_increment(1 DOWNTO 0)	<= GPIO(1 DOWNTO 0);
 	s_increment(PHASE_WIDTH-2 DOWNTO 3)	<= (OTHERS => '0');
