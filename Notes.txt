@@ -1,9 +1,1 @@
-In "phase accumulator": change the input signal name 'i_w' for a more descriptive name ?
 
-In "phase accumulator", "LUT_sinus" and "DDS": change the generic parameter name 'N' for a more descriptive name ?
-
-In "LUT_sinus": align the '=>' ?
-
-In "LUT_sinus-Generate_values": explain that we want a unsigned value.
-
-In "LUT_sinus": N is a parameter but only works for N=10 because the values are hard-coded on 10 bits.
