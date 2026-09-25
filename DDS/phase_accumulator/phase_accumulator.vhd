@@ -1,8 +1,12 @@
--- Phase Accumulator (DDS)
--- Set PHASE_WIDTH, default is 10.
--- Drive i_clk, keep i_n_reset high (active low), set frequency word i_w.
--- On each rising clock edge: o_phase = o_phase + i_w (wraps at 2^PHASE_WIDTH).
--- Pulse i_n_reset low to clear o_phase to 0.
+-- Author: Maxime BELLAUD
+-- Date: 15 September 2026
+--
+-- Description:
+-- Phase accumulator of the DDS.
+-- On each rising edge of i_clk, if i_enable is high, the phase register is
+-- incremented by i_increment and wraps around at 2^PHASE_WIDTH.
+-- i_n_reset is active low and clears the phase to 0.
+-- i_enable allows the accumulator to be frozen (used for the interleaved DAC).
 
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;

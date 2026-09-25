@@ -1,4 +1,14 @@
--- Sinus LUT (DDS)
+-- Author: Maxime BELLAUD
+-- Date: 15 September 2026
+--
+-- Description:
+-- Sine look-up table for the DDS.
+-- Stores one full period of a 14-bit offset-binary sine, with
+-- PHASE_WIDTH_MAX = 14 (16384 samples).
+-- The generic PHASE_WIDTH selects the used resolution: the input phase is
+-- left-shifted by (PHASE_WIDTH_MAX - PHASE_WIDTH), so a smaller PHASE_WIDTH
+-- reads one sample every 2^(PHASE_WIDTH_MAX - PHASE_WIDTH) entries
+-- without regenerating the table.
 
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;

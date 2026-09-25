@@ -1,3 +1,6 @@
+-- Author: Maxime BELLAUD
+-- Date: 24 September 2026
+--
 -- Description:
 -- Testbench for the DDS_interleaved.vhd file.
 

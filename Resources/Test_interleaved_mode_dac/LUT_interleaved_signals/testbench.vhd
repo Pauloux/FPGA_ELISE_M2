@@ -1,3 +1,9 @@
+-- Author: Maxime BELLAUD
+-- Date: 24 September 2026
+--
+-- Description:
+-- Testbench for the LUT_interleaved_signals.vhd file.
+
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
 USE IEEE.NUMERIC_STD.ALL;

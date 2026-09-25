@@ -1,3 +1,6 @@
+-- Author: Maxime BELLAUD
+-- Date: 23 September 2026
+--
 -- Description:
 -- Testbench for the DDS.vhd file with aliasing.
 

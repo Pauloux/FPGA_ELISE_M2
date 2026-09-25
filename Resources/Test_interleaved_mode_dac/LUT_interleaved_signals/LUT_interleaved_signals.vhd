@@ -1,4 +1,12 @@
--- Sinus LUT (DDS)
+-- Author: Maxime BELLAUD
+-- Date: 24 September 2026
+--
+-- Description:
+-- Look-up table used to show the AD9767 interleaved DAC mode.
+-- Even addresses hold full-scale DC (14-bit ones, ~1 V). Odd addresses hold
+-- samples of a 14-bit offset-binary sine. Streaming the table therefore
+-- sends a sine on one DAC channel and a constant on the other.
+-- PHASE_WIDTH is fixed to 10 (1024 entries) for this demonstration.
 
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;

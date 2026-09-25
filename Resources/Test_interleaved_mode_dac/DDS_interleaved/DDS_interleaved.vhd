@@ -1,3 +1,6 @@
+-- Author: Maxime BELLAUD
+-- Date: 24 September 2026
+--
 -- Description:
 -- Direct Digital Synthesis (DDS) implementation for interleaved mode of the DAC.
 -- Outputs a 14 bits sine wave.

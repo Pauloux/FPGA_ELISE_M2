@@ -1,3 +1,9 @@
+-- Author: Maxime BELLAUD
+-- Date: 15 September 2026
+--
+-- Description:
+-- Testbench for the LUT_sinus.vhd file.
+
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
 USE IEEE.NUMERIC_STD.ALL;
