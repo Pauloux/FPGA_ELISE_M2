@@ -33,7 +33,7 @@ BEGIN
 
 	o_phase <= s_phase;
 
-	PROCESS(i_clk, i_enable, i_n_reset)
+	PROCESS(i_clk, i_n_reset)
 	BEGIN
 		IF i_n_reset = '0' THEN
 			s_phase <= (OTHERS => '0');

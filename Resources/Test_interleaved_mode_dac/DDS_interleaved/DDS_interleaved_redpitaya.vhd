@@ -106,7 +106,7 @@ BEGIN
 
 	s_increment(PHASE_WIDTH-1)	<= GPIO(2);
 	s_increment(1 DOWNTO 0)	<= GPIO(1 DOWNTO 0);
-	s_increment(PHASE_WIDTH-2 DOWNTO 3)	<= (OTHERS => '0');
+	s_increment(PHASE_WIDTH-2 DOWNTO 2)	<= (OTHERS => '0');
 
 	s_phase_shift(PHASE_WIDTH-1 DOWNTO PHASE_WIDTH-4)	<= SW(3 DOWNTO 0);
 	s_phase_shift(PHASE_WIDTH-5 DOWNTO 0)	<= (OTHERS	=> '0');
