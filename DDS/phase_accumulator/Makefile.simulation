@@ -4,9 +4,11 @@ LIBRARY_PATH = ..
 EXTERNAL_SOURCES_NAME =
 TESTBENCH_NAME ?= testbench
 TESTBENCH_ENTITY ?= simulation
+
 SAVE_FILE ?= save_files/$(TESTBENCH_NAME).gtkw
 OUTPUT_DIR = output
-STOP_TIME ?= 2us
+STOP_TIME ?= 150us
+
 VHDL_STD = 08
 
 # GHDL options
