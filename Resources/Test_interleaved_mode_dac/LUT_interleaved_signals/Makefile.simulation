@@ -1,10 +1,10 @@
-# General parameters
+### General parameters
 SOURCE_NAME = LUT_interleaved_signals
 LIBRARY_PATH = ..
 EXTERNAL_SOURCES_NAME =
-TESTBENCH_NAME ?= testbench
+TESTBENCH_DIR ?= testbenches
+TESTBENCH_FILE ?= $(TESTBENCH_DIR)/testbench.vhd
 TESTBENCH_ENTITY ?= simulation
-SAVE_FILE ?= save_files/$(TESTBENCH_NAME).gtkw
 OUTPUT_DIR = output
 STOP_TIME ?= 150us
 VHDL_STD = 08
@@ -15,22 +15,32 @@ OPTIONS = --std=$(VHDL_STD) \
 RUN_OPTIONS = --stop-time=$(STOP_TIME) \
 	--wave=$(DUMP_FILE)
 
-# Getting file names
+### Get file names
+# Extract testbench name (without path or extension)
+TESTBENCH_NAME = $(notdir $(basename $(TESTBENCH_FILE)))
+
 SOURCE_FILE = $(SOURCE_NAME).vhd
-TESTBENCH_FILE = $(TESTBENCH_NAME).vhd
+# Resolve external source paths. Expected hierarchy:
+# <LIBRARY_PATH>/<external_source_name>/<external_source_name>.vhd
 EXTERNAL_SOURCES_FILES := $(foreach library_name,\
 	$(EXTERNAL_SOURCES_NAME),\
 	$(LIBRARY_PATH)/$(library_name)/$(library_name).vhd)
 ALL_VHDL_FILES = $(SOURCE_FILE) $(TESTBENCH_FILE) $(EXTERNAL_SOURCES_FILES)
-DUMP_FILE = $(OUTPUT_DIR)/$(TESTBENCH_NAME).ghw
 WORK_CF_FILE = $(OUTPUT_DIR)/work-obj$(VHDL_STD).cf
+DUMP_FILE = $(OUTPUT_DIR)/$(TESTBENCH_NAME).ghw
+# Derive the default GTKWave save file (.gtkw) from the TESTBENCH_FILE path and
+# name.
+SAVE_FILE ?= $(patsubst %.vhd,%.gtkw,$(TESTBENCH_FILE))
+
+### Recipes
+.PHONY: all simulation elaborate run clean
 
 all: simulation
 
 $(WORK_CF_FILE): $(ALL_VHDL_FILES)
 	@mkdir -p $(OUTPUT_DIR)
 	@echo "Importing files in the work library..."
-	ghdl -i $(OPTIONS) $(ALL_VHDL_FILES)
+	ghdl -i $(OPTIONS) $^
 	@echo "Analysis and elaboration..."
 	ghdl -m $(OPTIONS) $(TESTBENCH_ENTITY)
 
@@ -38,18 +48,15 @@ $(DUMP_FILE): $(WORK_CF_FILE)
 	@echo "Running (simulation)..."
 	ghdl -r $(OPTIONS) $(TESTBENCH_ENTITY) $(RUN_OPTIONS)
 
-.PHONY: simulation
+# Load the GTKWave save file only if it exists. Only uses the dump file otherwise.
 simulation: $(DUMP_FILE)
 	@echo "Opening GTKWave..."
 	gtkwave $(DUMP_FILE) $(wildcard $(SAVE_FILE))
 
-.PHONY: elaborate
 elaborate: $(WORK_CF_FILE)
 
-.PHONY: run
 run: $(DUMP_FILE)
 
-.PHONY: clean
 clean:
 	@echo "Cleaning..."
 	rm -f $(DUMP_FILE)
