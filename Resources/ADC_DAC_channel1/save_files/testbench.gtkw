@@ -1,22 +1,22 @@
 [*]
 [*] GTKWave Analyzer v3.3.126 (w)1999-2026 BSI
-[*] Wed Sep 16 14:04:16 2026
+[*] Mon Sep 28 09:13:36 2026
 [*]
-[dumpfile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/Resources/ADC_DAC_channel1/testbench.ghw"
-[dumpfile_mtime] "Wed Sep 16 14:04:10 2026"
+[dumpfile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/Resources/ADC_DAC_channel1/output/testbench.ghw"
+[dumpfile_mtime] "Mon Sep 28 09:13:31 2026"
 [dumpfile_size] 1316
-[savefile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/Resources/ADC_DAC_channel1/testbench.gtkw"
+[savefile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/Resources/ADC_DAC_channel1/save_files/testbench.gtkw"
 [timestart] 0
-[size] 1920 934
+[size] 1920 966
 [pos] -27 -24
-*-23.709505 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-23.807770 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] top.
 [treeopen] top.simulation.
 [treeopen] top.simulation.c_adc_dac_channel1_simulation_model.
 [sst_width] 278
 [signals_width] 254
 [sst_expanded] 1
-[sst_vpaned_height] 274
+[sst_vpaned_height] 285
 @200
 -Simulation input
 @22

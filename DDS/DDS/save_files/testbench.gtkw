@@ -1,13 +1,13 @@
 [*]
 [*] GTKWave Analyzer v3.3.126 (w)1999-2026 BSI
-[*] Fri Sep 18 14:35:57 2026
+[*] Mon Sep 28 09:03:43 2026
 [*]
-[dumpfile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/DDS/DDS/testbench.ghw"
-[dumpfile_mtime] "Fri Sep 18 14:34:11 2026"
-[dumpfile_size] 102798
-[savefile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/DDS/DDS/testbench.gtkw"
+[dumpfile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/DDS/DDS/output/testbench.ghw"
+[dumpfile_mtime] "Mon Sep 28 09:03:38 2026"
+[dumpfile_size] 154195
+[savefile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/DDS/DDS/save_files/testbench.gtkw"
 [timestart] 0
-[size] 1920 934
+[size] 1920 966
 [pos] -27 -24
 *-31.998268 -1 16472000000 24744000000 26464000000 28184000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [markername] AReset_1
@@ -19,7 +19,7 @@
 [sst_width] 278
 [signals_width] 222
 [sst_expanded] 1
-[sst_vpaned_height] 275
+[sst_vpaned_height] 287
 @200
 -Inputs
 @28

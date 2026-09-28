@@ -1,15 +1,15 @@
 [*]
-[*] GTKWave Analyzer v3.3.116 (w)1999-2023 BSI
-[*] Wed Sep 23 10:08:00 2026
+[*] GTKWave Analyzer v3.3.126 (w)1999-2026 BSI
+[*] Mon Sep 28 09:08:36 2026
 [*]
-[dumpfile] "/home/mbld/Documents/UFR_ST/Master/semestre_3/FPGA/FPGA_ELISE_M2/DDS/DDS/testbench-aliasing.ghw"
-[dumpfile_mtime] "Wed Sep 23 10:07:22 2026"
-[dumpfile_size] 4737
-[savefile] "/home/mbld/Documents/UFR_ST/Master/semestre_3/FPGA/FPGA_ELISE_M2/DDS/DDS/testbench-aliasing.gtkw"
+[dumpfile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/DDS/DDS/output/testbench-aliasing.ghw"
+[dumpfile_mtime] "Mon Sep 28 09:07:55 2026"
+[dumpfile_size] 4733
+[savefile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/DDS/DDS/save_files/testbench-aliasing.gtkw"
 [timestart] 0
-[size] 1920 935
+[size] 1920 966
 [pos] -27 -24
-*-26.498547 116400000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-26.498547 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] top.
 [treeopen] top.simulation.
 [treeopen] top.simulation.c_dds.
@@ -17,7 +17,7 @@
 [sst_width] 278
 [signals_width] 190
 [sst_expanded] 1
-[sst_vpaned_height] 274
+[sst_vpaned_height] 285
 @28
 top.simulation.s_i_clk
 @8022

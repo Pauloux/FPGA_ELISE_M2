@@ -1,22 +1,22 @@
 [*]
-[*] GTKWave Analyzer v3.3.116 (w)1999-2023 BSI
-[*] Tue Sep 22 09:55:10 2026
+[*] GTKWave Analyzer v3.3.126 (w)1999-2026 BSI
+[*] Mon Sep 28 09:12:21 2026
 [*]
-[dumpfile] "/home/mbld/Documents/UFR_ST/Master/semestre_3/FPGA/FPGA_ELISE_M2/DDS/phase_accumulator/testbench.ghw"
-[dumpfile_mtime] "Tue Sep 22 09:52:32 2026"
-[dumpfile_size] 4393
-[savefile] "/home/mbld/Documents/UFR_ST/Master/semestre_3/FPGA/FPGA_ELISE_M2/DDS/phase_accumulator/testbench.gtkw"
+[dumpfile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/DDS/phase_accumulator/output/testbench.ghw"
+[dumpfile_mtime] "Mon Sep 28 09:12:16 2026"
+[dumpfile_size] 4401
+[savefile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/DDS/phase_accumulator/save_files/testbench.gtkw"
 [timestart] 0
-[size] 1920 935
+[size] 1920 966
 [pos] -27 -24
-*-27.543917 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-27.527382 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] top.
 [treeopen] top.simulation.
 [treeopen] top.simulation.c_phase_accumulator.
 [sst_width] 278
 [signals_width] 181
 [sst_expanded] 1
-[sst_vpaned_height] 273
+[sst_vpaned_height] 284
 @200
 -Inputs
 @28
