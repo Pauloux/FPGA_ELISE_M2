@@ -4,12 +4,14 @@ LIBRARY_PATH = ..
 EXTERNAL_SOURCES_NAME =
 TESTBENCH_NAME ?= testbench
 TESTBENCH_ENTITY ?= simulation
-SAVE_FILE ?= $(TESTBENCH_NAME).gtkw
+SAVE_FILE ?= save_files/$(TESTBENCH_NAME).gtkw
+OUTPUT_DIR = output
 STOP_TIME ?= 200ns
 VHDL_STD = 08
 
 # GHDL options
-OPTIONS = --std=$(VHDL_STD)
+OPTIONS = --std=$(VHDL_STD) \
+	--workdir=$(OUTPUT_DIR)
 RUN_OPTIONS = --stop-time=$(STOP_TIME) \
 	--wave=$(DUMP_FILE)
 
@@ -20,12 +22,13 @@ EXTERNAL_SOURCES_FILES := $(foreach library_name,\
 	$(EXTERNAL_SOURCES_NAME),\
 	$(LIBRARY_PATH)/$(library_name)/$(library_name).vhd)
 ALL_VHDL_FILES = $(SOURCE_FILE) $(TESTBENCH_FILE) $(EXTERNAL_SOURCES_FILES)
-DUMP_FILE = $(TESTBENCH_NAME).ghw
-WORK_CF_FILE = work-obj$(VHDL_STD).cf
+DUMP_FILE = $(OUTPUT_DIR)/$(TESTBENCH_NAME).ghw
+WORK_CF_FILE = $(OUTPUT_DIR)/work-obj$(VHDL_STD).cf
 
 all: simulation
 
 $(WORK_CF_FILE): $(ALL_VHDL_FILES)
+	@mkdir -p $(OUTPUT_DIR)
 	@echo "Importing files in the work library..."
 	ghdl -i $(OPTIONS) $(ALL_VHDL_FILES)
 	@echo "Analysis and elaboration..."
@@ -51,3 +54,4 @@ clean:
 	@echo "Cleaning..."
 	rm -f $(DUMP_FILE)
 	rm -f $(WORK_CF_FILE)
+	rm -f -d $(OUTPUT_DIR)

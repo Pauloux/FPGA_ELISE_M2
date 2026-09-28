@@ -1,22 +1,22 @@
 [*]
-[*] GTKWave Analyzer v3.3.116 (w)1999-2023 BSI
-[*] Thu Sep 24 07:33:27 2026
+[*] GTKWave Analyzer v3.3.126 (w)1999-2026 BSI
+[*] Mon Sep 28 09:10:25 2026
 [*]
-[dumpfile] "/home/mbld/Documents/UFR_ST/Master/semestre_3/FPGA/FPGA_ELISE_M2/DDS/LUT_sinus/testbench.ghw"
-[dumpfile_mtime] "Thu Sep 24 07:32:49 2026"
+[dumpfile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/DDS/LUT_sinus/output/testbench.ghw"
+[dumpfile_mtime] "Mon Sep 28 09:10:02 2026"
 [dumpfile_size] 463331
-[savefile] "/home/mbld/Documents/UFR_ST/Master/semestre_3/FPGA/FPGA_ELISE_M2/DDS/LUT_sinus/testbench.gtkw"
+[savefile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/DDS/LUT_sinus/save_files/testbench.gtkw"
 [timestart] 0
-[size] 1920 935
+[size] 1920 966
 [pos] -27 -24
-*-34.169033 44810000000 8204000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-34.169033 -1 8204000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [markername] AReset 1
 [treeopen] top.
 [treeopen] top.simulation.
 [sst_width] 278
 [signals_width] 174
 [sst_expanded] 1
-[sst_vpaned_height] 273
+[sst_vpaned_height] 284
 @200
 -Inputs
 @28
