@@ -57,29 +57,29 @@ BEGIN
 		s_i_enable <= '1';
 		s_i_N_reset <= '1';
 		s_i_increment <= (OTHERS => '0');
-		WAIT FOR 4 * PERIOD;
+		WAIT FOR 128 * PERIOD;
 	
 		-- case with increment = 1 
 		s_i_increment <= STD_LOGIC_VECTOR(TO_UNSIGNED(1, PHASE_WIDTH));
-		WAIT FOR 128 * PERIOD;
+		WAIT FOR 1024 * PERIOD;
 
-		-- case with increment=64 + reset toggle 
-		s_i_increment <= STD_LOGIC_VECTOR(TO_UNSIGNED(64, PHASE_WIDTH));
-		WAIT FOR 8 * PERIOD;
+		-- case with increment=2 + reset toggle 
+		s_i_increment <= STD_LOGIC_VECTOR(TO_UNSIGNED(2, PHASE_WIDTH));
+		WAIT FOR 256 * PERIOD;
 		s_i_N_reset <= '0';
-		WAIT FOR 4 * PERIOD;
+		WAIT FOR 128 * PERIOD;
 		s_i_N_reset <= '1';
-		WAIT FOR 10 * PERIOD;
+		WAIT FOR 256* PERIOD;
 
-		-- case with increment=64 + enable toggle
+		-- case with increment=2 + enable toggle
 		s_i_enable <= '0';
-		WAIT FOR 4 * PERIOD;
+		WAIT FOR 128 * PERIOD;
 		s_i_enable <= '1';
-		WAIT FOR 4 * PERIOD;
+		WAIT FOR 512 * PERIOD;
 
-		-- case with increment = 128
-		s_i_increment <= STD_LOGIC_VECTOR(TO_UNSIGNED(128, PHASE_WIDTH));
-		WAIT FOR 12 * PERIOD;
+		-- case with increment = 3
+		s_i_increment <= STD_LOGIC_VECTOR(TO_UNSIGNED(3, PHASE_WIDTH));
+		WAIT FOR 256 * PERIOD;
 
 		stop;
 	END PROCESS p_scenario;
