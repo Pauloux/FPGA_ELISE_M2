@@ -60,7 +60,7 @@ BEGIN
 	END PROCESS p_clock;
 
 
-	p_behavioral : PROCESS
+	p_LUT_sinus_10 : PROCESS
 	BEGIN
 		WAIT UNTIL rising_edge(s_i_clk_125MHz);
 
@@ -70,6 +70,15 @@ BEGIN
 			WAIT UNTIL rising_edge(s_i_clk_125MHz);
 		END LOOP;
 
+
+		
+	END PROCESS p_LUT_sinus_10;
+
+
+	p_LUT_sinus_14 : PROCESS
+	BEGIN
+		WAIT UNTIL rising_edge(s_i_clk_125MHz);
+
 		-- PHASE_WIDTH = 14
 		FOR i IN 0 TO 2**PHASE_WIDTH_14 - 1 LOOP
 			s_i_phase_14 <= STD_LOGIC_VECTOR(TO_UNSIGNED(i, PHASE_WIDTH_14));
@@ -77,6 +86,6 @@ BEGIN
 		END LOOP;
 
 		STOP;
-	END PROCESS p_behavioral;
+	END PROCESS p_LUT_sinus_14;
 
 END behavioral;

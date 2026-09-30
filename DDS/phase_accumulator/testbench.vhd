@@ -66,10 +66,13 @@ BEGIN
 		-- case with increment=2 + reset toggle 
 		s_i_increment <= STD_LOGIC_VECTOR(TO_UNSIGNED(2, PHASE_WIDTH));
 		WAIT FOR 256 * PERIOD;
+		WAIT FOR  PERIOD/4; 
 		s_i_N_reset <= '0';
 		WAIT FOR 128 * PERIOD;
+	
 		s_i_N_reset <= '1';
-		WAIT FOR 256* PERIOD;
+		WAIT FOR  PERIOD*3/4;
+		WAIT FOR 255* PERIOD;
 
 		-- case with increment=2 + enable toggle
 		s_i_enable <= '0';

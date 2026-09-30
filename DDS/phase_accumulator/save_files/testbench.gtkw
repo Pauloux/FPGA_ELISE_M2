@@ -1,15 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.3.116 (w)1999-2023 BSI
-[*] Mon Sep 28 11:26:31 2026
+[*] Tue Sep 29 07:57:20 2026
 [*]
 [dumpfile] "/home/mbld/Documents/UFR_ST/Master/semestre_3/FPGA/FPGA_ELISE_M2/DDS/phase_accumulator/output/testbench.ghw"
-[dumpfile_mtime] "Mon Sep 28 11:26:29 2026"
-[dumpfile_size] 57751
+[dumpfile_mtime] "Mon Sep 28 14:37:32 2026"
+[dumpfile_size] 57761
 [savefile] "/home/mbld/Documents/UFR_ST/Master/semestre_3/FPGA/FPGA_ELISE_M2/DDS/phase_accumulator/save_files/testbench.gtkw"
 [timestart] 0
 [size] 1920 935
 [pos] -27 -24
-*-31.480639 -1 1024000000 9216000000 11264000000 12288000000 14336000000 15360000000 19456000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-31.480639 14990000000 1024000000 9216000000 11266000000 12290000000 14336000000 15360000000 19456000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [markername] Aset increment = 1
 [markername] Bset increment = 2
 [markername] CRESET = 0 
