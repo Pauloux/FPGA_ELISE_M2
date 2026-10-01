@@ -1,15 +1,15 @@
 [*]
-[*] GTKWave Analyzer v3.3.126 (w)1999-2026 BSI
-[*] Mon Sep 28 09:03:43 2026
+[*] GTKWave Analyzer v3.3.116 (w)1999-2023 BSI
+[*] Wed Sep 30 17:30:19 2026
 [*]
-[dumpfile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/DDS/DDS/output/testbench.ghw"
-[dumpfile_mtime] "Mon Sep 28 09:03:38 2026"
+[dumpfile] "/home/mbld/Documents/UFR_ST/Master/semestre_3/FPGA/FPGA_ELISE_M2/DDS/DDS/output/testbench.ghw"
+[dumpfile_mtime] "Wed Sep 30 17:27:14 2026"
 [dumpfile_size] 154195
-[savefile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/DDS/DDS/save_files/testbench.gtkw"
+[savefile] "/home/mbld/Documents/UFR_ST/Master/semestre_3/FPGA/FPGA_ELISE_M2/DDS/DDS/testbenches/testbench.gtkw"
 [timestart] 0
-[size] 1920 966
+[size] 1920 935
 [pos] -27 -24
-*-31.998268 -1 16472000000 24744000000 26464000000 28184000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-32.104546 -1 16472000000 24744000000 26464000000 28184000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [markername] AReset_1
 [markername] BReset_2
 [markername] CReset_3
@@ -17,23 +17,29 @@
 [treeopen] top.
 [treeopen] top.simulation.
 [sst_width] 278
-[signals_width] 222
+[signals_width] 321
 [sst_expanded] 1
-[sst_vpaned_height] 287
+[sst_vpaned_height] 276
 @200
 -Inputs
 @28
+[color] 6
 top.simulation.s_i_clk
+[color] 2
 top.simulation.s_i_n_reset
 @24
+[color] 2
 #{top.simulation.s_i_phase_shift[9:0]} top.simulation.s_i_phase_shift[9] top.simulation.s_i_phase_shift[8] top.simulation.s_i_phase_shift[7] top.simulation.s_i_phase_shift[6] top.simulation.s_i_phase_shift[5] top.simulation.s_i_phase_shift[4] top.simulation.s_i_phase_shift[3] top.simulation.s_i_phase_shift[2] top.simulation.s_i_phase_shift[1] top.simulation.s_i_phase_shift[0]
+[color] 2
 #{top.simulation.s_i_increment[9:0]} top.simulation.s_i_increment[9] top.simulation.s_i_increment[8] top.simulation.s_i_increment[7] top.simulation.s_i_increment[6] top.simulation.s_i_increment[5] top.simulation.s_i_increment[4] top.simulation.s_i_increment[3] top.simulation.s_i_increment[2] top.simulation.s_i_increment[1] top.simulation.s_i_increment[0]
 @200
 -
 -Outputs
 @22
+[color] 2
 #{top.simulation.s_o_data[13:0]} top.simulation.s_o_data[13] top.simulation.s_o_data[12] top.simulation.s_o_data[11] top.simulation.s_o_data[10] top.simulation.s_o_data[9] top.simulation.s_o_data[8] top.simulation.s_o_data[7] top.simulation.s_o_data[6] top.simulation.s_o_data[5] top.simulation.s_o_data[4] top.simulation.s_o_data[3] top.simulation.s_o_data[2] top.simulation.s_o_data[1] top.simulation.s_o_data[0]
 @8022
+[color] 2
 #{top.simulation.s_o_data[13:0]} top.simulation.s_o_data[13] top.simulation.s_o_data[12] top.simulation.s_o_data[11] top.simulation.s_o_data[10] top.simulation.s_o_data[9] top.simulation.s_o_data[8] top.simulation.s_o_data[7] top.simulation.s_o_data[6] top.simulation.s_o_data[5] top.simulation.s_o_data[4] top.simulation.s_o_data[3] top.simulation.s_o_data[2] top.simulation.s_o_data[1] top.simulation.s_o_data[0]
 @20000
 -

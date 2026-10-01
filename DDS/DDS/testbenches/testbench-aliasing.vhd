@@ -70,6 +70,15 @@ BEGIN
 		s_i_increment <= STD_LOGIC_VECTOR(TO_UNSIGNED(960, PHASE_WIDTH));
 		WAIT FOR ((2**(PHASE_WIDTH+1) / 64 + 10) * PERIOD);
 
+		-- Reset
+		s_i_n_reset	<= '0';
+		WAIT FOR 1 * PERIOD;
+
+		-- Case 3 - Increment = 513
+		s_i_n_reset	<= '1';
+		s_i_increment <= STD_LOGIC_VECTOR(TO_UNSIGNED(513, PHASE_WIDTH));
+		WAIT FOR ((2**(PHASE_WIDTH-1)) * PERIOD);
+
 		STOP;
 	END PROCESS p_cases;
 
