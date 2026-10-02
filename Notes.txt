@@ -1,3 +1,1 @@
-In "LUT_sinus-Generate_values": explain that we want a unsigned value.
-
-In "Makefile.openXC7": try to generate outputs in a specific folder
+Notes:
