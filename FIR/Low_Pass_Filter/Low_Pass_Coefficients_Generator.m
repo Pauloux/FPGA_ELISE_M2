@@ -1,10 +1,10 @@
-% Author :	BELLAUD Maxime 
+% Author :	BELLAUD Maxime
 % Date : 	1 october 2026
 
-% Octave program for generate low pass filter's coefficients 
+% Octave program for generate low pass filter's coefficients
 pkg load signal;
 % Frequency parameters
-F_clk = 125_000_000; % Hz 
+F_clk = 125_000_000; % Hz
 Fs = F_clk / 8; %Hz
 
 % Filter parameters

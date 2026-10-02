@@ -24,7 +24,6 @@ ARCHITECTURE behavioral OF simulation IS
 	SIGNAL s_i_clk_filter : STD_LOGIC := '0';
 	SIGNAL s_div          : INTEGER RANGE 0 TO 3 := 0;
 	SIGNAL s_i_N_reset    : STD_LOGIC := '1';
-	SIGNAL s_i_enable     : STD_LOGIC := '1';
 	SIGNAL s_phase        : UNSIGNED(PHASE_WIDTH-1 DOWNTO 0) := (OTHERS => '0');
 	SIGNAL s_lut          : STD_LOGIC_VECTOR(13 DOWNTO 0);
 	SIGNAL s_o_signal     : UNSIGNED(13 DOWNTO 0);
@@ -44,7 +43,6 @@ BEGIN
 		PORT MAP(
 			i_clk     => s_i_clk_filter,
 			i_N_reset => s_i_N_reset,
-			i_enable  => s_i_enable,
 			i_signal  => UNSIGNED(s_lut),
 			o_signal  => s_o_signal
 		);
@@ -81,24 +79,12 @@ BEGIN
 
 	p_scenario : PROCESS
 	BEGIN
-		-- Enable
-		s_i_N_reset <= '1';
-		s_i_enable  <= '1';
 		WAIT FOR 64 * PERIOD_FILTER;
-
-		-- Bypass
-		s_i_enable <= '0';
-		WAIT FOR 64 * PERIOD_FILTER;
-
-		-- Enable again
-		s_i_enable <= '1';
-		WAIT FOR 64 * PERIOD_FILTER;
-
 		-- Reset for one filter clock, then release
 		s_i_N_reset <= '0';
-		WAIT FOR PERIOD_FILTER;
+		WAIT FOR 16*PERIOD_FILTER;
 		s_i_N_reset <= '1';
-		WAIT FOR 64 * PERIOD_FILTER;
+		WAIT FOR 16 * PERIOD_FILTER;
 
 		STOP;
 	END PROCESS p_scenario;
