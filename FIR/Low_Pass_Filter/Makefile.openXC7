@@ -1,9 +1,9 @@
 # Before executing "make", please run this command:
 #source /home/jmfriedt/openxc7/export.sh
 
-PRJ = DDS_interleaved_redpitaya
-VHDL_LIBRARY_PATH = .. ../../../DDS
-VHDL_LIBRARY_NAMES = DDS_interleaved LUT_interleaved_signals phase_accumulator DAC_AD9767
+PRJ = Low_Pass_Filter_redpitaya
+VHDL_LIBRARY_PATH = .. ../../DDS
+VHDL_LIBRARY_NAMES = Low_Pass_Filter freq_divider DAC_AD9767
 V_LIST = $(OUTPUT_DIR)/$(PRJ).v
 CONSTR = ../../../ports.xdc
 OUTPUT_DIR = output
