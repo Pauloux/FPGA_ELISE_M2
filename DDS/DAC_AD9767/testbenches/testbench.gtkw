@@ -1,49 +1,52 @@
 [*]
 [*] GTKWave Analyzer v3.3.126 (w)1999-2026 BSI
-[*] Sun Sep 20 20:24:58 2026
+[*] Thu Oct  1 14:55:25 2026
 [*]
-[dumpfile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/DDS/DAC_AD9767/testbench.ghw"
-[dumpfile_mtime] "Sun Sep 20 20:23:15 2026"
+[dumpfile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/DDS/DAC_AD9767/output/testbench.ghw"
+[dumpfile_mtime] "Thu Oct  1 14:48:54 2026"
 [dumpfile_size] 1856
-[savefile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/DDS/DAC_AD9767/testbench.gtkw"
+[savefile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/DDS/DAC_AD9767/testbenches/testbench.gtkw"
 [timestart] 0
-[size] 1920 966
+[size] 1920 934
 [pos] -27 -24
-*-24.728655 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-24.728655 -1 80000000 120000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[markername] AReset begin
+[markername] BReset end
 [treeopen] top.
 [treeopen] top.simulation.
+[treeopen] top.simulation.c_dac_ad9767.
 [sst_width] 278
 [signals_width] 206
 [sst_expanded] 1
-[sst_vpaned_height] 284
+[sst_vpaned_height] 273
 @200
 -Inputs
 @28
-top.simulation.s_i_n_reset
-top.simulation.s_i_channel
-top.simulation.s_i_clk
-@22
+top.simulation.c_dac_ad9767.i_n_reset
+top.simulation.c_dac_ad9767.i_channel
+top.simulation.c_dac_ad9767.i_clk
+@24
 #{top.simulation.s_i_data[13:0]} top.simulation.s_i_data[13] top.simulation.s_i_data[12] top.simulation.s_i_data[11] top.simulation.s_i_data[10] top.simulation.s_i_data[9] top.simulation.s_i_data[8] top.simulation.s_i_data[7] top.simulation.s_i_data[6] top.simulation.s_i_data[5] top.simulation.s_i_data[4] top.simulation.s_i_data[3] top.simulation.s_i_data[2] top.simulation.s_i_data[1] top.simulation.s_i_data[0]
 @200
 -
 -Outputs
 -o_clk = o_wrt
 @28
-top.simulation.s_o_clk
-top.simulation.s_o_wrt
+top.simulation.c_dac_ad9767.o_clk
+top.simulation.c_dac_ad9767.o_wrt
 @200
 -o_data stable on o_clk
 -and o_wrt rising edge
-@22
-#{top.simulation.s_o_data[13:0]} top.simulation.s_o_data[13] top.simulation.s_o_data[12] top.simulation.s_o_data[11] top.simulation.s_o_data[10] top.simulation.s_o_data[9] top.simulation.s_o_data[8] top.simulation.s_o_data[7] top.simulation.s_o_data[6] top.simulation.s_o_data[5] top.simulation.s_o_data[4] top.simulation.s_o_data[3] top.simulation.s_o_data[2] top.simulation.s_o_data[1] top.simulation.s_o_data[0]
+@24
+#{top.simulation.c_dac_ad9767.o_data[13:0]} top.simulation.c_dac_ad9767.o_data[13] top.simulation.c_dac_ad9767.o_data[12] top.simulation.c_dac_ad9767.o_data[11] top.simulation.c_dac_ad9767.o_data[10] top.simulation.c_dac_ad9767.o_data[9] top.simulation.c_dac_ad9767.o_data[8] top.simulation.c_dac_ad9767.o_data[7] top.simulation.c_dac_ad9767.o_data[6] top.simulation.c_dac_ad9767.o_data[5] top.simulation.c_dac_ad9767.o_data[4] top.simulation.c_dac_ad9767.o_data[3] top.simulation.c_dac_ad9767.o_data[2] top.simulation.c_dac_ad9767.o_data[1] top.simulation.c_dac_ad9767.o_data[0]
 @200
 -
 -o_sel = i_channel
 @28
-top.simulation.s_o_sel
+top.simulation.c_dac_ad9767.o_sel
 @200
 -reset always 0
 @28
-top.simulation.s_o_reset
+top.simulation.c_dac_ad9767.o_reset
 [pattern_trace] 1
 [pattern_trace] 0
