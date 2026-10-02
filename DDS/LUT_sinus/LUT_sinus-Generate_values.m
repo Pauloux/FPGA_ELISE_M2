@@ -5,6 +5,8 @@ max_val = 2^amplitude_N - 1;	% 16383
 
 t = 0:nb_points-1;
 
+% Generate the table
+% we use +1 and /2 to center the sine wave between 0 and max_val.
 table = round( (sin(2*pi*t/nb_points) + 1) /2 * max_val );
 
 for k = 1:nb_points
