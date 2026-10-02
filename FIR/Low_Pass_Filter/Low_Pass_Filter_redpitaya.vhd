@@ -58,10 +58,22 @@ ARCHITECTURE arch OF Low_Pass_Filter_redpitaya IS
 	SIGNAL s_tmp_o	: UNSIGNED(13 DOWNTO 0);
 
 BEGIN
-
 	s_tmp_i	<= UNSIGNED(adc_dat_a_i);
 	s_filter_output	<= STD_LOGIC_VECTOR(s_tmp_o);
-	
+
+	-- Clock
+	c_clock_no_buffer	: IBUFDS
+		PORT MAP(
+			I	=> adc_clk_p_i,
+			IB	=> adc_clk_n_i,
+			O	=> s_clk_no_buffer
+		);
+	c_clock	: BUFG
+		PORT MAP(
+			I	=> s_clk_no_buffer,
+			O	=> s_clk
+		);
+
 	-- Frequency divider instantiation
 	c_freq_divider	: ENTITY work.freq_divider
 		GENERIC MAP(
