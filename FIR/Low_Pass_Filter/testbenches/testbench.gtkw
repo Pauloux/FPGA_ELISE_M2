@@ -1,0 +1,65 @@
+[*]
+[*] GTKWave Analyzer v3.3.116 (w)1999-2023 BSI
+[*] Fri Oct  2 09:16:44 2026
+[*]
+[dumpfile] "/home/mbld/Documents/UFR_ST/Master/semestre_3/FPGA/FPGA_ELISE_M2/FIR/Low_Pass_Filter/output/testbench.ghw"
+[dumpfile_mtime] "Fri Oct  2 09:05:10 2026"
+[dumpfile_size] 166555
+[savefile] "/home/mbld/Documents/UFR_ST/Master/semestre_3/FPGA/FPGA_ELISE_M2/FIR/Low_Pass_Filter/testbenches/testbench.gtkw"
+[timestart] 0
+[size] 1920 935
+[pos] -27 -24
+*-31.082846 3210000000 4096000000 8192000000 12288000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[markername] AEnable OFF
+[markername] BEnable ON
+[markername] CRESET Toggle
+[treeopen] top.
+[treeopen] top.simulation.
+[treeopen] top.simulation.c_filter.
+[sst_width] 278
+[signals_width] 170
+[sst_expanded] 1
+[sst_vpaned_height] 274
+@200
+-Input
+@28
+[color] 7
+top.simulation.c_filter.i_clk
+[color] 1
+top.simulation.c_filter.i_n_reset
+[color] 1
+top.simulation.c_filter.i_enable
+@8024
+[color] 4
+#{top.simulation.c_filter.i_signal[13:0]} top.simulation.c_filter.i_signal[13] top.simulation.c_filter.i_signal[12] top.simulation.c_filter.i_signal[11] top.simulation.c_filter.i_signal[10] top.simulation.c_filter.i_signal[9] top.simulation.c_filter.i_signal[8] top.simulation.c_filter.i_signal[7] top.simulation.c_filter.i_signal[6] top.simulation.c_filter.i_signal[5] top.simulation.c_filter.i_signal[4] top.simulation.c_filter.i_signal[3] top.simulation.c_filter.i_signal[2] top.simulation.c_filter.i_signal[1] top.simulation.c_filter.i_signal[0]
+@20000
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+@200
+-Output
+@10025
+[color] 5
+#{top.simulation.c_filter.o_signal[13:0]} top.simulation.c_filter.o_signal[13] top.simulation.c_filter.o_signal[12] top.simulation.c_filter.o_signal[11] top.simulation.c_filter.o_signal[10] top.simulation.c_filter.o_signal[9] top.simulation.c_filter.o_signal[8] top.simulation.c_filter.o_signal[7] top.simulation.c_filter.o_signal[6] top.simulation.c_filter.o_signal[5] top.simulation.c_filter.o_signal[4] top.simulation.c_filter.o_signal[3] top.simulation.c_filter.o_signal[2] top.simulation.c_filter.o_signal[1] top.simulation.c_filter.o_signal[0]
+@20000
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+[pattern_trace] 1
+[pattern_trace] 0
