@@ -1,1 +1,11 @@
 Notes:
+
+- Justify why the cutoff frequency is given at -6 dB
+- Justify why the cutoff frequency is not at 0.5 MHz
+- Justify why we do not loose data with 14 bits
+- Compare ADC_DAC.vhd without DAC_AD9767.vhd driver
+- Fix synchronisation problems in Low_Pass_Filter.vhd (add enable signal)
+- Change Low_Pass_Filter input and output data types from UNSIGNED to STD_LOGIC_VECTOR
+- Update README.txt to account for the new Makefiles
+- Put the .gtkwave files in the testbenches directory
+- Reorganize the folders to have all VHDL components in the same hierarchical level
