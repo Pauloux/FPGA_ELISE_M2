@@ -1,0 +1,67 @@
+[*]
+[*] GTKWave Analyzer v3.3.126 (w)1999-2026 BSI
+[*] Sun Oct  4 21:41:57 2026
+[*]
+[dumpfile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/Projects/low_pass_filter4/output/testbench.ghw"
+[dumpfile_mtime] "Sun Oct  4 21:41:35 2026"
+[dumpfile_size] 61317
+[savefile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/Projects/low_pass_filter4/testbenches/testbench.gtkw"
+[timestart] 0
+[size] 1920 966
+[pos] -27 -24
+*-29.633926 -1 4096000000 5120000000 12288000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[markername] ARESET ON
+[markername] BRESET OFF
+[treeopen] top.
+[treeopen] top.simulation.
+[treeopen] top.simulation.c_filter.
+[sst_width] 278
+[signals_width] 142
+[sst_expanded] 1
+[sst_vpaned_height] 285
+@200
+-Inputs
+@28
+[color] 5
+top.simulation.c_filter.i_clk
+[color] 5
+top.simulation.c_filter.i_n_reset
+@200
+-
+@22
+[color] 5
+#{top.simulation.c_filter.i_signal[13:0]} top.simulation.c_filter.i_signal[13] top.simulation.c_filter.i_signal[12] top.simulation.c_filter.i_signal[11] top.simulation.c_filter.i_signal[10] top.simulation.c_filter.i_signal[9] top.simulation.c_filter.i_signal[8] top.simulation.c_filter.i_signal[7] top.simulation.c_filter.i_signal[6] top.simulation.c_filter.i_signal[5] top.simulation.c_filter.i_signal[4] top.simulation.c_filter.i_signal[3] top.simulation.c_filter.i_signal[2] top.simulation.c_filter.i_signal[1] top.simulation.c_filter.i_signal[0]
+@8024
+[color] 5
+#{top.simulation.c_filter.i_signal[13:0]} top.simulation.c_filter.i_signal[13] top.simulation.c_filter.i_signal[12] top.simulation.c_filter.i_signal[11] top.simulation.c_filter.i_signal[10] top.simulation.c_filter.i_signal[9] top.simulation.c_filter.i_signal[8] top.simulation.c_filter.i_signal[7] top.simulation.c_filter.i_signal[6] top.simulation.c_filter.i_signal[5] top.simulation.c_filter.i_signal[4] top.simulation.c_filter.i_signal[3] top.simulation.c_filter.i_signal[2] top.simulation.c_filter.i_signal[1] top.simulation.c_filter.i_signal[0]
+@20000
+-
+-
+-
+-
+-
+-
+-
+-
+-
+@200
+-
+-Outputs
+@22
+[color] 2
+#{top.simulation.c_filter.o_signal[13:0]} top.simulation.c_filter.o_signal[13] top.simulation.c_filter.o_signal[12] top.simulation.c_filter.o_signal[11] top.simulation.c_filter.o_signal[10] top.simulation.c_filter.o_signal[9] top.simulation.c_filter.o_signal[8] top.simulation.c_filter.o_signal[7] top.simulation.c_filter.o_signal[6] top.simulation.c_filter.o_signal[5] top.simulation.c_filter.o_signal[4] top.simulation.c_filter.o_signal[3] top.simulation.c_filter.o_signal[2] top.simulation.c_filter.o_signal[1] top.simulation.c_filter.o_signal[0]
+@8024
+[color] 2
+#{top.simulation.c_filter.o_signal[13:0]} top.simulation.c_filter.o_signal[13] top.simulation.c_filter.o_signal[12] top.simulation.c_filter.o_signal[11] top.simulation.c_filter.o_signal[10] top.simulation.c_filter.o_signal[9] top.simulation.c_filter.o_signal[8] top.simulation.c_filter.o_signal[7] top.simulation.c_filter.o_signal[6] top.simulation.c_filter.o_signal[5] top.simulation.c_filter.o_signal[4] top.simulation.c_filter.o_signal[3] top.simulation.c_filter.o_signal[2] top.simulation.c_filter.o_signal[1] top.simulation.c_filter.o_signal[0]
+@20000
+-
+-
+-
+-
+-
+-
+-
+-
+-
+[pattern_trace] 1
+[pattern_trace] 0

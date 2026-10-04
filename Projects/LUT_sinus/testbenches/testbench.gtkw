@@ -1,0 +1,73 @@
+[*]
+[*] GTKWave Analyzer v3.3.126 (w)1999-2026 BSI
+[*] Sun Oct  4 21:34:40 2026
+[*]
+[dumpfile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/Projects/LUT_sinus/output/testbench.ghw"
+[dumpfile_mtime] "Sun Oct  4 21:33:34 2026"
+[dumpfile_size] 695959
+[savefile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/Projects/LUT_sinus/testbenches/testbench.gtkw"
+[timestart] 0
+[size] 1920 966
+[pos] -27 -24
+*-34.149158 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.simulation.
+[sst_width] 278
+[signals_width] 240
+[sst_expanded] 1
+[sst_vpaned_height] 284
+@28
+[color] 5
+top.simulation.s_i_clk_125mhz
+@200
+-
+-Phase_width = 10 bits
+@22
+[color] 5
+#{top.simulation.s_i_phase_10[9:0]} top.simulation.s_i_phase_10[9] top.simulation.s_i_phase_10[8] top.simulation.s_i_phase_10[7] top.simulation.s_i_phase_10[6] top.simulation.s_i_phase_10[5] top.simulation.s_i_phase_10[4] top.simulation.s_i_phase_10[3] top.simulation.s_i_phase_10[2] top.simulation.s_i_phase_10[1] top.simulation.s_i_phase_10[0]
+@8024
+[color] 5
+#{top.simulation.s_i_phase_10[9:0]} top.simulation.s_i_phase_10[9] top.simulation.s_i_phase_10[8] top.simulation.s_i_phase_10[7] top.simulation.s_i_phase_10[6] top.simulation.s_i_phase_10[5] top.simulation.s_i_phase_10[4] top.simulation.s_i_phase_10[3] top.simulation.s_i_phase_10[2] top.simulation.s_i_phase_10[1] top.simulation.s_i_phase_10[0]
+@20000
+-
+-
+@22
+[color] 2
+#{top.simulation.s_o_data_10[13:0]} top.simulation.s_o_data_10[13] top.simulation.s_o_data_10[12] top.simulation.s_o_data_10[11] top.simulation.s_o_data_10[10] top.simulation.s_o_data_10[9] top.simulation.s_o_data_10[8] top.simulation.s_o_data_10[7] top.simulation.s_o_data_10[6] top.simulation.s_o_data_10[5] top.simulation.s_o_data_10[4] top.simulation.s_o_data_10[3] top.simulation.s_o_data_10[2] top.simulation.s_o_data_10[1] top.simulation.s_o_data_10[0]
+@8022
+[color] 2
+#{top.simulation.s_o_data_10[13:0]} top.simulation.s_o_data_10[13] top.simulation.s_o_data_10[12] top.simulation.s_o_data_10[11] top.simulation.s_o_data_10[10] top.simulation.s_o_data_10[9] top.simulation.s_o_data_10[8] top.simulation.s_o_data_10[7] top.simulation.s_o_data_10[6] top.simulation.s_o_data_10[5] top.simulation.s_o_data_10[4] top.simulation.s_o_data_10[3] top.simulation.s_o_data_10[2] top.simulation.s_o_data_10[1] top.simulation.s_o_data_10[0]
+@20000
+-
+-
+-
+-
+-
+-
+@200
+-
+-Phase_width = 14 bits
+@22
+[color] 5
+#{top.simulation.s_i_phase_14[13:0]} top.simulation.s_i_phase_14[13] top.simulation.s_i_phase_14[12] top.simulation.s_i_phase_14[11] top.simulation.s_i_phase_14[10] top.simulation.s_i_phase_14[9] top.simulation.s_i_phase_14[8] top.simulation.s_i_phase_14[7] top.simulation.s_i_phase_14[6] top.simulation.s_i_phase_14[5] top.simulation.s_i_phase_14[4] top.simulation.s_i_phase_14[3] top.simulation.s_i_phase_14[2] top.simulation.s_i_phase_14[1] top.simulation.s_i_phase_14[0]
+@8024
+[color] 5
+#{top.simulation.s_i_phase_14[13:0]} top.simulation.s_i_phase_14[13] top.simulation.s_i_phase_14[12] top.simulation.s_i_phase_14[11] top.simulation.s_i_phase_14[10] top.simulation.s_i_phase_14[9] top.simulation.s_i_phase_14[8] top.simulation.s_i_phase_14[7] top.simulation.s_i_phase_14[6] top.simulation.s_i_phase_14[5] top.simulation.s_i_phase_14[4] top.simulation.s_i_phase_14[3] top.simulation.s_i_phase_14[2] top.simulation.s_i_phase_14[1] top.simulation.s_i_phase_14[0]
+@20000
+-
+-
+@22
+[color] 2
+#{top.simulation.s_o_data_14[13:0]} top.simulation.s_o_data_14[13] top.simulation.s_o_data_14[12] top.simulation.s_o_data_14[11] top.simulation.s_o_data_14[10] top.simulation.s_o_data_14[9] top.simulation.s_o_data_14[8] top.simulation.s_o_data_14[7] top.simulation.s_o_data_14[6] top.simulation.s_o_data_14[5] top.simulation.s_o_data_14[4] top.simulation.s_o_data_14[3] top.simulation.s_o_data_14[2] top.simulation.s_o_data_14[1] top.simulation.s_o_data_14[0]
+@8022
+[color] 2
+#{top.simulation.s_o_data_14[13:0]} top.simulation.s_o_data_14[13] top.simulation.s_o_data_14[12] top.simulation.s_o_data_14[11] top.simulation.s_o_data_14[10] top.simulation.s_o_data_14[9] top.simulation.s_o_data_14[8] top.simulation.s_o_data_14[7] top.simulation.s_o_data_14[6] top.simulation.s_o_data_14[5] top.simulation.s_o_data_14[4] top.simulation.s_o_data_14[3] top.simulation.s_o_data_14[2] top.simulation.s_o_data_14[1] top.simulation.s_o_data_14[0]
+@20000
+-
+-
+-
+-
+-
+-
+[pattern_trace] 1
+[pattern_trace] 0

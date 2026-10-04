@@ -1,0 +1,73 @@
+[*]
+[*] GTKWave Analyzer v3.3.126 (w)1999-2026 BSI
+[*] Sun Oct  4 21:40:27 2026
+[*]
+[dumpfile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/Projects/DDS/output/testbench.ghw"
+[dumpfile_mtime] "Sun Oct  4 21:15:28 2026"
+[dumpfile_size] 154195
+[savefile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/Projects/DDS/testbenches/testbench.gtkw"
+[timestart] 0
+[size] 1920 966
+[pos] -27 -24
+*-32.048820 -1 16472000000 24744000000 26464000000 28184000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[markername] AReset_1
+[markername] BReset_2
+[markername] CReset_3
+[markername] DReset_4
+[treeopen] top.
+[treeopen] top.simulation.
+[sst_width] 278
+[signals_width] 270
+[sst_expanded] 1
+[sst_vpaned_height] 287
+@200
+-Inputs
+@28
+[color] 5
+top.simulation.s_i_clk
+[color] 5
+top.simulation.s_i_n_reset
+@24
+[color] 5
+#{top.simulation.s_i_phase_shift[9:0]} top.simulation.s_i_phase_shift[9] top.simulation.s_i_phase_shift[8] top.simulation.s_i_phase_shift[7] top.simulation.s_i_phase_shift[6] top.simulation.s_i_phase_shift[5] top.simulation.s_i_phase_shift[4] top.simulation.s_i_phase_shift[3] top.simulation.s_i_phase_shift[2] top.simulation.s_i_phase_shift[1] top.simulation.s_i_phase_shift[0]
+[color] 5
+#{top.simulation.s_i_increment[9:0]} top.simulation.s_i_increment[9] top.simulation.s_i_increment[8] top.simulation.s_i_increment[7] top.simulation.s_i_increment[6] top.simulation.s_i_increment[5] top.simulation.s_i_increment[4] top.simulation.s_i_increment[3] top.simulation.s_i_increment[2] top.simulation.s_i_increment[1] top.simulation.s_i_increment[0]
+@200
+-
+-Outputs
+@22
+[color] 2
+#{top.simulation.s_o_data[13:0]} top.simulation.s_o_data[13] top.simulation.s_o_data[12] top.simulation.s_o_data[11] top.simulation.s_o_data[10] top.simulation.s_o_data[9] top.simulation.s_o_data[8] top.simulation.s_o_data[7] top.simulation.s_o_data[6] top.simulation.s_o_data[5] top.simulation.s_o_data[4] top.simulation.s_o_data[3] top.simulation.s_o_data[2] top.simulation.s_o_data[1] top.simulation.s_o_data[0]
+@8022
+[color] 2
+#{top.simulation.s_o_data[13:0]} top.simulation.s_o_data[13] top.simulation.s_o_data[12] top.simulation.s_o_data[11] top.simulation.s_o_data[10] top.simulation.s_o_data[9] top.simulation.s_o_data[8] top.simulation.s_o_data[7] top.simulation.s_o_data[6] top.simulation.s_o_data[5] top.simulation.s_o_data[4] top.simulation.s_o_data[3] top.simulation.s_o_data[2] top.simulation.s_o_data[1] top.simulation.s_o_data[0]
+@20000
+-
+-
+-
+-
+-
+-
+-
+-
+-
+@200
+-
+-Internal signals
+@24
+[color] 7
+#{top.simulation.c_dds.s_phase_with_offset[9:0]} top.simulation.c_dds.s_phase_with_offset[9] top.simulation.c_dds.s_phase_with_offset[8] top.simulation.c_dds.s_phase_with_offset[7] top.simulation.c_dds.s_phase_with_offset[6] top.simulation.c_dds.s_phase_with_offset[5] top.simulation.c_dds.s_phase_with_offset[4] top.simulation.c_dds.s_phase_with_offset[3] top.simulation.c_dds.s_phase_with_offset[2] top.simulation.c_dds.s_phase_with_offset[1] top.simulation.c_dds.s_phase_with_offset[0]
+@8022
+[color] 7
+#{top.simulation.c_dds.s_phase_with_offset[9:0]} top.simulation.c_dds.s_phase_with_offset[9] top.simulation.c_dds.s_phase_with_offset[8] top.simulation.c_dds.s_phase_with_offset[7] top.simulation.c_dds.s_phase_with_offset[6] top.simulation.c_dds.s_phase_with_offset[5] top.simulation.c_dds.s_phase_with_offset[4] top.simulation.c_dds.s_phase_with_offset[3] top.simulation.c_dds.s_phase_with_offset[2] top.simulation.c_dds.s_phase_with_offset[1] top.simulation.c_dds.s_phase_with_offset[0]
+@20000
+-
+-
+-
+-
+-
+-
+-
+-
+[pattern_trace] 1
+[pattern_trace] 0
