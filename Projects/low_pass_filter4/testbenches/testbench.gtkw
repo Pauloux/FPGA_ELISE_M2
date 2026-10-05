@@ -1,39 +1,39 @@
 [*]
-[*] GTKWave Analyzer v3.3.126 (w)1999-2026 BSI
-[*] Sun Oct  4 21:41:57 2026
+[*] GTKWave Analyzer v3.3.116 (w)1999-2023 BSI
+[*] Mon Oct  5 08:47:51 2026
 [*]
-[dumpfile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/Projects/low_pass_filter4/output/testbench.ghw"
-[dumpfile_mtime] "Sun Oct  4 21:41:35 2026"
-[dumpfile_size] 61317
-[savefile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/Projects/low_pass_filter4/testbenches/testbench.gtkw"
+[dumpfile] "/home/mbld/Documents/UFR_ST/Master/semestre_3/FPGA/FPGA_ELISE_M2/Projects/low_pass_filter4/output/testbench.ghw"
+[dumpfile_mtime] "Mon Oct  5 08:45:39 2026"
+[dumpfile_size] 230477
+[savefile] "/home/mbld/Documents/UFR_ST/Master/semestre_3/FPGA/FPGA_ELISE_M2/Projects/low_pass_filter4/testbenches/testbench.gtkw"
 [timestart] 0
-[size] 1920 966
+[size] 1920 935
 [pos] -27 -24
-*-29.633926 -1 4096000000 5120000000 12288000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-31.275394 -1 4096000000 5120000000 13312000000 14336000000 9216000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [markername] ARESET ON
 [markername] BRESET OFF
+[markername] CRESET ON
+[markername] DRESET OFF
+[markername] ESine 6.1MHz
 [treeopen] top.
 [treeopen] top.simulation.
-[treeopen] top.simulation.c_filter.
 [sst_width] 278
-[signals_width] 142
+[signals_width] 198
 [sst_expanded] 1
-[sst_vpaned_height] 285
+[sst_vpaned_height] 274
 @200
 -Inputs
 @28
+[color] 6
+top.simulation.s_clk
 [color] 5
-top.simulation.c_filter.i_clk
-[color] 5
-top.simulation.c_filter.i_n_reset
-@200
--
-@22
-[color] 5
-#{top.simulation.c_filter.i_signal[13:0]} top.simulation.c_filter.i_signal[13] top.simulation.c_filter.i_signal[12] top.simulation.c_filter.i_signal[11] top.simulation.c_filter.i_signal[10] top.simulation.c_filter.i_signal[9] top.simulation.c_filter.i_signal[8] top.simulation.c_filter.i_signal[7] top.simulation.c_filter.i_signal[6] top.simulation.c_filter.i_signal[5] top.simulation.c_filter.i_signal[4] top.simulation.c_filter.i_signal[3] top.simulation.c_filter.i_signal[2] top.simulation.c_filter.i_signal[1] top.simulation.c_filter.i_signal[0]
-@8024
-[color] 5
-#{top.simulation.c_filter.i_signal[13:0]} top.simulation.c_filter.i_signal[13] top.simulation.c_filter.i_signal[12] top.simulation.c_filter.i_signal[11] top.simulation.c_filter.i_signal[10] top.simulation.c_filter.i_signal[9] top.simulation.c_filter.i_signal[8] top.simulation.c_filter.i_signal[7] top.simulation.c_filter.i_signal[6] top.simulation.c_filter.i_signal[5] top.simulation.c_filter.i_signal[4] top.simulation.c_filter.i_signal[3] top.simulation.c_filter.i_signal[2] top.simulation.c_filter.i_signal[1] top.simulation.c_filter.i_signal[0]
+top.simulation.s_enable
+@29
+[color] 1
+top.simulation.s_n_reset
+@8022
+[color] 2
+#{top.simulation.s_filter_input[13:0]} top.simulation.s_filter_input[13] top.simulation.s_filter_input[12] top.simulation.s_filter_input[11] top.simulation.s_filter_input[10] top.simulation.s_filter_input[9] top.simulation.s_filter_input[8] top.simulation.s_filter_input[7] top.simulation.s_filter_input[6] top.simulation.s_filter_input[5] top.simulation.s_filter_input[4] top.simulation.s_filter_input[3] top.simulation.s_filter_input[2] top.simulation.s_filter_input[1] top.simulation.s_filter_input[0]
 @20000
 -
 -
@@ -47,12 +47,9 @@ top.simulation.c_filter.i_n_reset
 @200
 -
 -Outputs
-@22
-[color] 2
-#{top.simulation.c_filter.o_signal[13:0]} top.simulation.c_filter.o_signal[13] top.simulation.c_filter.o_signal[12] top.simulation.c_filter.o_signal[11] top.simulation.c_filter.o_signal[10] top.simulation.c_filter.o_signal[9] top.simulation.c_filter.o_signal[8] top.simulation.c_filter.o_signal[7] top.simulation.c_filter.o_signal[6] top.simulation.c_filter.o_signal[5] top.simulation.c_filter.o_signal[4] top.simulation.c_filter.o_signal[3] top.simulation.c_filter.o_signal[2] top.simulation.c_filter.o_signal[1] top.simulation.c_filter.o_signal[0]
-@8024
-[color] 2
-#{top.simulation.c_filter.o_signal[13:0]} top.simulation.c_filter.o_signal[13] top.simulation.c_filter.o_signal[12] top.simulation.c_filter.o_signal[11] top.simulation.c_filter.o_signal[10] top.simulation.c_filter.o_signal[9] top.simulation.c_filter.o_signal[8] top.simulation.c_filter.o_signal[7] top.simulation.c_filter.o_signal[6] top.simulation.c_filter.o_signal[5] top.simulation.c_filter.o_signal[4] top.simulation.c_filter.o_signal[3] top.simulation.c_filter.o_signal[2] top.simulation.c_filter.o_signal[1] top.simulation.c_filter.o_signal[0]
+@8022
+[color] 7
+#{top.simulation.s_filter_output[13:0]} top.simulation.s_filter_output[13] top.simulation.s_filter_output[12] top.simulation.s_filter_output[11] top.simulation.s_filter_output[10] top.simulation.s_filter_output[9] top.simulation.s_filter_output[8] top.simulation.s_filter_output[7] top.simulation.s_filter_output[6] top.simulation.s_filter_output[5] top.simulation.s_filter_output[4] top.simulation.s_filter_output[3] top.simulation.s_filter_output[2] top.simulation.s_filter_output[1] top.simulation.s_filter_output[0]
 @20000
 -
 -
