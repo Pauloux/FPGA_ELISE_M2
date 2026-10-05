@@ -31,7 +31,7 @@ ARCHITECTURE arch OF low_pass_filter4_redpitaya IS
 	
 	-- Constants
 	CONSTANT CLK_FREQUENCY	: INTEGER	:= 125_000_000;
-	CONSTANT SAMPLING_FREQUENCY	: INTEGER	:= 15_625_000;
+	CONSTANT SAMPLING_FREQUENCY	: INTEGER	:= CLK_FREQUENCY / 8;
 
 	-- Clock
 	SIGNAL s_clk_no_buffer	: STD_LOGIC;
@@ -51,15 +51,10 @@ ARCHITECTURE arch OF low_pass_filter4_redpitaya IS
 	END COMPONENT;
 
 	-- Signals
-	SIGNAL s_sampling_clock	: STD_LOGIC;
+	SIGNAL s_enable	: STD_LOGIC := '0';
 	SIGNAL s_filter_output	: STD_LOGIC_VECTOR(13 DOWNTO 0)	:= (OTHERS => '0');
 
-	SIGNAL s_tmp_i	: UNSIGNED(13 DOWNTO 0);
-	SIGNAL s_tmp_o	: UNSIGNED(13 DOWNTO 0);
-
 BEGIN
-	s_tmp_i	<= UNSIGNED(adc_dat_a_i);
-	s_filter_output	<= STD_LOGIC_VECTOR(s_tmp_o);
 
 	-- Clock
 	c_clock_no_buffer	: IBUFDS
@@ -82,16 +77,17 @@ BEGIN
 		)
 		PORT MAP(
 			i_clk	=> s_clk,
-			o_overflow	=> s_sampling_clock
+			o_overflow	=> s_enable
 		);
 	
 	-- Low pass filter instantiation
 	c_low_pass_filter4	: ENTITY work.low_pass_filter4
 		PORT MAP(
-			i_clk	=> s_sampling_clock,
+			i_clk	=> s_clk,
 			i_N_reset	=> Button,
-			i_signal	=> s_tmp_i,
-			o_signal	=> s_tmp_o
+			i_enable	=> s_enable,
+			i_signal	=> adc_dat_a_i,
+			o_signal	=> s_filter_output
 		);
 
 	-- DAC AD9767 instantiation
