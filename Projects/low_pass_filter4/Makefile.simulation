@@ -1,7 +1,7 @@
 ### General parameters
 SOURCE_NAME = low_pass_filter4
 LIBRARY_PATH = ..
-EXTERNAL_SOURCES_NAME = LUT_sinus
+EXTERNAL_SOURCES_NAME = LUT_sinus freq_divider
 TESTBENCH_DIR ?= testbenches
 TESTBENCH_FILE ?= $(TESTBENCH_DIR)/testbench.vhd
 RC_FILE ?= $(TESTBENCH_DIR)/.gtkwaverc

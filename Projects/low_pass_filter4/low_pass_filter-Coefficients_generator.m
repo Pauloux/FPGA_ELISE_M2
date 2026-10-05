@@ -25,9 +25,9 @@ SCALE = 8 - ceil(log2(max(filter_coeff)));
 % Print and compute coefficients in VHDL format
 printf("\tGENERIC(\n")
 printf("\t\tSCALE : INTEGER := %d", SCALE)
-for k = 0:order
+for k = 0:order-2
 	filter_coeff_Fix = round(filter_coeff * 2^(SCALE));
-    printf(";\n\t\tN_%d : UNSIGNED(7 DOWNTO 0) := \"%s\"", k, dec2bin(filter_coeff_Fix(k+1), 8))
+    printf(";\n\t\tB_%d : UNSIGNED(7 DOWNTO 0) := \"%s\"", k, dec2bin(filter_coeff_Fix(k+1), 8))
 end
 printf("\n\t);\n")
 
