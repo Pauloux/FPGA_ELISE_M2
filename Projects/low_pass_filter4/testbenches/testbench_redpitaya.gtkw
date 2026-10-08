@@ -1,0 +1,87 @@
+[*]
+[*] GTKWave Analyzer v3.3.126 (w)1999-2026 BSI
+[*] Thu Oct  8 14:01:07 2026
+[*]
+[dumpfile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/Projects/low_pass_filter4/output/testbench_redpitaya.ghw"
+[dumpfile_mtime] "Thu Oct  8 13:49:52 2026"
+[dumpfile_size] 262606
+[savefile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/Projects/low_pass_filter4/testbenches/testbench_redpitaya.gtkw"
+[timestart] 0
+[size] 1920 934
+[pos] -27 -24
+*-31.275394 14336000000 4096000000 5120000000 9216000000 13312000000 14336000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[markername] ARESET ON
+[markername] BRESET OFF
+[markername] CSine 6.1 MHz
+[markername] DRESET ON
+[markername] ERESET OFF
+[treeopen] top.
+[treeopen] top.simulation.
+[treeopen] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.
+[treeopen] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.c_low_pass_filter4.
+[sst_width] 278
+[signals_width] 198
+[sst_expanded] 1
+[sst_vpaned_height] 535
+@200
+-Inputs
+@28
+[color] 5
+top.simulation.c_freq_divider.i_clk
+[color] 5
+top.simulation.c_low_pass_filter4_redpitaya_simulation_model.s_enable
+@29
+[color] 5
+top.simulation.c_low_pass_filter4_redpitaya_simulation_model.c_dac_ad9767.i_n_reset
+@22
+[color] 5
+#{top.simulation.s_filter_input[13:0]} top.simulation.s_filter_input[13] top.simulation.s_filter_input[12] top.simulation.s_filter_input[11] top.simulation.s_filter_input[10] top.simulation.s_filter_input[9] top.simulation.s_filter_input[8] top.simulation.s_filter_input[7] top.simulation.s_filter_input[6] top.simulation.s_filter_input[5] top.simulation.s_filter_input[4] top.simulation.s_filter_input[3] top.simulation.s_filter_input[2] top.simulation.s_filter_input[1] top.simulation.s_filter_input[0]
+@8022
+[color] 5
+#{top.simulation.s_filter_input[13:0]} top.simulation.s_filter_input[13] top.simulation.s_filter_input[12] top.simulation.s_filter_input[11] top.simulation.s_filter_input[10] top.simulation.s_filter_input[9] top.simulation.s_filter_input[8] top.simulation.s_filter_input[7] top.simulation.s_filter_input[6] top.simulation.s_filter_input[5] top.simulation.s_filter_input[4] top.simulation.s_filter_input[3] top.simulation.s_filter_input[2] top.simulation.s_filter_input[1] top.simulation.s_filter_input[0]
+@20000
+-
+-
+-
+@200
+-
+-Outputs
+@22
+[color] 2
+#{top.simulation.c_low_pass_filter4_redpitaya_simulation_model.dac_dat_o[13:0]} top.simulation.c_low_pass_filter4_redpitaya_simulation_model.dac_dat_o[13] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.dac_dat_o[12] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.dac_dat_o[11] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.dac_dat_o[10] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.dac_dat_o[9] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.dac_dat_o[8] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.dac_dat_o[7] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.dac_dat_o[6] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.dac_dat_o[5] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.dac_dat_o[4] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.dac_dat_o[3] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.dac_dat_o[2] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.dac_dat_o[1] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.dac_dat_o[0]
+@8022
+[color] 2
+#{top.simulation.c_low_pass_filter4_redpitaya_simulation_model.dac_dat_o[13:0]} top.simulation.c_low_pass_filter4_redpitaya_simulation_model.dac_dat_o[13] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.dac_dat_o[12] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.dac_dat_o[11] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.dac_dat_o[10] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.dac_dat_o[9] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.dac_dat_o[8] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.dac_dat_o[7] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.dac_dat_o[6] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.dac_dat_o[5] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.dac_dat_o[4] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.dac_dat_o[3] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.dac_dat_o[2] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.dac_dat_o[1] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.dac_dat_o[0]
+@20000
+-
+-
+-
+-
+@28
+[color] 2
+top.simulation.c_low_pass_filter4_redpitaya_simulation_model.dac_clk_o
+[color] 2
+top.simulation.c_low_pass_filter4_redpitaya_simulation_model.dac_wrt_o
+[color] 2
+top.simulation.c_low_pass_filter4_redpitaya_simulation_model.dac_sel_o
+@200
+-
+@28
+[color] 2
+top.simulation.c_low_pass_filter4_redpitaya_simulation_model.dac_rst_o
+@200
+-
+-Internal signals
+@22
+[color] 7
+#{top.simulation.c_low_pass_filter4_redpitaya_simulation_model.s_filter_output[13:0]} top.simulation.c_low_pass_filter4_redpitaya_simulation_model.s_filter_output[13] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.s_filter_output[12] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.s_filter_output[11] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.s_filter_output[10] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.s_filter_output[9] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.s_filter_output[8] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.s_filter_output[7] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.s_filter_output[6] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.s_filter_output[5] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.s_filter_output[4] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.s_filter_output[3] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.s_filter_output[2] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.s_filter_output[1] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.s_filter_output[0]
+@8022
+[color] 7
+#{top.simulation.c_low_pass_filter4_redpitaya_simulation_model.s_filter_output[13:0]} top.simulation.c_low_pass_filter4_redpitaya_simulation_model.s_filter_output[13] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.s_filter_output[12] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.s_filter_output[11] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.s_filter_output[10] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.s_filter_output[9] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.s_filter_output[8] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.s_filter_output[7] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.s_filter_output[6] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.s_filter_output[5] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.s_filter_output[4] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.s_filter_output[3] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.s_filter_output[2] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.s_filter_output[1] top.simulation.c_low_pass_filter4_redpitaya_simulation_model.s_filter_output[0]
+@20000
+-
+-
+-
+-
+[pattern_trace] 1
+[pattern_trace] 0
