@@ -1,0 +1,43 @@
+[*]
+[*] GTKWave Analyzer v3.3.126 (w)1999-2026 BSI
+[*] Thu Oct  8 08:38:45 2026
+[*]
+[dumpfile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/Projects/freq_divider/output/testbench.ghw"
+[dumpfile_mtime] "Thu Oct  8 08:36:47 2026"
+[dumpfile_size] 801
+[savefile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/Projects/freq_divider/testbenches/testbench.gtkw"
+[timestart] 0
+[size] 1920 966
+[pos] -27 -24
+*-24.433130 156000000 36000000 76000000 116000000 156000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[markername] APeriod 1
+[markername] BPeriod 2
+[markername] CPeriod 3
+[markername] DPeriod 4
+[treeopen] top.
+[treeopen] top.simulation.
+[sst_width] 278
+[signals_width] 168
+[sst_expanded] 1
+[sst_vpaned_height] 284
+@200
+-Inputs
+-125 MHz
+@28
+[color] 5
+top.simulation.c_freq_divider.i_clk
+@200
+-
+-Internal signals
+@420
+[color] 7
+top.simulation.c_freq_divider.s_count
+@200
+-
+-Outputs
+-25 MHz
+@28
+[color] 2
+top.simulation.c_freq_divider.o_overflow
+[pattern_trace] 1
+[pattern_trace] 0
