@@ -4,4 +4,3 @@ Notes:
 - Justify why the cutoff frequency is not at 0.5 MHz
 - Justify why we do not loose data with 14 bits
 - Compare ADC_DAC.vhd without DAC_AD9767.vhd driver
-- Update README.txt to account for the new Makefiles
