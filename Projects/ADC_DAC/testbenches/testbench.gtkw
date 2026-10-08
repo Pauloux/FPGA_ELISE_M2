@@ -1,0 +1,62 @@
+[*]
+[*] GTKWave Analyzer v3.3.126 (w)1999-2026 BSI
+[*] Thu Oct  8 12:48:25 2026
+[*]
+[dumpfile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/Projects/ADC_DAC/output/testbench.ghw"
+[dumpfile_mtime] "Thu Oct  8 12:44:48 2026"
+[dumpfile_size] 2171
+[savefile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/Projects/ADC_DAC/testbenches/testbench.gtkw"
+[timestart] 0
+[size] 1920 934
+[pos] -27 -24
+*-24.751675 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.simulation.
+[sst_width] 278
+[signals_width] 200
+[sst_expanded] 1
+[sst_vpaned_height] 273
+@200
+-Inputs
+@28
+[color] 5
+top.simulation.c_adc_dac_simulation_model.adc_clk_i
+@22
+[color] 5
+#{top.simulation.c_adc_dac_simulation_model.adc_dat_a_i[13:0]} top.simulation.c_adc_dac_simulation_model.adc_dat_a_i[13] top.simulation.c_adc_dac_simulation_model.adc_dat_a_i[12] top.simulation.c_adc_dac_simulation_model.adc_dat_a_i[11] top.simulation.c_adc_dac_simulation_model.adc_dat_a_i[10] top.simulation.c_adc_dac_simulation_model.adc_dat_a_i[9] top.simulation.c_adc_dac_simulation_model.adc_dat_a_i[8] top.simulation.c_adc_dac_simulation_model.adc_dat_a_i[7] top.simulation.c_adc_dac_simulation_model.adc_dat_a_i[6] top.simulation.c_adc_dac_simulation_model.adc_dat_a_i[5] top.simulation.c_adc_dac_simulation_model.adc_dat_a_i[4] top.simulation.c_adc_dac_simulation_model.adc_dat_a_i[3] top.simulation.c_adc_dac_simulation_model.adc_dat_a_i[2] top.simulation.c_adc_dac_simulation_model.adc_dat_a_i[1] top.simulation.c_adc_dac_simulation_model.adc_dat_a_i[0]
+[color] 5
+#{top.simulation.c_adc_dac_simulation_model.adc_dat_b_i[13:0]} top.simulation.c_adc_dac_simulation_model.adc_dat_b_i[13] top.simulation.c_adc_dac_simulation_model.adc_dat_b_i[12] top.simulation.c_adc_dac_simulation_model.adc_dat_b_i[11] top.simulation.c_adc_dac_simulation_model.adc_dat_b_i[10] top.simulation.c_adc_dac_simulation_model.adc_dat_b_i[9] top.simulation.c_adc_dac_simulation_model.adc_dat_b_i[8] top.simulation.c_adc_dac_simulation_model.adc_dat_b_i[7] top.simulation.c_adc_dac_simulation_model.adc_dat_b_i[6] top.simulation.c_adc_dac_simulation_model.adc_dat_b_i[5] top.simulation.c_adc_dac_simulation_model.adc_dat_b_i[4] top.simulation.c_adc_dac_simulation_model.adc_dat_b_i[3] top.simulation.c_adc_dac_simulation_model.adc_dat_b_i[2] top.simulation.c_adc_dac_simulation_model.adc_dat_b_i[1] top.simulation.c_adc_dac_simulation_model.adc_dat_b_i[0]
+@200
+-
+-Outputs
+@28
+[color] 2
+top.simulation.c_adc_dac_simulation_model.dac_clk_o
+[color] 2
+top.simulation.c_adc_dac_simulation_model.dac_wrt_o
+[color] 2
+top.simulation.c_adc_dac_simulation_model.dac_sel_o
+@22
+[color] 2
+#{top.simulation.c_adc_dac_simulation_model.dac_dat_o[13:0]} top.simulation.c_adc_dac_simulation_model.dac_dat_o[13] top.simulation.c_adc_dac_simulation_model.dac_dat_o[12] top.simulation.c_adc_dac_simulation_model.dac_dat_o[11] top.simulation.c_adc_dac_simulation_model.dac_dat_o[10] top.simulation.c_adc_dac_simulation_model.dac_dat_o[9] top.simulation.c_adc_dac_simulation_model.dac_dat_o[8] top.simulation.c_adc_dac_simulation_model.dac_dat_o[7] top.simulation.c_adc_dac_simulation_model.dac_dat_o[6] top.simulation.c_adc_dac_simulation_model.dac_dat_o[5] top.simulation.c_adc_dac_simulation_model.dac_dat_o[4] top.simulation.c_adc_dac_simulation_model.dac_dat_o[3] top.simulation.c_adc_dac_simulation_model.dac_dat_o[2] top.simulation.c_adc_dac_simulation_model.dac_dat_o[1] top.simulation.c_adc_dac_simulation_model.dac_dat_o[0]
+@200
+-
+@28
+[color] 2
+top.simulation.c_adc_dac_simulation_model.dac_rst_o
+@200
+-
+-Internal signals
+@420
+[color] 7
+top.simulation.c_adc_dac_simulation_model.div
+@28
+[color] 7
+top.simulation.c_adc_dac_simulation_model.aclk
+@22
+[color] 7
+#{top.simulation.c_adc_dac_simulation_model.dat_a_reg[13:0]} top.simulation.c_adc_dac_simulation_model.dat_a_reg[13] top.simulation.c_adc_dac_simulation_model.dat_a_reg[12] top.simulation.c_adc_dac_simulation_model.dat_a_reg[11] top.simulation.c_adc_dac_simulation_model.dat_a_reg[10] top.simulation.c_adc_dac_simulation_model.dat_a_reg[9] top.simulation.c_adc_dac_simulation_model.dat_a_reg[8] top.simulation.c_adc_dac_simulation_model.dat_a_reg[7] top.simulation.c_adc_dac_simulation_model.dat_a_reg[6] top.simulation.c_adc_dac_simulation_model.dat_a_reg[5] top.simulation.c_adc_dac_simulation_model.dat_a_reg[4] top.simulation.c_adc_dac_simulation_model.dat_a_reg[3] top.simulation.c_adc_dac_simulation_model.dat_a_reg[2] top.simulation.c_adc_dac_simulation_model.dat_a_reg[1] top.simulation.c_adc_dac_simulation_model.dat_a_reg[0]
+[color] 7
+#{top.simulation.c_adc_dac_simulation_model.dat_b_reg[13:0]} top.simulation.c_adc_dac_simulation_model.dat_b_reg[13] top.simulation.c_adc_dac_simulation_model.dat_b_reg[12] top.simulation.c_adc_dac_simulation_model.dat_b_reg[11] top.simulation.c_adc_dac_simulation_model.dat_b_reg[10] top.simulation.c_adc_dac_simulation_model.dat_b_reg[9] top.simulation.c_adc_dac_simulation_model.dat_b_reg[8] top.simulation.c_adc_dac_simulation_model.dat_b_reg[7] top.simulation.c_adc_dac_simulation_model.dat_b_reg[6] top.simulation.c_adc_dac_simulation_model.dat_b_reg[5] top.simulation.c_adc_dac_simulation_model.dat_b_reg[4] top.simulation.c_adc_dac_simulation_model.dat_b_reg[3] top.simulation.c_adc_dac_simulation_model.dat_b_reg[2] top.simulation.c_adc_dac_simulation_model.dat_b_reg[1] top.simulation.c_adc_dac_simulation_model.dat_b_reg[0]
+[pattern_trace] 1
+[pattern_trace] 0
