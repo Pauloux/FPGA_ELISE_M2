@@ -5,9 +5,9 @@
 -- Testbench for low_pass_filter4.vhd.
 -- The filter runs on the 125 MHz clock. freq_divider pulses i_enable for one
 -- clock every 8 cycles, so the filter samples at 125/8 MHz (15.625 MHz).
--- Two LUT generate the tones in parallel: 244 kHz, below the 0.5 MHz cutoff,
--- and 6.1 MHz, above it. The filter input selects the 244 kHz sine first,
--- then the 6.1 MHz sine.
+-- Three LUT generate the tones in parallel: 244 kHz, below the requested
+-- cutoff, 3.30 MHz, next to the realized -6 dB point, and 6.1 MHz, above it.
+-- The filter input plays them in that order.
 
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
@@ -25,15 +25,18 @@ ARCHITECTURE behavioral OF simulation IS
 
 	CONSTANT PHASE_WIDTH : INTEGER := 10;
 	CONSTANT INCREMENT_244KHZ : INTEGER := 2;	-- 244 kHz at 125 MHz
+	CONSTANT INCREMENT_3MHZ : INTEGER := 27;	-- 3.30 MHz at 125 MHz, nearest step to 3.31 MHz
 	CONSTANT INCREMENT_6MHZ : INTEGER := 50;	-- 6.1 MHz at 125 MHz
 
 	SIGNAL s_clk : STD_LOGIC := '0';
 	SIGNAL s_n_reset : STD_LOGIC := '1';
 	SIGNAL s_enable : STD_LOGIC := '0';
-	SIGNAL s_select_6MHz : STD_LOGIC := '0';
+	SIGNAL s_select_tone : UNSIGNED(1 DOWNTO 0) := "00";
 
 	SIGNAL s_phase_244kHz : UNSIGNED(PHASE_WIDTH-1 DOWNTO 0) := (OTHERS => '0');
 	SIGNAL s_sine_244kHz : STD_LOGIC_VECTOR(13 DOWNTO 0) := (OTHERS => '0');
+	SIGNAL s_phase_3MHz : UNSIGNED(PHASE_WIDTH-1 DOWNTO 0) := (OTHERS => '0');
+	SIGNAL s_sine_3MHz : STD_LOGIC_VECTOR(13 DOWNTO 0) := (OTHERS => '0');
 	SIGNAL s_phase_6MHz : UNSIGNED(PHASE_WIDTH-1 DOWNTO 0) := (OTHERS => '0');
 	SIGNAL s_sine_6MHz : STD_LOGIC_VECTOR(13 DOWNTO 0) := (OTHERS => '0');
 
@@ -61,6 +64,15 @@ BEGIN
 			o_data => s_sine_244kHz
 		);
 
+	c_lut_3MHz : ENTITY work.LUT_sinus
+		GENERIC MAP(
+			PHASE_WIDTH => PHASE_WIDTH
+		)
+		PORT MAP(
+			i_phase => STD_LOGIC_VECTOR(s_phase_3MHz),
+			o_data => s_sine_3MHz
+		);
+
 	c_lut_6MHz : ENTITY work.LUT_sinus
 		GENERIC MAP(
 			PHASE_WIDTH => PHASE_WIDTH
@@ -70,7 +82,9 @@ BEGIN
 			o_data => s_sine_6MHz
 		);
 
-	s_filter_input <= s_sine_6MHz WHEN s_select_6MHz = '1' ELSE s_sine_244kHz;
+	s_filter_input <= s_sine_6MHz WHEN s_select_tone = "10"
+		ELSE s_sine_3MHz WHEN s_select_tone = "01"
+		ELSE s_sine_244kHz;
 
 	c_low_pass_filter4 : ENTITY work.low_pass_filter4
 		PORT MAP(
@@ -90,11 +104,12 @@ BEGIN
 		WAIT FOR PERIOD / 2;
 	END PROCESS p_clock;
 
-	-- Both phases advance at 125 MHz, each with its own increment.
+	-- The three phases advance at 125 MHz, each with its own increment.
 	p_phase : PROCESS(s_clk, s_n_reset)
 	BEGIN
 		IF rising_edge(s_clk) THEN
 			s_phase_244kHz <= s_phase_244kHz + INCREMENT_244KHZ;
+			s_phase_3MHz <= s_phase_3MHz + INCREMENT_3MHZ;
 			s_phase_6MHz <= s_phase_6MHz + INCREMENT_6MHZ;
 		END IF;
 	END PROCESS p_phase;
@@ -104,19 +119,19 @@ BEGIN
 
 
 		-- 244 kHz, below the cutoff.
-		s_select_6MHz <= '0';
+		s_select_tone <= "00";
 		WAIT FOR 512 * PERIOD;
 		s_n_reset <= '0';
 		WAIT FOR 128 * PERIOD;
 		s_n_reset <= '1';
 		WAIT FOR 512 * PERIOD;
 
-		-- 6.1 MHz, above the cutoff.
-		s_select_6MHz <= '1';
+		-- 3.30 MHz, next to the realized -6 dB point.
+		s_select_tone <= "01";
 		WAIT FOR 512 * PERIOD;
-		s_n_reset <= '0';
-		WAIT FOR 128 * PERIOD;
-		s_n_reset <= '1';
+
+		-- 6.1 MHz, above the cutoff.
+		s_select_tone <= "10";
 		WAIT FOR 512 * PERIOD;
 		STOP;
 	END PROCESS p_scenario;

@@ -1,20 +1,19 @@
 [*]
 [*] GTKWave Analyzer v3.3.116 (w)1999-2023 BSI
-[*] Mon Oct  5 09:29:23 2026
+[*] Fri Oct 23 13:08:49 2026
 [*]
 [dumpfile] "/home/mbld/Documents/UFR_ST/Master/semestre_3/FPGA/FPGA_ELISE_M2/Projects/low_pass_filter4/output/testbench.ghw"
-[dumpfile_mtime] "Mon Oct  5 09:29:13 2026"
-[dumpfile_size] 230477
+[dumpfile_mtime] "Fri Oct 23 13:00:44 2026"
+[dumpfile_size] 307741
 [savefile] "/home/mbld/Documents/UFR_ST/Master/semestre_3/FPGA/FPGA_ELISE_M2/Projects/low_pass_filter4/testbenches/testbench.gtkw"
 [timestart] 0
 [size] 1920 935
 [pos] -27 -24
-*-31.275394 -1 4096000000 5120000000 13312000000 14336000000 9216000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-31.192915 8120000000 4096000000 5120000000 13312000000 9196000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [markername] ARESET ON
 [markername] BRESET OFF
-[markername] CRESET ON
-[markername] DRESET OFF
-[markername] ESine 6.1MHz
+[markername] CSine 6.1MHz
+[markername] DSine 3MHz
 [treeopen] top.
 [treeopen] top.simulation.
 [sst_width] 278
@@ -28,7 +27,6 @@
 top.simulation.s_clk
 [color] 5
 top.simulation.s_enable
-@29
 [color] 1
 top.simulation.s_n_reset
 @8022
