@@ -32,9 +32,6 @@ ARCHITECTURE arch OF low_pass_filter4 IS
 TYPE t_signal_memory IS ARRAY (0 TO 4) OF UNSIGNED(13 DOWNTO 0);
 SIGNAL s_signal_memory : t_signal_memory := (OTHERS => (OTHERS => '0'));
 
-TYPE t_coeffs IS ARRAY (0 TO 2) OF UNSIGNED(7 DOWNTO 0);
-CONSTANT c_coeffs : t_coeffs := (B_0, B_1, B_2);
-
 SIGNAL s_o_signal : UNSIGNED(13 DOWNTO 0) := (OTHERS => '0');
 
 BEGIN
@@ -47,14 +44,13 @@ BEGIN
 		v_scaled_output := (OTHERS => '0');
 	ELSIF rising_edge(i_clk) THEN
 		IF i_enable = '1' THEN
+
 			-- Compute the accumulator
-
 			v_scaled_output := RESIZE(
-				RESIZE((RESIZE(UNSIGNED(i_signal), 15) + RESIZE(s_signal_memory(3), 15)) * c_coeffs(0), 25)
-				+ RESIZE((RESIZE(s_signal_memory(0), 15) + RESIZE(s_signal_memory(2), 15)) * c_coeffs(1), 25)
-				+ RESIZE(s_signal_memory(1) * c_coeffs(2), 25),
+				RESIZE((RESIZE(UNSIGNED(i_signal), 15) + RESIZE(s_signal_memory(3), 15)) * B_0, 25)
+				+ RESIZE((RESIZE(s_signal_memory(0), 15) + RESIZE(s_signal_memory(2), 15)) * B_1, 25)
+				+ RESIZE(s_signal_memory(1) * B_2, 25),
 				v_scaled_output'LENGTH);
-
 
 			-- Shift the signal memory
 			s_signal_memory(0) <= UNSIGNED(i_signal);
@@ -62,7 +58,7 @@ BEGIN
 				s_signal_memory(k + 1) <= s_signal_memory(k);
 			end loop;
 
-			-- Output 
+			-- Apply the scaling factor for the output 
 			s_o_signal <= v_scaled_output(SCALE + 13 DOWNTO SCALE);
 		
 		ELSE 
