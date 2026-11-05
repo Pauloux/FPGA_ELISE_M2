@@ -1,5 +1,2 @@
 Notes:
 
-- Justify why the cutoff frequency is given at -6 dB
-- Justify why the cutoff frequency is not at 0.5 MHz
-- Justify why we do not loose data with 14 bits
