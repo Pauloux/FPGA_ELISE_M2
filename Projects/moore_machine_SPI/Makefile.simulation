@@ -1,7 +1,7 @@
 ### General parameters
 SOURCE_NAME = moore_machine_SPI
 LIBRARY_PATH = ..
-EXTERNAL_SOURCES_NAME = parallel_to_serial_converter
+EXTERNAL_SOURCES_NAME =
 TESTBENCH_DIR ?= testbenches
 TESTBENCH_FILE ?= $(TESTBENCH_DIR)/testbench.vhd
 RC_FILE ?= $(TESTBENCH_DIR)/.gtkwaverc
