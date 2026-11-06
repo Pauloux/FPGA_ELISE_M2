@@ -1,0 +1,44 @@
+[*]
+[*] GTKWave Analyzer v3.3.126 (w)1999-2026 BSI
+[*] Fri Nov  6 14:40:16 2026
+[*]
+[dumpfile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/Projects/parallel_to_serial_converter/output/testbench-prescaler=10-width=5.ghw"
+[dumpfile_mtime] "Fri Nov  6 14:39:14 2026"
+[dumpfile_size] 6302
+[savefile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/Projects/parallel_to_serial_converter/testbenches/testbench-prescaler=10-width=5.gtkw"
+[timestart] 0
+[size] 1920 934
+[pos] -27 -24
+*-28.457417 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.simulation.
+[treeopen] top.simulation.c_parallel_to_serial_converter.
+[sst_width] 278
+[signals_width] 190
+[sst_expanded] 1
+[sst_vpaned_height] 273
+@28
+[color] 5
+top.simulation.c_parallel_to_serial_converter.i_clk
+[color] 5
+#{top.simulation.c_parallel_to_serial_converter.i_parallel_data[4:0]} top.simulation.c_parallel_to_serial_converter.i_parallel_data[4] top.simulation.c_parallel_to_serial_converter.i_parallel_data[3] top.simulation.c_parallel_to_serial_converter.i_parallel_data[2] top.simulation.c_parallel_to_serial_converter.i_parallel_data[1] top.simulation.c_parallel_to_serial_converter.i_parallel_data[0]
+[color] 5
+top.simulation.c_parallel_to_serial_converter.i_n_reset
+@200
+-
+@420
+[color] 7
+top.simulation.c_parallel_to_serial_converter.s_freq_counter
+[color] 7
+top.simulation.c_parallel_to_serial_converter.s_bit_counter
+@200
+-
+@28
+[color] 2
+top.simulation.c_parallel_to_serial_converter.o_clk
+[color] 2
+top.simulation.c_parallel_to_serial_converter.o_serial_data
+[color] 2
+top.simulation.c_parallel_to_serial_converter.o_done
+[pattern_trace] 1
+[pattern_trace] 0

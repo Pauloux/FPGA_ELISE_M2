@@ -1,1 +1,1 @@
-testbench-prescaler=6_250_000-width=16.vhd
+testbench-prescaler=20-width=16.vhd
