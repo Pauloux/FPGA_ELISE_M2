@@ -68,16 +68,23 @@ BEGIN
 			s_o_serial_data	<= '0';
 			s_o_done	<= '0';
 		ELSE
-			IF s_freq_counter < FREQ_COUNTER_MAX THEN
-				s_freq_counter	<= s_freq_counter + 1;
-				s_bit_counter	<= s_bit_counter;
-				s_o_clk	<= s_o_clk;
-				s_o_serial_data	<= s_o_serial_data;
-				s_o_done	<= s_o_done;
-			ELSE	-- End of one period
-				s_freq_counter <= 0;
+			IF s_o_done = '0' THEN
+				IF s_freq_counter = FREQ_COUNTER_MAX THEN	-- End of period
+					s_freq_counter <= 0;
+					IF s_bit_counter < BIT_COUNTER_MAX THEN	-- Increment bit counter
+						s_bit_counter	<= s_bit_counter + 1;
+						s_o_clk	<= '0';
+						s_o_serial_data	<= i_parallel_data(BIT_COUNTER_MAX - s_bit_counter);
+						s_o_done	<= '0';
+					ELSE	-- When s_bit_counter = BIT_COUNTER_MAX (all bit have been sent)
+						s_bit_counter	<= s_bit_counter;
+						s_o_clk	<= '1';
+						s_o_serial_data	<= '0';
+						s_o_done	<= '1';
+					END IF;
+				ELSE
+					s_freq_counter	<= s_freq_counter + 1;
 
-				IF s_o_done = '0' THEN
 					IF s_freq_counter <= FREQ_COUNTER_HALFWAY THEN
 						s_bit_counter	<= s_bit_counter;
 						s_o_clk	<= '1';
@@ -88,26 +95,13 @@ BEGIN
 						s_o_clk	<= '0';
 						s_o_serial_data	<= i_parallel_data(BIT_COUNTER_MAX - s_bit_counter);
 						s_o_done	<= '0';
-					ELSE	-- When s_freq_counter = FREQ_COUNTER_MAX
-						IF s_bit_counter < BIT_COUNTER_MAX THEN	-- Increment bit counter
-							s_bit_counter	<= s_bit_counter + 1;
-
-							s_o_clk	<= '0';
-							s_o_serial_data	<= i_parallel_data(BIT_COUNTER_MAX - s_bit_counter);
-							s_o_done	<= '0';
-						ELSE	-- When s_bit_counter = BIT_COUNTER_MAX (all bit have been sent)
-							s_bit_counter	<= s_bit_counter;
-							s_o_clk	<= '1';
-							s_o_serial_data	<= '0';
-							s_o_done	<= '1';
-						END IF;
 					END IF;
-				ELSE	-- Conversion is finished, waiting for reset
-					s_bit_counter	<= s_bit_counter;
-					s_o_clk	<= '1';
-					s_o_serial_data	<= '0';
-					s_o_done	<= '1';
 				END IF;
+			ELSE	-- Conversion is finished, waiting for reset
+				s_bit_counter	<= s_bit_counter;
+				s_o_clk	<= '1';
+				s_o_serial_data	<= '0';
+				s_o_done	<= '1';
 			END IF;
 		END IF;
 	END PROCESS;
