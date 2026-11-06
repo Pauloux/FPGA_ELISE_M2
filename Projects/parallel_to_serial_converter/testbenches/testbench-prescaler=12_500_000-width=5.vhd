@@ -94,7 +94,7 @@ BEGIN
 		s_i_parallel_data	<= "10101";
 		WAIT FOR (PARALLEL_BUS_WIDTH / 2 * PERIOD * (FREQ / CLK_PRESCALER)) + (4 * PERIOD);	-- Not enough time for the full conversion
 		s_i_N_reset	<= '0';
-		WAIT FOR PERIOD / 2;	-- Wait and start a new conversion
+		WAIT FOR PERIOD;	-- Wait and start a new conversion
 		s_i_N_reset	<= '1';
 		s_i_parallel_data	<= "10101";
 		WAIT FOR PARALLEL_BUS_WIDTH * PERIOD * (FREQ / CLK_PRESCALER);

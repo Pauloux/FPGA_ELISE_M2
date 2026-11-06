@@ -52,67 +52,67 @@ ARCHITECTURE arch OF parallel_to_serial_converter IS
 	SIGNAL s_freq_counter	: INTEGER RANGE 0 TO FREQ_COUNTER_MAX	:= 0;
 	SIGNAL s_bit_counter	: INTEGER RANGE 0 TO BIT_COUNTER_MAX	:= 0;
 
+	SIGNAL s_o_clk	: STD_LOGIC	:= '1';
 	SIGNAL s_o_serial_data	: STD_LOGIC	:= '0';
 	SIGNAL s_o_done	: STD_LOGIC	:= '0';
 
 BEGIN
 
-	PROCESS (i_clk, i_N_reset)
+	PROCESS
 	BEGIN
-		IF (i_N_reset = '0') THEN	-- Asynchronous reset
+		WAIT UNTIL rising_edge(i_clk);
+		IF (i_N_reset = '0') THEN
 			s_freq_counter	<= 0;
-		ELSE
-			IF rising_edge(i_clk) THEN -- Frequency divider counter increment
-				IF s_freq_counter = FREQ_COUNTER_MAX THEN
-					s_freq_counter <= 0;
-				ELSE
-					s_freq_counter	<= s_freq_counter + 1;
-				END IF;
-			ELSE	-- Latch
-				s_freq_counter	<= s_freq_counter;
-			END IF;
-		END IF;
-	END PROCESS;
-
-	PROCESS (s_freq_counter, i_N_reset)
-	BEGIN
-		IF (i_N_reset = '0') THEN	-- Asynchronous reset
 			s_bit_counter	<= 0;
-
-			o_clk	<= '1';
+			s_o_clk	<= '1';
 			s_o_serial_data	<= '0';
 			s_o_done	<= '0';
 		ELSE
-			IF s_o_done = '0' THEN
-				IF s_freq_counter <= FREQ_COUNTER_HALFWAY THEN
-					o_clk	<= '1';
-					s_o_serial_data	<= i_parallel_data(BIT_COUNTER_MAX - s_bit_counter);
-					s_o_done	<= '0';
-				ELSIF s_freq_counter < FREQ_COUNTER_MAX THEN
-					o_clk	<= '0';
-					s_o_serial_data	<= i_parallel_data(BIT_COUNTER_MAX - s_bit_counter);
-					s_o_done	<= '0';
-				ELSE	-- When s_freq_counter = FREQ_COUNTER_MAX
-					IF s_bit_counter < BIT_COUNTER_MAX THEN	-- Increment bit counter
-						s_bit_counter	<= s_bit_counter + 1;
+			IF s_freq_counter < FREQ_COUNTER_MAX THEN
+				s_freq_counter	<= s_freq_counter + 1;
+				s_bit_counter	<= s_bit_counter;
+				s_o_clk	<= s_o_clk;
+				s_o_serial_data	<= s_o_serial_data;
+				s_o_done	<= s_o_done;
+			ELSE	-- End of one period
+				s_freq_counter <= 0;
 
-						o_clk	<= '0';
+				IF s_o_done = '0' THEN
+					IF s_freq_counter <= FREQ_COUNTER_HALFWAY THEN
+						s_bit_counter	<= s_bit_counter;
+						s_o_clk	<= '1';
 						s_o_serial_data	<= i_parallel_data(BIT_COUNTER_MAX - s_bit_counter);
 						s_o_done	<= '0';
-					ELSE	-- When s_bit_counter = BIT_COUNTER_MAX (all bit have been sent)
-						o_clk	<= '1';
-						s_o_serial_data	<= '0';
-						s_o_done	<= '1';
+					ELSIF s_freq_counter < FREQ_COUNTER_MAX THEN
+						s_bit_counter	<= s_bit_counter;
+						s_o_clk	<= '0';
+						s_o_serial_data	<= i_parallel_data(BIT_COUNTER_MAX - s_bit_counter);
+						s_o_done	<= '0';
+					ELSE	-- When s_freq_counter = FREQ_COUNTER_MAX
+						IF s_bit_counter < BIT_COUNTER_MAX THEN	-- Increment bit counter
+							s_bit_counter	<= s_bit_counter + 1;
+
+							s_o_clk	<= '0';
+							s_o_serial_data	<= i_parallel_data(BIT_COUNTER_MAX - s_bit_counter);
+							s_o_done	<= '0';
+						ELSE	-- When s_bit_counter = BIT_COUNTER_MAX (all bit have been sent)
+							s_bit_counter	<= s_bit_counter;
+							s_o_clk	<= '1';
+							s_o_serial_data	<= '0';
+							s_o_done	<= '1';
+						END IF;
 					END IF;
+				ELSE	-- Conversion is finished, waiting for reset
+					s_bit_counter	<= s_bit_counter;
+					s_o_clk	<= '1';
+					s_o_serial_data	<= '0';
+					s_o_done	<= '1';
 				END IF;
-			ELSE	-- Conversion is finished, waiting for reset
-				o_clk	<= '1';
-				s_o_serial_data	<= '0';
-				s_o_done	<= '1';
 			END IF;
 		END IF;
 	END PROCESS;
 
+	o_clk	<= s_o_clk;
 	o_serial_data	<= s_o_serial_data;
 	o_done	<= s_o_done;
 
