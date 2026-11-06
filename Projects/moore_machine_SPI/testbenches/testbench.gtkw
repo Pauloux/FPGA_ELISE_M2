@@ -1,0 +1,21 @@
+[*]
+[*] GTKWave Analyzer
+[*]
+[dumpfile] "/home/mbld/Documents/UFR_ST/Master/semestre_3/FPGA/FPGA_ELISE_M2/Projects/moore_machine_SPI/output/testbench.ghw"
+[timestart] 0
+[treeopen] top.
+[treeopen] top.simulation.
+[treeopen] top.simulation.c_moore.
+[sst_width] 278
+[signals_width] 180
+@28
+top.simulation.c_moore.i_clk
+top.simulation.c_moore.i_button
+top.simulation.c_moore.s_state
+top.simulation.c_moore.o_FSYNC
+top.simulation.c_moore.s_enable_spi
+top.simulation.c_moore.s_done_spi
+top.simulation.c_moore.o_SCLK
+top.simulation.c_moore.o_SDATA
+[pattern_trace] 1
+[pattern_trace] 0
