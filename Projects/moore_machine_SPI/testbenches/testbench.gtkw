@@ -1,15 +1,15 @@
 [*]
-[*] GTKWave Analyzer v3.3.116 (w)1999-2023 BSI
-[*] Fri Nov  6 11:39:32 2026
+[*] GTKWave Analyzer v3.3.126 (w)1999-2026 BSI
+[*] Fri Nov  6 12:04:10 2026
 [*]
-[dumpfile] "/home/mbld/Documents/UFR_ST/Master/semestre_3/FPGA/FPGA_ELISE_M2/Projects/moore_machine_SPI/output/testbench.ghw"
-[dumpfile_mtime] "Fri Nov  6 11:39:08 2026"
-[dumpfile_size] 1644
-[savefile] "/home/mbld/Documents/UFR_ST/Master/semestre_3/FPGA/FPGA_ELISE_M2/Projects/moore_machine_SPI/testbenches/testbench.gtkw"
+[dumpfile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/Projects/moore_machine_SPI/output/testbench.ghw"
+[dumpfile_mtime] "Fri Nov  6 12:04:02 2026"
+[dumpfile_size] 1651
+[savefile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/Projects/moore_machine_SPI/testbenches/testbench.gtkw"
 [timestart] 0
-[size] 1920 935
+[size] 1920 934
 [pos] -27 -24
-*-26.311785 102800000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-26.378851 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] top.
 [treeopen] top.simulation.
 [treeopen] top.simulation.c_moore.
@@ -24,6 +24,8 @@
 top.simulation.c_moore.i_clk
 [color] 2
 top.simulation.c_moore.i_done_spi
+[color] 6
+top.simulation.c_moore.i_n_start
 @20000
 -
 @200
@@ -38,7 +40,6 @@ top.simulation.c_moore.s_state
 @28
 [color] 5
 top.simulation.c_moore.o_enable_spi
-@29
 [color] 5
 top.simulation.c_moore.o_n_ss
 [pattern_trace] 1

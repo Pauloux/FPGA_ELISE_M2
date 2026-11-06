@@ -21,9 +21,9 @@ END ENTITY;
 
 ARCHITECTURE moore_machine_SPI_arch OF moore_machine_SPI IS
 
-	TYPE t_state IS (S_IDLE, S_START, S_SEND, S_RELEASE);
+	TYPE t_state IS (IDLE, START, SEND, WAIT_START_OFF);
 
-	SIGNAL s_state : t_state := S_IDLE;
+	SIGNAL s_state : t_state := IDLE;
 
 BEGIN
 
@@ -31,16 +31,16 @@ BEGIN
 	PROCESS (s_state)
 	BEGIN
 		CASE s_state IS
-			WHEN S_IDLE =>
+			WHEN IDLE =>
 				o_N_SS<= '1';
 				o_enable_spi <= '0';
-			WHEN S_START =>
+			WHEN START =>
 				o_N_SS<= '0';
 				o_enable_spi <= '0';
-			WHEN S_SEND =>
+			WHEN SEND =>
 				o_N_SS<= '0';
 				o_enable_spi <= '1';
-			WHEN S_RELEASE =>
+			WHEN WAIT_START_OFF =>
 				o_N_SS<= '1';
 				o_enable_spi <= '0';
 			WHEN OTHERS =>
@@ -53,34 +53,34 @@ BEGIN
 	BEGIN
 		IF rising_edge(i_clk) THEN
 			CASE s_state IS
-				WHEN S_IDLE =>
+				WHEN IDLE =>
 					IF i_N_start = '0' THEN
-						s_state <= S_START;
+						s_state <= START;
 					ELSE
-						s_state <= S_IDLE;
+						s_state <= IDLE;
 					END IF;
 
-				WHEN S_START =>
-					s_state <= S_SEND;
+				WHEN START =>
+					s_state <= SEND;
 
-				WHEN S_SEND =>
+				WHEN SEND =>
 					IF i_N_start = '1' AND i_done_spi = '1' THEN
-						s_state <= S_IDLE;
+						s_state <= IDLE;
 					ELSIF i_N_start = '0' AND i_done_spi = '1' THEN
-						s_state <= S_RELEASE;
+						s_state <= WAIT_START_OFF;
 					ELSE
-						s_state <= S_SEND;
+						s_state <= SEND;
 					END IF;
 
-				WHEN S_RELEASE =>
+				WHEN WAIT_START_OFF =>
 					IF i_N_start = '1' THEN
-						s_state <= S_IDLE;
+						s_state <= IDLE;
 					ELSE
-						s_state <= S_RELEASE;
+						s_state <= WAIT_START_OFF;
 					END IF;
 
 				WHEN OTHERS =>
-					s_state <= S_IDLE;
+					s_state <= IDLE;
 			END CASE;
 		END IF;
 	END PROCESS;
