@@ -1,21 +1,32 @@
 [*]
-[*] GTKWave Analyzer
+[*] GTKWave Analyzer v3.3.116 (w)1999-2023 BSI
+[*] Fri Nov  6 08:22:33 2026
 [*]
 [dumpfile] "/home/mbld/Documents/UFR_ST/Master/semestre_3/FPGA/FPGA_ELISE_M2/Projects/moore_machine_SPI/output/testbench.ghw"
+[dumpfile_mtime] "Fri Nov  6 08:20:40 2026"
+[dumpfile_size] 18407
+[savefile] "/home/mbld/Documents/UFR_ST/Master/semestre_3/FPGA/FPGA_ELISE_M2/Projects/moore_machine_SPI/testbenches/testbench.gtkw"
 [timestart] 0
+[size] 1920 935
+[pos] -27 -24
+*-30.049046 1666000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] top.
 [treeopen] top.simulation.
 [treeopen] top.simulation.c_moore.
 [sst_width] 278
-[signals_width] 180
+[signals_width] 126
+[sst_expanded] 1
+[sst_vpaned_height] 274
 @28
-top.simulation.c_moore.i_clk
-top.simulation.c_moore.i_button
+top.simulation.c_moore.c_parallel_to_serial_converter.i_clk
+@420
 top.simulation.c_moore.s_state
-top.simulation.c_moore.o_FSYNC
+@28
+top.simulation.c_moore.i_button
+top.simulation.c_moore.o_fsync
 top.simulation.c_moore.s_enable_spi
 top.simulation.c_moore.s_done_spi
-top.simulation.c_moore.o_SCLK
-top.simulation.c_moore.o_SDATA
+top.simulation.c_moore.o_sdata
+top.simulation.c_moore.o_sclk
 [pattern_trace] 1
 [pattern_trace] 0

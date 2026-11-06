@@ -33,20 +33,24 @@ ARCHITECTURE moore_machine_SPI_arch OF moore_machine_SPI IS
 	SIGNAL s_done_spi   : STD_LOGIC := '0';
 
 BEGIN
--------------- A DECOMMENTER LORSQUE L'ENTITE SPI SERA FAITE -------------
-	-- c_SPI: ENTITY work.SPI
-	-- 	GENERIC MAP(
-	-- 		tscale  => 20,
-	-- 		N       => N
-	-- 	)
-	-- 	PORT MAP(
-	-- 		i_clk    => i_clk,
-	-- 		i_enable => s_enable_spi,
-	-- 		i_W      => i_W,
-	-- 		o_SCLK   => o_SCLK,
-	-- 		o_SDATA  => o_SDATA,
-	-- 		o_done   => s_done_spi
-	-- 	);
+
+--------------------------------------------------------------------------
+    c_parallel_to_serial_converter: ENTITY work.parallel_to_serial_converter
+	GENERIC MAP(
+        CLK_PRESCALER=>6_250_000,
+		PARALLEL_BUS_WIDTH => N
+	)
+	PORT MAP(
+		-- Inputs
+		i_clk=> i_clk,
+		i_N_reset=> s_enable_spi,
+		i_parallel_data	=> i_W,
+
+		-- Outputs
+		o_clk=>o_SCLK,
+		o_serial_data=>o_SDATA,
+		o_done=> s_done_spi
+	);
 ---------------------------------------------------------------------
 
 	-- Outputs depend on the current state only.
