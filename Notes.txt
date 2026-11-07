@@ -1,3 +1,1 @@
 Notes:
-
-- Add simulation of the seven segment display

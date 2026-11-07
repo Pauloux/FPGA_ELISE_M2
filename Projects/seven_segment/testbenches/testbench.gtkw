@@ -1,0 +1,34 @@
+[*]
+[*] GTKWave Analyzer v3.3.126 (w)1999-2026 BSI
+[*] Sat Nov  7 17:06:22 2026
+[*]
+[dumpfile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/Projects/seven_segment/output/testbench.ghw"
+[dumpfile_mtime] "Sat Nov  7 17:04:43 2026"
+[dumpfile_size] 886
+[savefile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/Projects/seven_segment/testbenches/testbench.gtkw"
+[timestart] 0
+[size] 1920 934
+[pos] -27 -24
+*-23.964645 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.simulation.
+[treeopen] top.simulation.c_seven_segment.
+[sst_width] 278
+[signals_width] 150
+[sst_expanded] 1
+[sst_vpaned_height] 273
+@200
+-Input
+@22
+[color] 5
+#{top.simulation.c_seven_segment.i_digit[3:0]} top.simulation.c_seven_segment.i_digit[3] top.simulation.c_seven_segment.i_digit[2] top.simulation.c_seven_segment.i_digit[1] top.simulation.c_seven_segment.i_digit[0]
+@200
+-
+-Output
+-0 = segment ON
+-1 = segment OFF
+@28
+[color] 2
+#{top.simulation.c_seven_segment.o_gfedcba[6:0]} top.simulation.c_seven_segment.o_gfedcba[6] top.simulation.c_seven_segment.o_gfedcba[5] top.simulation.c_seven_segment.o_gfedcba[4] top.simulation.c_seven_segment.o_gfedcba[3] top.simulation.c_seven_segment.o_gfedcba[2] top.simulation.c_seven_segment.o_gfedcba[1] top.simulation.c_seven_segment.o_gfedcba[0]
+[pattern_trace] 1
+[pattern_trace] 0
