@@ -1,15 +1,21 @@
 [*]
 [*] GTKWave Analyzer v3.3.126 (w)1999-2026 BSI
-[*] Fri Nov  6 14:37:17 2026
+[*] Sat Nov  7 16:56:18 2026
 [*]
 [dumpfile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/Projects/parallel_to_serial_converter/output/testbench.ghw"
-[dumpfile_mtime] "Fri Nov  6 14:35:58 2026"
+[dumpfile_mtime] "Sat Nov  7 16:56:13 2026"
 [dumpfile_size] 31699
-[savefile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/Projects/parallel_to_serial_converter/testbenches/test.gtkw"
+[savefile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/Projects/parallel_to_serial_converter/testbenches/testbench-prescaler=20-width=16.gtkw"
 [timestart] 0
 [size] 1920 934
 [pos] -27 -24
-*-30.973448 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-30.973448 -1 2556000000 3204000000 3360000000 5928000000 8496000000 12376000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[markername] AWaiting for reset
+[markername] BReset
+[markername] COnly 0
+[markername] DOnly 1
+[markername] E0 and 1 alternating
+[markername] FReset during conversion
 [treeopen] top.
 [treeopen] top.simulation.
 [treeopen] top.simulation.c_parallel_to_serial_converter.
@@ -22,6 +28,7 @@
 top.simulation.c_parallel_to_serial_converter.i_clk
 [color] 5
 #{top.simulation.c_parallel_to_serial_converter.i_parallel_data[15:0]} top.simulation.c_parallel_to_serial_converter.i_parallel_data[15] top.simulation.c_parallel_to_serial_converter.i_parallel_data[14] top.simulation.c_parallel_to_serial_converter.i_parallel_data[13] top.simulation.c_parallel_to_serial_converter.i_parallel_data[12] top.simulation.c_parallel_to_serial_converter.i_parallel_data[11] top.simulation.c_parallel_to_serial_converter.i_parallel_data[10] top.simulation.c_parallel_to_serial_converter.i_parallel_data[9] top.simulation.c_parallel_to_serial_converter.i_parallel_data[8] top.simulation.c_parallel_to_serial_converter.i_parallel_data[7] top.simulation.c_parallel_to_serial_converter.i_parallel_data[6] top.simulation.c_parallel_to_serial_converter.i_parallel_data[5] top.simulation.c_parallel_to_serial_converter.i_parallel_data[4] top.simulation.c_parallel_to_serial_converter.i_parallel_data[3] top.simulation.c_parallel_to_serial_converter.i_parallel_data[2] top.simulation.c_parallel_to_serial_converter.i_parallel_data[1] top.simulation.c_parallel_to_serial_converter.i_parallel_data[0]
+@29
 [color] 5
 top.simulation.c_parallel_to_serial_converter.i_n_reset
 @200
