@@ -118,18 +118,21 @@ BEGIN
 							WORD_2	WHEN "10",
 							WORD_3	WHEN OTHERS;
 	
-	-- Word selection : 7-segment display
+	-- Word selection: 7-segment display
 	WITH SW(3 DOWNTO 2) SELECT
 		s_seven_segment_digit <=	s_word_to_send(3 DOWNTO 0) WHEN "00",
 									s_word_to_send(7 DOWNTO 4) WHEN "01",
 									s_word_to_send(11 DOWNTO 8) WHEN "10",
 									s_word_to_send(15 DOWNTO 12) WHEN OTHERS;
 
-	-- Word selection : LED
+	-- Word selection: LED
 	WITH SW(3 DOWNTO 2) SELECT
 		led_o <=	s_word_to_send(7 DOWNTO 0) WHEN "00",
 					s_word_to_send(7 DOWNTO 0) WHEN "01",
 					s_word_to_send(15 DOWNTO 8) WHEN "10",
 					s_word_to_send(15 DOWNTO 8) WHEN OTHERS;
+
+	-- Reset: fixed value in our case
+	GPIO(3)	<= '0';
 
 END arch;
