@@ -1,5 +1,11 @@
 FPGA projects made during the second year of the ÉLISE Master's program.
 
+/!\ Warning /!\
+The tools used to synthesize the project for the Red Pitaya have
+recently received an important update. The Makefile.redpitaya probably needs to
+be modified in order to work again.
+/!\ Warning /!\
+
 To synthesize and load the program into the Red Pitaya, please install
 everything as described on
 https://github.com/master-elise/fpga_tools/tree/872ef5ebb082c328cb7ecc2ec63625131b2e3e2c.
