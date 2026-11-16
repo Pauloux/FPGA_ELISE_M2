@@ -1,22 +1,23 @@
 [*]
-[*] GTKWave Analyzer v3.3.126 (w)1999-2026 BSI
-[*] Fri Nov  6 12:04:10 2026
+[*] GTKWave Analyzer v3.3.116 (w)1999-2023 BSI
+[*] Mon Nov 16 08:50:48 2026
 [*]
-[dumpfile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/Projects/moore_machine_SPI/output/testbench.ghw"
-[dumpfile_mtime] "Fri Nov  6 12:04:02 2026"
+[dumpfile] "/home/mbld/Documents/UFR_ST/Master/semestre_3/FPGA/FPGA_ELISE_M2/Projects/moore_machine_SPI/output/testbench.ghw"
+[dumpfile_mtime] "Mon Nov 16 08:47:00 2026"
 [dumpfile_size] 1651
-[savefile] "/home/pauloux/Documents/0CMI/0Semestre9/FPGA/TP/dev/Projects/moore_machine_SPI/testbenches/testbench.gtkw"
+[savefile] "/home/mbld/Documents/UFR_ST/Master/semestre_3/FPGA/FPGA_ELISE_M2/Projects/moore_machine_SPI/testbenches/testbench.gtkw"
 [timestart] 0
-[size] 1920 934
+[size] 1920 935
 [pos] -27 -24
-*-26.378851 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-26.378851 -1 244000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[markername] A2nd Boucle
 [treeopen] top.
 [treeopen] top.simulation.
 [treeopen] top.simulation.c_moore.
 [sst_width] 278
 [signals_width] 250
 [sst_expanded] 1
-[sst_vpaned_height] 274
+[sst_vpaned_height] 275
 @200
 -Input
 @28
