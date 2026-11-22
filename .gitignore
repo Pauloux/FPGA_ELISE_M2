@@ -6,3 +6,9 @@
 *.frames
 *.json
 *.bin
+*.cmd
+*.o
+*.ko
+*.mod*
+*.symvers
+*.order
