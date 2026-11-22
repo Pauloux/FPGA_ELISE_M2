@@ -12,7 +12,7 @@ USE IEEE.NUMERIC_STD.ALL;
 ENTITY moore_machine_SPI IS
 	PORT(
 		i_clk        : IN  STD_LOGIC;
-		i_N_start   : IN  STD_LOGIC; -- WARNING : description use PULL-UP version
+		i_N_start   : IN  STD_LOGIC;
 		i_done_spi   : IN  STD_LOGIC;
 		o_enable_spi : OUT STD_LOGIC := '0';
 		o_N_SS     : OUT STD_LOGIC := '1'
